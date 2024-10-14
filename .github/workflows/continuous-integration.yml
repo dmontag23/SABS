@@ -36,7 +36,6 @@ jobs:
         run: yarn lint
   integration_tests:
     name: Integration tests 🧪
-    environment: test
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repository code
@@ -54,7 +53,6 @@ jobs:
         run: yarn test:integration
   e2e_tests:
     name: E2E tests (IOS) 📱
-    environment: test
     runs-on: macos-latest
     steps:
       - name: Check out the repository code
