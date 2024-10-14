@@ -409,9 +409,10 @@ describe("Holds", () => {
 
     // get tickets for a second show that is already open
     await userEvent.press(getByLabelText("Back button"));
-    expect(getByText("Hamilton")).toBeVisible();
-    /* TODO: Investigate why this is necessary to press the card after navigating
-    back to the card list screen. Perhaps it's a limitation with the react navigation library */
+    /* The timers are advanced by 1 second here because the slide transition from the screen
+    details page to the rush show list page takes about 1 second, and if you click the rush 
+    show card when it is visible but before the transition has finished, nothing will happen.
+    This can be reproduced manually on the simulator. */
     act(() => jest.advanceTimersByTime(1000));
     await userEvent.press(getByText("Hamilton"));
     expect(getByLabelText("Header image")).toBeVisible();
