@@ -30,6 +30,7 @@ const LocationBottomSheetModal = ({
       ref={innerRef}
       snapPoints={snapPoints}
       handleComponent={null}
+      enableDynamicSizing={false}
       backgroundStyle={{backgroundColor: colors.elevation.level1}}>
       <View style={[styles.container]}>
         <LocationHeader onCloseButtonPress={handleClose} />

@@ -59,6 +59,7 @@ const HoldConfirmationBottomSheet = ({
       snapPoints={snapPoints}
       enableOverDrag={false}
       enablePanDownToClose={false}
+      enableDynamicSizing={false}
       index={hold ? 1 : -1}
       bottomInset={bottomInset}
       style={[styles.modalContainer, {borderColor: colors.primary}]}>
