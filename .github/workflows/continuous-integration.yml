@@ -17,8 +17,6 @@ jobs:
         run: yarn
       - name: Install mock server dependencies
         run: cd mock-server && yarn && cd ..
-      - name: Install pod dependencies
-        run: cd ./ios && pod install && cd ..
       - name: Create the env file
         run: echo "${{ vars.ENV }}" > .env
   typecheck:
@@ -53,6 +51,8 @@ jobs:
         run: |
           brew tap wix/brew
           brew install applesimutils
+      - name: Install pod dependencies
+        run: cd ./ios && pod install && cd ..
       - name: Build Detox
         run: yarn test:e2e:build ios.sim.release
       - name: Run Detox Tests
