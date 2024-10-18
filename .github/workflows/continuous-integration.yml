@@ -2,28 +2,47 @@ name: Continuous Integration
 run-name: '"${{ github.event.head_commit.message }}" on ${{ github.event.ref }}, authored by ${{ github.event.head_commit.author.username }} 🚀'
 on: push
 jobs:
+  setup-dependencies:
+    name: Setup dependencies 🛠️
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository code
+        uses: actions/checkout@v4
+      - name: Setup node and cache yarn
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+          cache: yarn
+      - name: Install dependencies
+        run: yarn
+      - name: Install mock server dependencies
+        run: cd mock-server && yarn && cd ..
+      - name: Install pod dependencies
+        run: cd ./ios && pod install && cd ..
+      - name: Create the env file
+        run: echo "${{ vars.ENV }}" > .env
   typecheck:
     name: Typecheck ✅
-    uses: ./.github/workflows/setup-install.yml
+    needs: setup-dependencies
     steps:
       - name: Typecheck
         run: yarn typecheck
   lint:
     name: Lint 🧹
-    uses: ./.github/workflows/setup-install.yml
+    needs: setup-dependencies
     steps:
       - name: Lint
         run: yarn lint
   integration_tests:
     name: Integration tests 🧪
-    uses: ./.github/workflows/setup-install.yml
+    needs: setup-dependencies
     steps:
       - name: Run integration tests
         run: yarn test:integration
   e2e_tests:
     name: E2E tests (IOS) 📱
+    needs: setup-dependencies
     runs-on: macos-latest
-    uses: ./.github/workflows/setup-install.yml
     steps:
       - name: Start mock server
         run: cd ./mock-server && nohup yarn start &
