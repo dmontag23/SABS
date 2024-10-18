@@ -4,72 +4,27 @@ on: push
 jobs:
   typecheck:
     name: Typecheck ✅
-    runs-on: ubuntu-latest
+    uses: ./.github/workflows/setup-install.yml
     steps:
-      - name: Check out the repository code
-        uses: actions/checkout@v4
-      - name: Setup node and cache yarn
-        uses: actions/setup-node@v4
-        with:
-          node-version: latest
-          cache: yarn
-      - name: Install dependencies
-        run: yarn
-      - name: Install mock server dependencies
-        run: cd mock-server && yarn && cd ..
       - name: Typecheck
         run: yarn typecheck
   lint:
     name: Lint 🧹
-    runs-on: ubuntu-latest
+    uses: ./.github/workflows/setup-install.yml
     steps:
-      - name: Check out the repository code
-        uses: actions/checkout@v4
-      - name: Setup node and cache yarn
-        uses: actions/setup-node@v4
-        with:
-          node-version: latest
-          cache: yarn
-      - name: Install dependencies
-        run: yarn
       - name: Lint
         run: yarn lint
   integration_tests:
     name: Integration tests 🧪
-    runs-on: ubuntu-latest
+    uses: ./.github/workflows/setup-install.yml
     steps:
-      - name: Check out the repository code
-        uses: actions/checkout@v4
-      - name: Setup node and cache yarn
-        uses: actions/setup-node@v4
-        with:
-          node-version: latest
-          cache: yarn
-      - name: Create the env file
-        run: echo "${{ vars.ENV }}" > .env
-      - name: Install dependencies
-        run: yarn
       - name: Run integration tests
         run: yarn test:integration
   e2e_tests:
     name: E2E tests (IOS) 📱
     runs-on: macos-latest
+    uses: ./.github/workflows/setup-install.yml
     steps:
-      - name: Check out the repository code
-        uses: actions/checkout@v4
-      - name: Setup node and cache yarn
-        uses: actions/setup-node@v4
-        with:
-          node-version: latest
-          cache: yarn
-      - name: Create the env file
-        run: echo "${{ vars.ENV }}" > .env
-      - name: Install dependencies
-        run: yarn
-      - name: Install pod dependencies
-        run: cd ./ios && pod install && cd ..
-      - name: Install mock server dependencies
-        run: cd ./mock-server && yarn && cd ..
       - name: Start mock server
         run: cd ./mock-server && nohup yarn start &
       - name: Install Detox dependencies

@@ -1,0 +1,23 @@
+name: Setup dependencies
+on:
+  workflow_call:
+jobs:
+  setup-dependencies:
+    name: Setup dependencies 🛠️
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository code
+        uses: actions/checkout@v4
+      - name: Setup node and cache yarn
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+          cache: yarn
+      - name: Install dependencies
+        run: yarn
+      - name: Install mock server dependencies
+        run: cd mock-server && yarn && cd ..
+      - name: Install pod dependencies
+        run: cd ./ios && pod install && cd ..
+      - name: Create the env file
+        run: echo "${{ vars.ENV }}" > .env
