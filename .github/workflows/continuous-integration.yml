@@ -13,8 +13,6 @@ jobs:
         with:
           node-version: 22.x
           cache: yarn
-      - name: Install utils for pod installation
-        run: brew install applesimutils
       - name: Install dependencies
         run: yarn
       - name: Install mock server dependencies
@@ -52,7 +50,9 @@ jobs:
       - name: Start mock server
         run: cd ./mock-server && nohup yarn start &
       - name: Install Detox dependencies
-        run: brew tap wix/brew
+        run: |
+          brew tap wix/brew
+          brew install applesimutils
       - name: Build Detox
         run: yarn test:e2e:build ios.sim.release
       - name: Run Detox Tests
