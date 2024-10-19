@@ -1,0 +1,18 @@
+name: "Setup Dependencies 🛠️"
+description: "Setup Node.js, install dependencies, and configure environment"
+runs:
+  using: "composite"
+  steps:
+    - name: Check out the repository code
+      uses: actions/checkout@v4
+    - name: Setup node and cache yarn
+      uses: actions/setup-node@v4
+      with:
+        node-version: 22.x
+        cache: yarn
+    - name: Install dependencies
+      run: yarn
+    - name: Install mock server dependencies
+      run: cd mock-server && yarn && cd ..
+    - name: Create the env file
+      run: echo "${{ vars.ENV }}" > .env
