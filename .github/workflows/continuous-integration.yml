@@ -6,6 +6,8 @@ jobs:
     name: Typecheck ✅
     runs-on: ubuntu-latest
     steps:
+      - name: Check out the repository code
+        uses: actions/checkout@v4
       - name: Setup dependencies 🛠️
         uses: ./.github/actions/setup-dependencies
         with:
@@ -16,24 +18,36 @@ jobs:
     name: Lint 🧹
     runs-on: ubuntu-latest
     steps:
+      - name: Check out the repository code
+        uses: actions/checkout@v4
       - name: Setup dependencies 🛠️
         uses: ./.github/actions/setup-dependencies
+        with:
+          env_var: ${{ vars.ENV }}
       - name: Lint
         run: yarn lint
   integration_tests:
     name: Integration tests 🧪
     runs-on: ubuntu-latest
     steps:
+      - name: Check out the repository code
+        uses: actions/checkout@v4
       - name: Setup dependencies 🛠️
         uses: ./.github/actions/setup-dependencies
+        with:
+          env_var: ${{ vars.ENV }}
       - name: Run integration tests
         run: yarn test:integration
   e2e_tests:
     name: E2E tests (IOS) 📱
     runs-on: macos-latest
     steps:
+      - name: Check out the repository code
+        uses: actions/checkout@v4
       - name: Setup dependencies 🛠️
         uses: ./.github/actions/setup-dependencies
+        with:
+          env_var: ${{ vars.ENV }}
       - name: Start mock server
         run: cd ./mock-server && nohup yarn start &
       - name: Install Detox dependencies
