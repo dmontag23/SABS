@@ -12,7 +12,15 @@ runs:
         cache: yarn
     - name: Install dependencies
       run: yarn
+      shell: bash
     - name: Install mock server dependencies
       run: cd mock-server && yarn && cd ..
+      shell: bash
     - name: Create the env file
-      run: echo "${{ vars.ENV }}" > .env
+      run: echo "${{ inputs.env_vars }}" > .env
+      shell: bash
+
+inputs:
+  env_vars:
+    description: "Environment variables"
+    required: true
