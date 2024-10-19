@@ -6,6 +6,7 @@ jobs:
     name: Typecheck ✅
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - name: Setup dependencies 🛠️
         uses: ./.github/actions/setup-dependencies
       - name: Typecheck
