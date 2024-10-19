@@ -6,12 +6,10 @@ jobs:
     name: Typecheck ✅
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
       - name: Setup dependencies 🛠️
         uses: ./.github/actions/setup-dependencies
         with:
-          env_value: ${{ vars.ENV }}
+          env_var: ${{ vars.ENV }}
       - name: Typecheck
         run: yarn typecheck
   lint:

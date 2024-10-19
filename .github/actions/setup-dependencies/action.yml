@@ -17,10 +17,10 @@ runs:
       run: cd mock-server && yarn && cd ..
       shell: bash
     - name: Create the env file
-      run: echo "${{ inputs.env_vars }}" > .env
+      run: echo "${{ inputs.env_var }}" > .env
       shell: bash
 
 inputs:
-  env_vars:
-    description: "Environment variables"
+  env_var:
+    description: "Environment variable"
     required: true
