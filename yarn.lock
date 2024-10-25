@@ -2785,9 +2785,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/react-native@npm:^12.7.2":
-  version: 12.7.2
-  resolution: "@testing-library/react-native@npm:12.7.2"
+"@testing-library/react-native@npm:^12.8.0":
+  version: 12.8.0
+  resolution: "@testing-library/react-native@npm:12.8.0"
   dependencies:
     jest-matcher-utils: ^29.7.0
     pretty-format: ^29.7.0
@@ -2800,7 +2800,7 @@ __metadata:
   peerDependenciesMeta:
     jest:
       optional: true
-  checksum: 7e3d8ab7d549823fcf438c17353e6c40386da88bbb1edfbd0747282a28c673597be27fdc2fa1f3a7d8786b77c72bb2e37f67ad2c9134225e9b68db97838f77e2
+  checksum: 324f2eeed9753fa986d897cacd16a6a2de7c59648f4e28c65a3b66bb6bfee1b6a8e62396012361b6b3947af632ab4b4e51d6c6f49419564d4f5aa0dcdb170331
   languageName: node
   linkType: hard
 
@@ -9071,16 +9071,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-screens@npm:^3.34.1":
-  version: 3.34.1
-  resolution: "react-native-screens@npm:3.34.1"
+"react-native-screens@npm:^3.35.0":
+  version: 3.35.0
+  resolution: "react-native-screens@npm:3.35.0"
   dependencies:
     react-freeze: ^1.0.0
     warn-once: ^0.1.0
   peerDependencies:
     react: "*"
     react-native: "*"
-  checksum: e8d7613d02b9a4a35676a220a59a1057a624a1358d40ec533fff0a3425ea8cb08e010b1d5729d61e972737b4c63262b989e0b5c6e02a7c0a4097850fe81f887e
+  checksum: cb8a0c8d8a41a8a1065cc2253e4272a970366a7d80bc54e889b2f48de7ccccd3e828e2701de39c0453a67956ec0cad140fb506324cce04419b5e2eb495c038c2
   languageName: node
   linkType: hard
 
@@ -9557,7 +9557,7 @@ __metadata:
     "@react-navigation/native": ^6.1.18
     "@react-navigation/stack": ^6.4.1
     "@tanstack/react-query": ^5.59.16
-    "@testing-library/react-native": ^12.7.2
+    "@testing-library/react-native": ^12.8.0
     "@trivago/prettier-plugin-sort-imports": ^4.3.0
     "@types/react": ^18.2.6
     "@types/react-native-vector-icons": ^6.4.18
@@ -9579,7 +9579,7 @@ __metadata:
     react-native-paper: ^5.12.5
     react-native-reanimated: ^3.16.1
     react-native-safe-area-context: ^4.11.1
-    react-native-screens: ^3.34.1
+    react-native-screens: ^3.35.0
     react-native-svg: ^15.8.0
     react-native-vector-icons: ^10.2.0
     react-test-renderer: 18.3.1
