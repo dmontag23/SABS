@@ -7,11 +7,6 @@ updates:
     # Check the yarn registry for updates every day (weekdays)
     schedule:
       interval: "daily"
-    # Group all updates into 1 PR
-    groups:
-      all-dependencies:
-        patterns:
-          - "*"
     # Ignore all react native dependencies
     ignore:
       - dependency-name: "react"
@@ -33,11 +28,6 @@ updates:
     # Check the yarn registry for updates every day (weekdays)
     schedule:
       interval: "daily"
-    # Group all updates into 1 PR
-    groups:
-      all-dependencies:
-        patterns:
-          - "*"
 
   # Disable any ruby updates as these are done manually as a part of a react native upgrade
   - package-ecosystem: bundler
