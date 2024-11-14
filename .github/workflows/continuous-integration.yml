@@ -55,6 +55,7 @@ jobs:
           brew tap wix/brew
           brew install applesimutils
       - name: Install pod dependencies
+        # TODO: Re-enable new arch once paper supports it: https://github.com/callstack/react-native-paper/issues/4454
         run: cd ./ios && RCT_NEW_ARCH_ENABLED=0 pod install && cd ..
       - name: Build Detox
         run: yarn test:e2e:build ios.sim.release
