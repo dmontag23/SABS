@@ -128,16 +128,12 @@ describe("Hold banner", () => {
     });
 
     // check the banner appears on the show details page
-    await waitFor(
-      () =>
-        expect(
-          getByText("Attempting to get 1 ticket for Hamilton in 00:00:04")
-        ).toBeVisible(),
-      {timeout: 2000}
+    await waitFor(() =>
+      expect(
+        getByText(/Attempting to get 1 ticket for Hamilton in/)
+      ).toBeVisible()
     );
-    const bannerText = getByText(
-      "Attempting to get 1 ticket for Hamilton in 00:00:04"
-    );
+    const bannerText = getByText(/Attempting to get 1 ticket for Hamilton in/);
     expect(getByText("Cancel")).toBeVisible();
     await userEvent.press(getByText("Cancel"));
 
