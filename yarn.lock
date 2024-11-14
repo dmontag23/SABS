@@ -5072,16 +5072,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"detox-copilot@npm:^0.0.23":
-  version: 0.0.23
-  resolution: "detox-copilot@npm:0.0.23"
-  checksum: ae209f519b1f7b97b657de49e752f1fc18292ed049d26056682010231203b3c07bdb61a06d610ffead2a75cdf5b11849cdab03ae2670debe5e2f8b0191006635
+"detox-copilot@npm:^0.0.24":
+  version: 0.0.24
+  resolution: "detox-copilot@npm:0.0.24"
+  checksum: 31ff7b0e7fee08ce070768d2454dc63e8e3050acb589fd509ca508bf26bbd2c1e860fdb66ceeefb60524b07b14c0a545f859536ca6b9f1ce402f84310cc2aef6
   languageName: node
   linkType: hard
 
-"detox@npm:^20.27.6":
-  version: 20.27.6
-  resolution: "detox@npm:20.27.6"
+"detox@npm:^20.28.0":
+  version: 20.28.0
+  resolution: "detox@npm:20.28.0"
   dependencies:
     ajv: ^8.6.3
     bunyan: ^1.8.12
@@ -5089,7 +5089,7 @@ __metadata:
     caf: ^15.0.1
     chalk: ^4.0.0
     child-process-promise: ^2.2.0
-    detox-copilot: ^0.0.23
+    detox-copilot: ^0.0.24
     execa: ^5.1.1
     find-up: ^5.0.0
     fs-extra: ^11.0.0
@@ -5126,7 +5126,7 @@ __metadata:
       optional: true
   bin:
     detox: local-cli/cli.js
-  checksum: b08d1a347c583c092f9ddd95ec0a3e296c74a5e612335945d94a89c9f79e2ba762a8a0d27813a57917fe4b5e1e495aec510d7f1eb7947fdbf71d9fab9cc5e840
+  checksum: 29c385ea6a521c40fd7dc75717f4c493cdde6381077fbc60f7cac2f3ca72be23f2a312dc14fa558c5fbd8c707429af2717afb6119274b3943a6621df3ad36092
   languageName: node
   linkType: hard
 
@@ -10027,7 +10027,7 @@ __metadata:
     "@types/react-test-renderer": ^18.0.0
     axios: ^1.7.7
     babel-jest: ^29.6.3
-    detox: ^20.27.6
+    detox: ^20.28.0
     eslint: ^8.19.0
     eslint-config-prettier: ^9.1.0
     eslint-plugin-prettier: ^5.2.1
