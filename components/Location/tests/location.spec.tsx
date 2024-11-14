@@ -84,7 +84,7 @@ describe("Locations", () => {
 
     // change the location
     await userEvent.press(getByText("New York"));
-    expect(getAllByText("New York")).toHaveLength(2);
+    await waitFor(() => expect(getAllByText("New York")).toHaveLength(2));
 
     // check the rush bottom tab is visible
     const rushTab = getByRole("button", {name: "Rush Shows"});

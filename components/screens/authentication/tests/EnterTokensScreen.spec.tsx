@@ -84,11 +84,13 @@ describe("EnterTokensScreen", () => {
       expect(loginButton).toBeEnabled();
       await userEvent.press(loginButton);
 
-      expect(
-        getByText(
-          'An error occurred when trying to store the access token access-token, refresh token refresh-token, and ttl 0: "Error with AsyncStorage multiSet". Please try submitting the tokens again.'
-        )
-      ).toBeVisible();
+      await waitFor(() =>
+        expect(
+          getByText(
+            'An error occurred when trying to store the access token access-token, refresh token refresh-token, and ttl 0: "Error with AsyncStorage multiSet". Please try submitting the tokens again.'
+          )
+        ).toBeVisible()
+      );
       expect(loginButton).toBeEnabled();
     });
 
