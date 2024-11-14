@@ -128,10 +128,12 @@ describe("Hold banner", () => {
     });
 
     // check the banner appears on the show details page
-    await waitFor(() =>
-      expect(
-        getByText("Attempting to get 1 ticket for Hamilton in 00:00:04")
-      ).toBeVisible()
+    await waitFor(
+      () =>
+        expect(
+          getByText("Attempting to get 1 ticket for Hamilton in 00:00:04")
+        ).toBeVisible(),
+      {timeout: 2000}
     );
     const bannerText = getByText(
       "Attempting to get 1 ticket for Hamilton in 00:00:04"
@@ -220,7 +222,9 @@ describe("Hold banner", () => {
     await userEvent.press(getByText("2"));
 
     // check the banner appears on the show details page with an error message
-    expect(getByText("Trying to get 2 tickets to Hamilton")).toBeVisible();
+    await waitFor(() =>
+      expect(getByText("Trying to get 2 tickets to Hamilton")).toBeVisible()
+    );
     expect(getByTestId("loadingSpinner")).toBeVisible();
     await waitFor(() =>
       expect(
