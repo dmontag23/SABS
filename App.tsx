@@ -35,7 +35,10 @@ const App = () => {
   return (
     <GestureHandlerRootView>
       <QueryClientProvider client={QUERY_CLIENT}>
-        <NavigationContainer theme={NAV_LIGHT_THEME}>
+        <NavigationContainer
+          /* TODO: Undo the spread operation here when react-native-paper's adaptNavigationTheme supports fonts
+          https://github.com/callstack/react-native-paper/issues/4540 */
+          theme={{...NAV_LIGHT_THEME, fonts: DefaultTheme.fonts}}>
           {/* PaperProvider should be the innermost provider for the app. See
           https://callstack.github.io/react-native-paper/docs/guides/getting-started */}
           <PaperProvider theme={LIGHT_THEME}>
