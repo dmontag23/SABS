@@ -3075,9 +3075,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-navigation/core@npm:^7.0.2":
-  version: 7.0.2
-  resolution: "@react-navigation/core@npm:7.0.2"
+"@react-navigation/core@npm:^7.0.3":
+  version: 7.0.3
+  resolution: "@react-navigation/core@npm:7.0.3"
   dependencies:
     "@react-navigation/routers": ^7.0.0
     escape-string-regexp: ^4.0.0
@@ -3088,7 +3088,7 @@ __metadata:
     use-sync-external-store: ^1.2.2
   peerDependencies:
     react: "*"
-  checksum: 90f9213c0bd4a530990222e58e88b4a12d572af5e296f6fd888afac91e0de7fbf33222bd0972d8f84e93fa4b44ff255daaeb7a9c8106cd5bb2a30f2b060a8e60
+  checksum: 5ec628ef592b475d41483115f311cc9ce61cf10cb9987d24cd44e7dea61b727d6256ee0d6fb526608db15c7eba4bfa42d7c625b6afa5346ec5d669476ff998f4
   languageName: node
   linkType: hard
 
@@ -3110,11 +3110,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-navigation/native@npm:^7.0.2":
-  version: 7.0.2
-  resolution: "@react-navigation/native@npm:7.0.2"
+"@react-navigation/native@npm:^7.0.3":
+  version: 7.0.3
+  resolution: "@react-navigation/native@npm:7.0.3"
   dependencies:
-    "@react-navigation/core": ^7.0.2
+    "@react-navigation/core": ^7.0.3
     escape-string-regexp: ^4.0.0
     fast-deep-equal: ^3.1.3
     nanoid: 3.3.7
@@ -3122,7 +3122,7 @@ __metadata:
   peerDependencies:
     react: ">= 18.2.0"
     react-native: "*"
-  checksum: 0614550c1768cad1e135a6058d4fdeb65abc3ac83ac32ad5058178b4137a3580db4cf46230d463613e82d8c27d991edb41cbf67f56cd70e2e637eced9ba83804
+  checksum: 0c2fa0402c5047f6cbc1653ace7b90b8e6314a06b52c59f46547a5a12ea2578bf29d6e86d72a178d2d200ef694475219db860edacd48b4bd377378339f272d83
   languageName: node
   linkType: hard
 
@@ -10017,7 +10017,7 @@ __metadata:
     "@react-native/typescript-config": 0.76.1
     "@react-navigation/bottom-tabs": ^7.0.3
     "@react-navigation/elements": ^2.0.2
-    "@react-navigation/native": ^7.0.2
+    "@react-navigation/native": ^7.0.3
     "@react-navigation/stack": ^7.0.2
     "@tanstack/react-query": ^5.60.5
     "@testing-library/react-native": ^12.8.1
