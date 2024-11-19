@@ -3092,24 +3092,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-navigation/elements@npm:^2.0.2":
-  version: 2.0.2
-  resolution: "@react-navigation/elements@npm:2.0.2"
-  dependencies:
-    color: ^4.2.3
-  peerDependencies:
-    "@react-native-masked-view/masked-view": ">= 0.2.0"
-    "@react-navigation/native": ^7.0.2
-    react: ">= 18.2.0"
-    react-native: "*"
-    react-native-safe-area-context: ">= 4.0.0"
-  peerDependenciesMeta:
-    "@react-native-masked-view/masked-view":
-      optional: true
-  checksum: 8172caf8e3483e89506ab9984644bbfcb0b494c51e7faba3defa11522ae1f087515b6829945eeb9019dcd3de3e257538df431c6c59974746aa14c079b8912c67
-  languageName: node
-  linkType: hard
-
 "@react-navigation/elements@npm:^2.0.4":
   version: 2.0.4
   resolution: "@react-navigation/elements@npm:2.0.4"
@@ -3171,20 +3153,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-navigation/stack@npm:^7.0.2":
-  version: 7.0.2
-  resolution: "@react-navigation/stack@npm:7.0.2"
+"@react-navigation/stack@npm:^7.0.5":
+  version: 7.0.5
+  resolution: "@react-navigation/stack@npm:7.0.5"
   dependencies:
-    "@react-navigation/elements": ^2.0.2
+    "@react-navigation/elements": ^2.1.0
     color: ^4.2.3
   peerDependencies:
-    "@react-navigation/native": ^7.0.2
+    "@react-navigation/native": ^7.0.3
     react: ">= 18.2.0"
     react-native: "*"
     react-native-gesture-handler: ">= 2.0.0"
     react-native-safe-area-context: ">= 4.0.0"
     react-native-screens: ">= 4.0.0"
-  checksum: cc4da6e2024de2cf80d76f5ddf76aaebcb475a127dfa0943c6130288e89dc572c8bd6b8404b4852d7a8b28e7c5fe7e38822544dcda3eacc8412db471454a5a64
+  checksum: 695e92d1a5a3f94af1da8838b161998211ee6eb6238f313850b925528edd8f011d123f36e5b67888552bfa71804a1a5702c9c49f8a1706be52da5ecb32e0fd0c
   languageName: node
   linkType: hard
 
@@ -10054,7 +10036,7 @@ __metadata:
     "@react-navigation/bottom-tabs": ^7.0.5
     "@react-navigation/elements": ^2.1.0
     "@react-navigation/native": ^7.0.2
-    "@react-navigation/stack": ^7.0.2
+    "@react-navigation/stack": ^7.0.5
     "@tanstack/react-query": ^5.60.6
     "@testing-library/react-native": ^12.8.1
     "@trivago/prettier-plugin-sort-imports": ^4.3.0
