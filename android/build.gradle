@@ -23,6 +23,8 @@ allprojects {
     repositories {
         maven {
             url("$rootDir/../node_modules/detox/Detox-android")
+            // Needed for LogRocket, see https://docs.logrocket.com/reference/react-native
+            url("https://storage.googleapis.com/logrocket-maven/")
         }
    }
 }

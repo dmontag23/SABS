@@ -1,6 +1,7 @@
 import React, {useEffect} from "react";
 import {AppState, AppStateStatus, Platform} from "react-native";
 
+import LogRocket from "@logrocket/react-native";
 import {DefaultTheme, NavigationContainer} from "@react-navigation/native";
 import {
   QueryClient,
@@ -30,6 +31,11 @@ const App = () => {
   useEffect(() => {
     const {remove} = AppState.addEventListener("change", onAppStateChange);
     return remove;
+  }, []);
+
+  // Needed for LogRocket, see https://docs.logrocket.com/reference/react-native
+  useEffect(() => {
+    LogRocket.init("ohogoe/sabs");
   }, []);
 
   return (
