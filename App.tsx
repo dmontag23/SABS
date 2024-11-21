@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import {AppState, AppStateStatus, Platform} from "react-native";
 
 import {DefaultTheme, NavigationContainer} from "@react-navigation/native";
-import Sentry from "@sentry/react-native";
+import * as Sentry from "@sentry/react-native";
 import {
   QueryClient,
   QueryClientProvider,
