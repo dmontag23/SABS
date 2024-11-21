@@ -3059,11 +3059,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-navigation/bottom-tabs@npm:^7.0.5":
-  version: 7.0.5
-  resolution: "@react-navigation/bottom-tabs@npm:7.0.5"
+"@react-navigation/bottom-tabs@npm:^7.0.6":
+  version: 7.0.6
+  resolution: "@react-navigation/bottom-tabs@npm:7.0.6"
   dependencies:
-    "@react-navigation/elements": ^2.0.4
+    "@react-navigation/elements": ^2.1.0
     color: ^4.2.3
   peerDependencies:
     "@react-navigation/native": ^7.0.3
@@ -3071,7 +3071,7 @@ __metadata:
     react-native: "*"
     react-native-safe-area-context: ">= 4.0.0"
     react-native-screens: ">= 4.0.0"
-  checksum: 0f6ba4dadd171c19df76ca7325224420eaa7c77c77a94f8e7af7ef13bb0188101591a0b81b2e34f0474105777caca40096e1c20c3c405c4a8c17e21bdc1a2d93
+  checksum: c63006705f26ad5710b4dbe30179a270730917a54f1b6f43626668cc240e8bee15c06177c259f455875d66abc0b7fea0961628439c1678ea816c5ffc25c5c30b
   languageName: node
   linkType: hard
 
@@ -3089,24 +3089,6 @@ __metadata:
   peerDependencies:
     react: "*"
   checksum: 90f9213c0bd4a530990222e58e88b4a12d572af5e296f6fd888afac91e0de7fbf33222bd0972d8f84e93fa4b44ff255daaeb7a9c8106cd5bb2a30f2b060a8e60
-  languageName: node
-  linkType: hard
-
-"@react-navigation/elements@npm:^2.0.4":
-  version: 2.0.4
-  resolution: "@react-navigation/elements@npm:2.0.4"
-  dependencies:
-    color: ^4.2.3
-  peerDependencies:
-    "@react-native-masked-view/masked-view": ">= 0.2.0"
-    "@react-navigation/native": ^7.0.3
-    react: ">= 18.2.0"
-    react-native: "*"
-    react-native-safe-area-context: ">= 4.0.0"
-  peerDependenciesMeta:
-    "@react-native-masked-view/masked-view":
-      optional: true
-  checksum: b8fc4ae0d96920a37cdb471f89508462ac24e7d3e27542d86e9a1203b3d03aff6a39f6df5199abd641d2e326d5e8e9624ed80330a053546dc59627051c19a499
   languageName: node
   linkType: hard
 
@@ -10278,7 +10260,7 @@ __metadata:
     "@react-native/eslint-config": 0.76.1
     "@react-native/metro-config": 0.76.1
     "@react-native/typescript-config": 0.76.1
-    "@react-navigation/bottom-tabs": ^7.0.5
+    "@react-navigation/bottom-tabs": ^7.0.6
     "@react-navigation/elements": ^2.1.0
     "@react-navigation/native": ^7.0.2
     "@react-navigation/stack": ^7.0.5
