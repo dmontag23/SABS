@@ -10,11 +10,6 @@ import nock from "nock";
 import "react-native-gesture-handler/jestSetup";
 import {act} from "testing-library/extension";
 
-// The following is needed after adding LogRocket so that the integration tests do not fail
-jest.mock("@logrocket/react-native", () => ({
-  init: jest.fn()
-}));
-
 jest.mock("@react-native-async-storage/async-storage", () => MockAsyncStorage);
 
 // The following is needed to test reanimated, see https://reactnavigation.org/docs/testing/#mocking-native-modules
