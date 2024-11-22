@@ -2,7 +2,6 @@ import React, {useEffect} from "react";
 import {AppState, AppStateStatus, Platform} from "react-native";
 
 import {DefaultTheme, NavigationContainer} from "@react-navigation/native";
-import * as Sentry from "@sentry/react-native";
 import {
   QueryClient,
   QueryClientProvider,
@@ -13,13 +12,6 @@ import {PaperProvider, adaptNavigationTheme} from "react-native-paper";
 
 import RootNavigator from "./components/screens/RootNavigator";
 import {LIGHT_THEME} from "./themes";
-
-Sentry.init({
-  dsn: "https://d31580a48951a99064cb12260f4284e4@o4508338113150976.ingest.de.sentry.io/4508338121211984"
-
-  // uncomment the line below to enable Spotlight (https://spotlightjs.com)
-  // enableSpotlight: __DEV__,
-});
 
 const QUERY_CLIENT = new QueryClient();
 
