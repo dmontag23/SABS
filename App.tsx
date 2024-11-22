@@ -14,12 +14,15 @@ import {PaperProvider, adaptNavigationTheme} from "react-native-paper";
 import RootNavigator from "./components/screens/RootNavigator";
 import {LIGHT_THEME} from "./themes";
 
-Sentry.init({
-  dsn: "https://d31580a48951a99064cb12260f4284e4@o4508338113150976.ingest.de.sentry.io/4508338121211984"
+/* On CI, Detox tests seem to time out because they are waiting for Sentry to initialize. 
+The if condition here prevents Sentry from running on CI. */
+if (process.env.DISABLE_SENTRY !== "true")
+  Sentry.init({
+    dsn: "https://d31580a48951a99064cb12260f4284e4@o4508338113150976.ingest.de.sentry.io/4508338121211984"
 
-  // uncomment the line below to enable Spotlight (https://spotlightjs.com)
-  // enableSpotlight: __DEV__,
-});
+    // uncomment the line below to enable Spotlight (https://spotlightjs.com)
+    // enableSpotlight: __DEV__,
+  });
 
 const QUERY_CLIENT = new QueryClient();
 
