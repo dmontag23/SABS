@@ -88,7 +88,3 @@ mock-server/data
 
 # E2E test artifacts
 tests/e2e/.artifacts
-
-# Sentry
-android/sentry.properties
-ios/sentry.properties
