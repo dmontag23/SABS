@@ -48,6 +48,11 @@ jobs:
         uses: ./.github/actions/setup-dependencies
         with:
           env_var: ${{ vars.ENV }}
+      - name: Create Sentry properties file
+        env:
+          SENTRY_PROPERTIES: ${{ secrets.SENTRY_PROPERTIES }}
+        run: echo "$SENTRY_PROPERTIES" > ios/sentry.properties
+        shell: bash
       - name: Start mock server
         run: cd ./mock-server && nohup yarn start &
       - name: Install Detox dependencies
