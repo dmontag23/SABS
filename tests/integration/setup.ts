@@ -28,10 +28,6 @@ jest.mock("@gorhom/bottom-sheet", () => ({
   __esModule: true
 }));
 
-jest.mock("@sentry/react-native", () => ({
-  init: jest.fn()
-}));
-
 export const systemTime = new Date(2021, 4, 23);
 
 beforeEach(() => {
