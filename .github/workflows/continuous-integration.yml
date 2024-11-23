@@ -1,6 +1,10 @@
 name: Continuous Integration
 run-name: '"${{ github.event.head_commit.message }}" on ${{ github.event.ref }}, authored by ${{ github.event.head_commit.author.username }} 🚀'
-on: [push, pull_request_target]
+on:
+  push:
+    branches:
+      - main
+  pull_request_target: {}
 jobs:
   typecheck:
     name: Typecheck ✅
