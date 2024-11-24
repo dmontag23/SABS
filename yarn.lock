@@ -3153,20 +3153,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-navigation/stack@npm:^7.0.5":
-  version: 7.0.5
-  resolution: "@react-navigation/stack@npm:7.0.5"
+"@react-navigation/stack@npm:^7.0.6":
+  version: 7.0.6
+  resolution: "@react-navigation/stack@npm:7.0.6"
   dependencies:
-    "@react-navigation/elements": ^2.1.0
+    "@react-navigation/elements": ^2.1.1
     color: ^4.2.3
   peerDependencies:
-    "@react-navigation/native": ^7.0.3
+    "@react-navigation/native": ^7.0.4
     react: ">= 18.2.0"
     react-native: "*"
     react-native-gesture-handler: ">= 2.0.0"
     react-native-safe-area-context: ">= 4.0.0"
     react-native-screens: ">= 4.0.0"
-  checksum: 695e92d1a5a3f94af1da8838b161998211ee6eb6238f313850b925528edd8f011d123f36e5b67888552bfa71804a1a5702c9c49f8a1706be52da5ecb32e0fd0c
+  checksum: 0852afd857e929eec189644c029cc8e5747658b6ad0bc35f00d9f4f0bb0c33d709ded40b709c6ac5eca8391a4c07e2f1ee47757159ea2f503314aa689978dcbc
   languageName: node
   linkType: hard
 
@@ -10281,7 +10281,7 @@ __metadata:
     "@react-navigation/bottom-tabs": ^7.0.6
     "@react-navigation/elements": ^2.1.1
     "@react-navigation/native": ^7.0.4
-    "@react-navigation/stack": ^7.0.5
+    "@react-navigation/stack": ^7.0.6
     "@sentry/react-native": ^6.2.0
     "@tanstack/react-query": ^5.61.0
     "@testing-library/react-native": ^12.8.1
