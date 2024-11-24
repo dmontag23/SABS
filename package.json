@@ -29,6 +29,7 @@
     "react-hook-form": "^7.53.2",
     "react-native": "0.76.1",
     "react-native-gesture-handler": "^2.21.2",
+    "react-native-logs": "^5.3.0",
     "react-native-paper": "^5.12.5",
     "react-native-reanimated": "^3.16.2",
     "react-native-safe-area-context": "^4.14.0",

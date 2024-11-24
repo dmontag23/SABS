@@ -2,6 +2,7 @@ import {AxiosHeaders, InternalAxiosRequestConfig} from "axios";
 
 import {todayTixOAuthAPI} from "./axiosConfig";
 
+import {log} from "../config/logger";
 import {getTokens, storeTokens} from "../store/asyncStorageUtils";
 import {
   TodayTixClient,
@@ -63,6 +64,13 @@ export const handleTodayTixApiRequest = async (
       ? await refreshAndStoreNewAccessToken(currentAccessToken, refreshToken)
       : currentAccessToken;
 
+  log.info(
+    "Request: ",
+    request.method,
+    request.baseURL,
+    request.url,
+    request.data
+  );
   return {
     ...request,
     headers: new AxiosHeaders({
