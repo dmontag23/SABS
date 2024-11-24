@@ -3059,19 +3059,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-navigation/bottom-tabs@npm:^7.0.6":
-  version: 7.0.6
-  resolution: "@react-navigation/bottom-tabs@npm:7.0.6"
+"@react-navigation/bottom-tabs@npm:^7.0.7":
+  version: 7.0.7
+  resolution: "@react-navigation/bottom-tabs@npm:7.0.7"
   dependencies:
-    "@react-navigation/elements": ^2.1.0
+    "@react-navigation/elements": ^2.1.1
     color: ^4.2.3
   peerDependencies:
-    "@react-navigation/native": ^7.0.3
+    "@react-navigation/native": ^7.0.4
     react: ">= 18.2.0"
     react-native: "*"
     react-native-safe-area-context: ">= 4.0.0"
     react-native-screens: ">= 4.0.0"
-  checksum: c63006705f26ad5710b4dbe30179a270730917a54f1b6f43626668cc240e8bee15c06177c259f455875d66abc0b7fea0961628439c1678ea816c5ffc25c5c30b
+  checksum: 54802e4ba7461743c1154f54e0d3593a667c42c532d58cf5e374f58cad2a8e08e5388a29adefaece991201432485301c0408748ab1a813eedab8e816ca351085
   languageName: node
   linkType: hard
 
@@ -3089,24 +3089,6 @@ __metadata:
   peerDependencies:
     react: ">= 18.2.0"
   checksum: fbd0fde2fe8a3632735d3b1322e21cf3da852314dd1b029fdbc086f5bc064d8fad3c2501a1fc394c6cc27826254fd69217a4eeb17dcbdfdc43d5b3f0fa3388d3
-  languageName: node
-  linkType: hard
-
-"@react-navigation/elements@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "@react-navigation/elements@npm:2.1.0"
-  dependencies:
-    color: ^4.2.3
-  peerDependencies:
-    "@react-native-masked-view/masked-view": ">= 0.2.0"
-    "@react-navigation/native": ^7.0.3
-    react: ">= 18.2.0"
-    react-native: "*"
-    react-native-safe-area-context: ">= 4.0.0"
-  peerDependenciesMeta:
-    "@react-native-masked-view/masked-view":
-      optional: true
-  checksum: 318ce2b7613d1928123cf130597078d5b0c7dabe31a4ddd9cc913a29792625adf6c69ecb7081a4c6ebb55a05a87c511618b531770297849f5b30b92f70e9bc86
   languageName: node
   linkType: hard
 
@@ -10278,7 +10260,7 @@ __metadata:
     "@react-native/eslint-config": 0.76.1
     "@react-native/metro-config": 0.76.1
     "@react-native/typescript-config": 0.76.1
-    "@react-navigation/bottom-tabs": ^7.0.6
+    "@react-navigation/bottom-tabs": ^7.0.7
     "@react-navigation/elements": ^2.1.1
     "@react-navigation/native": ^7.0.4
     "@react-navigation/stack": ^7.0.6
