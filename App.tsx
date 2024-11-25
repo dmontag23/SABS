@@ -15,7 +15,8 @@ import RootNavigator from "./components/screens/RootNavigator";
 import {LIGHT_THEME} from "./themes";
 
 Sentry.init({
-  dsn: "https://d31580a48951a99064cb12260f4284e4@o4508338113150976.ingest.de.sentry.io/4508338121211984"
+  dsn: "https://d31580a48951a99064cb12260f4284e4@o4508338113150976.ingest.de.sentry.io/4508338121211984",
+  maxBreadcrumbs: 400
 
   // uncomment the line below to enable Spotlight (https://spotlightjs.com)
   // enableSpotlight: __DEV__,
