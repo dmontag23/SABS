@@ -3152,49 +3152,45 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sentry-internal/browser-utils@npm:8.37.1":
-  version: 8.37.1
-  resolution: "@sentry-internal/browser-utils@npm:8.37.1"
+"@sentry-internal/browser-utils@npm:8.40.0":
+  version: 8.40.0
+  resolution: "@sentry-internal/browser-utils@npm:8.40.0"
   dependencies:
-    "@sentry/core": 8.37.1
-    "@sentry/types": 8.37.1
-    "@sentry/utils": 8.37.1
-  checksum: 2f978fe13289e9b9cf71e03a16596303e4cedfd5c7e7ccf2fdd90de1dfc7b1e3d9b2e0275e5aaba3b58deeb204ae5b53437da4880dab36c8f148c0e97e1147b7
+    "@sentry/core": 8.40.0
+    "@sentry/types": 8.40.0
+  checksum: b32ce642ab4277c3d77d9ccfb0eebbd491f8b4e7eaf395985e63183cb0c298944753d2bc139606fc9b401d3f55a7d3ede15fbb2ac59ba8ff9089dc8a685bca61
   languageName: node
   linkType: hard
 
-"@sentry-internal/feedback@npm:8.37.1":
-  version: 8.37.1
-  resolution: "@sentry-internal/feedback@npm:8.37.1"
+"@sentry-internal/feedback@npm:8.40.0":
+  version: 8.40.0
+  resolution: "@sentry-internal/feedback@npm:8.40.0"
   dependencies:
-    "@sentry/core": 8.37.1
-    "@sentry/types": 8.37.1
-    "@sentry/utils": 8.37.1
-  checksum: 74f0d35e9e1a4e2a10d9846f53f349805cab244949ea0cb75b97aa7f67534b3e40dbdf1dd8ee132191fe5df8946feea3a939db454e3450d501668feea93599b3
+    "@sentry/core": 8.40.0
+    "@sentry/types": 8.40.0
+  checksum: 712845b89df12d4b75f293de37b5888f8dc78e58639f11368edf095185fbb7c50bcc65e992d10b276b6feca5976b5e4ff6e8e4e5d4c9096d5fa0a3becb7c581d
   languageName: node
   linkType: hard
 
-"@sentry-internal/replay-canvas@npm:8.37.1":
-  version: 8.37.1
-  resolution: "@sentry-internal/replay-canvas@npm:8.37.1"
+"@sentry-internal/replay-canvas@npm:8.40.0":
+  version: 8.40.0
+  resolution: "@sentry-internal/replay-canvas@npm:8.40.0"
   dependencies:
-    "@sentry-internal/replay": 8.37.1
-    "@sentry/core": 8.37.1
-    "@sentry/types": 8.37.1
-    "@sentry/utils": 8.37.1
-  checksum: f0218bfc43617e34c5422228d0931f216e0297b52d0db6bf50e56158ef6c47e4555c6574c391d56ebb8f369452a4e90d1556b9437f2df78ec3fecaf5ba62a744
+    "@sentry-internal/replay": 8.40.0
+    "@sentry/core": 8.40.0
+    "@sentry/types": 8.40.0
+  checksum: ed4eee113ede6c3f5dfec190a8df24957f366bf0698f78b626ae53876c8319583c5cc042d93cb3542147eab3e4e1d3c95ee24cb0bb530800cc1dd926b64ed811
   languageName: node
   linkType: hard
 
-"@sentry-internal/replay@npm:8.37.1":
-  version: 8.37.1
-  resolution: "@sentry-internal/replay@npm:8.37.1"
+"@sentry-internal/replay@npm:8.40.0":
+  version: 8.40.0
+  resolution: "@sentry-internal/replay@npm:8.40.0"
   dependencies:
-    "@sentry-internal/browser-utils": 8.37.1
-    "@sentry/core": 8.37.1
-    "@sentry/types": 8.37.1
-    "@sentry/utils": 8.37.1
-  checksum: 912a5e79ad423faf7ec6e530000fed09dba401c496e5154b272c49c8d99042fb6da651a8fbfd99dd66b659d74e178234d65296c927051c815248c42b12e0aeeb
+    "@sentry-internal/browser-utils": 8.40.0
+    "@sentry/core": 8.40.0
+    "@sentry/types": 8.40.0
+  checksum: 6e37746ec8de83551aef8001583f114b9f04bdf85dd6db9431d939263c87530ac484e826585c3ee210a9089db0743e0221974bd2e7a9aeb6ff79cd150f163d14
   languageName: node
   linkType: hard
 
@@ -3205,18 +3201,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sentry/browser@npm:8.37.1":
-  version: 8.37.1
-  resolution: "@sentry/browser@npm:8.37.1"
+"@sentry/browser@npm:8.40.0":
+  version: 8.40.0
+  resolution: "@sentry/browser@npm:8.40.0"
   dependencies:
-    "@sentry-internal/browser-utils": 8.37.1
-    "@sentry-internal/feedback": 8.37.1
-    "@sentry-internal/replay": 8.37.1
-    "@sentry-internal/replay-canvas": 8.37.1
-    "@sentry/core": 8.37.1
-    "@sentry/types": 8.37.1
-    "@sentry/utils": 8.37.1
-  checksum: 0be548277a34e3fea50ce53241a3a174d249cdbf14fe8b0bb16ec802cf5da980cb1788e407049468967bda2e61af984958a698057358a0ca0da023fe2adc1c76
+    "@sentry-internal/browser-utils": 8.40.0
+    "@sentry-internal/feedback": 8.40.0
+    "@sentry-internal/replay": 8.40.0
+    "@sentry-internal/replay-canvas": 8.40.0
+    "@sentry/core": 8.40.0
+    "@sentry/types": 8.40.0
+  checksum: b8c21570ff6a26effd1ae2843ab377c3e345624e38cea2eff916b160c8b3d33eb649d088f4f9dfcb26ae0aa8e8d02a7f947ed19af7a139ac2ad2b1f9d3adca2d
   languageName: node
   linkType: hard
 
@@ -3306,27 +3301,26 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sentry/core@npm:8.37.1":
-  version: 8.37.1
-  resolution: "@sentry/core@npm:8.37.1"
+"@sentry/core@npm:8.40.0":
+  version: 8.40.0
+  resolution: "@sentry/core@npm:8.40.0"
   dependencies:
-    "@sentry/types": 8.37.1
-    "@sentry/utils": 8.37.1
-  checksum: a72218c0234beaf5f177cfa6a195291387fbe3e255a385aaad9ec54d90aa258efcf2f04be5f024cd49670389f260a2a69b482334f5be131078b67502989e8a49
+    "@sentry/types": 8.40.0
+  checksum: db80e8410401c3dfd09d1bad0508e592b44082e58a44a354b9332f4dc7295e3f98bcdfb36e542e43d2e66fbfbb8f1e8035feb91994e7f40a2a869d1de979b1d2
   languageName: node
   linkType: hard
 
-"@sentry/react-native@npm:^6.2.0":
-  version: 6.2.0
-  resolution: "@sentry/react-native@npm:6.2.0"
+"@sentry/react-native@npm:^6.3.0":
+  version: 6.3.0
+  resolution: "@sentry/react-native@npm:6.3.0"
   dependencies:
     "@sentry/babel-plugin-component-annotate": 2.20.1
-    "@sentry/browser": 8.37.1
+    "@sentry/browser": 8.40.0
     "@sentry/cli": 2.38.2
-    "@sentry/core": 8.37.1
-    "@sentry/react": 8.37.1
-    "@sentry/types": 8.37.1
-    "@sentry/utils": 8.37.1
+    "@sentry/core": 8.40.0
+    "@sentry/react": 8.40.0
+    "@sentry/types": 8.40.0
+    "@sentry/utils": 8.40.0
   peerDependencies:
     expo: ">=49.0.0"
     react: ">=17.0.0"
@@ -3336,38 +3330,38 @@ __metadata:
       optional: true
   bin:
     sentry-expo-upload-sourcemaps: scripts/expo-upload-sourcemaps.js
-  checksum: 6271708e847282938cca15d9932e6490253394a48e655fe8a5c20d5122f18be50a4abcb9a04a650b4dc153ebeda08d392c3931fb66d367b84e2228bf1adfd277
+  checksum: 5968e3a84852ddee1b23c0ffeba55adcf3ef4325a77179e818a6e8bb7fa7c5f9cb8eed5f017904bcf5da813b3b1a7d10a1b2ff069a3a87249276f9b080197610
   languageName: node
   linkType: hard
 
-"@sentry/react@npm:8.37.1":
-  version: 8.37.1
-  resolution: "@sentry/react@npm:8.37.1"
+"@sentry/react@npm:8.40.0":
+  version: 8.40.0
+  resolution: "@sentry/react@npm:8.40.0"
   dependencies:
-    "@sentry/browser": 8.37.1
-    "@sentry/core": 8.37.1
-    "@sentry/types": 8.37.1
-    "@sentry/utils": 8.37.1
+    "@sentry/browser": 8.40.0
+    "@sentry/core": 8.40.0
+    "@sentry/types": 8.40.0
     hoist-non-react-statics: ^3.3.2
   peerDependencies:
     react: ^16.14.0 || 17.x || 18.x || 19.x
-  checksum: b2c0b481b9d6afb455385e32ac1bb925c0b9a3c27c1260ce40dcde299e0bb02875a842953d6f1b47e407f4dea8c204928d17615891d4b96d466850339ad11f87
+  checksum: 53276804fb6cb82c7ed69d62db3452c55c2dc275f4afe0a07e6572b0855231b64d487a4b13fc843ee319b5e6390c34245b80e3e6784d799cc2e14f814fedf920
   languageName: node
   linkType: hard
 
-"@sentry/types@npm:8.37.1":
-  version: 8.37.1
-  resolution: "@sentry/types@npm:8.37.1"
-  checksum: 531d61279797beb6b884a85049c1a9627cda829653976dc333fe5dcef081276dcbfd1f0aee7b9c8c64f243888989b2a550b5b1cdbd064184a35aa03662a437b2
+"@sentry/types@npm:8.40.0":
+  version: 8.40.0
+  resolution: "@sentry/types@npm:8.40.0"
+  checksum: eb7fbb606d9178559de219e86da5dfefa78a8825d5baf03a2eb8fafdcdfb51898bde943edc375adc8cb71fcae2d854b019088c6a045541e94a1c6c1c9779cfe8
   languageName: node
   linkType: hard
 
-"@sentry/utils@npm:8.37.1":
-  version: 8.37.1
-  resolution: "@sentry/utils@npm:8.37.1"
+"@sentry/utils@npm:8.40.0":
+  version: 8.40.0
+  resolution: "@sentry/utils@npm:8.40.0"
   dependencies:
-    "@sentry/types": 8.37.1
-  checksum: ab47148790d89a7a0f957c618e2e20f0e9b2891495993b54c724feb76baec264a2cd4e1e39230823e098076f66262ca9d0f134767c7f09c0e34059890d27b3c3
+    "@sentry/core": 8.40.0
+    "@sentry/types": 8.40.0
+  checksum: 18d1c5a1b259dbe6ceee9ae7ef22fa0cb0cc5650ecfe51dc2d9367992981d4ce9d5d8267e27ab2e32ca56525c11b0f3a1f41e34492d14d0059e3983d18042fd0
   languageName: node
   linkType: hard
 
@@ -10271,7 +10265,7 @@ __metadata:
     "@react-navigation/elements": ^2.1.1
     "@react-navigation/native": ^7.0.4
     "@react-navigation/stack": ^7.0.6
-    "@sentry/react-native": ^6.2.0
+    "@sentry/react-native": ^6.3.0
     "@tanstack/react-query": ^5.61.0
     "@testing-library/react-native": ^12.8.1
     "@trivago/prettier-plugin-sort-imports": ^4.3.0
