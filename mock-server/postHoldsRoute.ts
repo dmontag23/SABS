@@ -357,6 +357,17 @@ const postHolds401Response: TodayTixAPIError = {
     "Sorry, something went wrong. Please try signing in again and contact TodayTix Support if the issue persists."
 };
 
+const postHolds409AddedToAnotherCartResponse: TodayTixAPIError = {
+  code: 409,
+  error: TodayTixHoldErrorCode.SEATS_TAKEN,
+  context: [
+    "Unfortunately, those tickets have just been added to another user's cart."
+  ],
+  title: "All seats are being held",
+  message:
+    "Sorry, all remaining tickets are currently being held by other customers. Please try again later."
+};
+
 const postHolds409SeatsTakenResponse: TodayTixAPIError = {
   code: 409,
   error: TodayTixHoldErrorCode.SEATS_TAKEN,
@@ -368,7 +379,7 @@ const postHolds409SeatsTakenResponse: TodayTixAPIError = {
     "Sorry, all remaining tickets are currently being held by other customers. Please try again later."
 };
 
-const postHolds409Response: TodayTixAPIError = {
+const postHolds409RushNotUnlockedResponse: TodayTixAPIError = {
   code: 409,
   error: TodayTixHoldErrorCode.CONFLICT,
   context: ["You are not eligible to purchase Rush tickets."],
@@ -384,23 +395,38 @@ const postHoldsRoute = (router: Router) =>
     TodayTixAPIRes<TodayTixHold> | TodayTixAPIError,
     TodayTixHoldsReq
   >("/holds", (req, res) => {
-    if (req.body.showtime === 1 && req.body.numTickets === 2) {
-      res.status(409).json(postHolds409SeatsTakenResponse);
+    /* When trying to get tickets to SIX, return
+     - 1 ticket: Seats just added to another user's cart (i.e. customer id has been deprioritized)
+     - 2 tickets: Seats held by other customers */
+    if (req.body.showtime === 1) {
+      res
+        .status(409)
+        .json(
+          req.body.numTickets === 1
+            ? postHolds409AddedToAnotherCartResponse
+            : postHolds409SeatsTakenResponse
+        );
       return;
     }
 
-    // see if Guys & Dolls has been unlocked
-    const isGuysAndDollsUnlocked = Boolean(
-      getItemFromStore<TodayTixRushGrant>("rush-grants", "3")
-    );
-
-    if (!isGuysAndDollsUnlocked) {
-      res.status(409).json(postHolds409Response);
-      return;
-    }
-
-    // Otherwise store the hold for Guys & Dolls
+    // Guys & Dolls @19.30
     if (req.body.showtime === 3) {
+      // If trying to get 2 tickets, return unauthenticated response
+      if (req.body.numTickets === 2) {
+        res.status(401).json(postHolds401Response);
+        return;
+      }
+      // see if Guys & Dolls has been unlocked
+      const isGuysAndDollsUnlocked = Boolean(
+        getItemFromStore<TodayTixRushGrant>("rush-grants", "3")
+      );
+
+      if (!isGuysAndDollsUnlocked) {
+        res.status(409).json(postHolds409RushNotUnlockedResponse);
+        return;
+      }
+
+      // Otherwise store the hold for Guys & Dolls
       const holdToReturn = writeItemToStore(
         "holds",
         guysAndDollsHold.id.toString(),
