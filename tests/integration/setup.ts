@@ -1,12 +1,11 @@
-/* The following import is needed for react navigation. 
-See https://reactnavigation.org/docs/testing/ */
-
+import {afterEach, beforeEach, jest} from "@jest/globals";
 /* The following import and mock are needed for AsyncStorage.
 See https://react-native-async-storage.github.io/async-storage/docs/advanced/jest */
-import {afterEach, beforeEach, jest} from "@jest/globals";
 import MockAsyncStorage from "@react-native-async-storage/async-storage/jest/async-storage-mock";
 import "@testing-library/react-native/extend-expect";
 import nock from "nock";
+/* The following import is needed for react navigation. 
+See https://reactnavigation.org/docs/testing/ */
 import "react-native-gesture-handler/jestSetup";
 import {act} from "testing-library/extension";
 
