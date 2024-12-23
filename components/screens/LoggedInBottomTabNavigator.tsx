@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {LayoutChangeEvent, View} from "react-native";
+import {View} from "react-native";
 
 import {
   BottomTabBarProps,
@@ -10,13 +10,33 @@ import {CommonActions} from "@react-navigation/native";
 import {BottomNavigation} from "react-native-paper";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
-import HoldConfirmationBottomSheet from "./HoldConfirmationBottomSheet";
 import RushShowNavigator from "./RushShowNavigator";
 import SettingsScreen from "./SettingsScreen";
+
+import HoldConfirmationBottomSheet from "../Hold/HoldConfirmationBottomSheet";
 
 import {LoggedInBottomTabParamList} from "../../types/navigation";
 
 const BottomTab = createBottomTabNavigator<LoggedInBottomTabParamList>();
+
+const BottomTabBarWrapper = (props: BottomTabBarProps) => <TabBar {...props} />;
+
+const TabBar = (props: BottomTabBarProps) => {
+  const [bottomNavBarHeight, setBottomNavBarHeight] = useState(0);
+
+  return (
+    <>
+      <HoldConfirmationBottomSheet bottomInset={bottomNavBarHeight} />
+      <View
+        onLayout={({nativeEvent}) =>
+          setBottomNavBarHeight(nativeEvent.layout.height)
+        }
+        testID="bottom-tab-bar-wrapper">
+        <BottomTabBar {...props} />
+      </View>
+    </>
+  );
+};
 
 /* The bottom tab bar here is based on 
 https://callstack.github.io/react-native-paper/docs/components/BottomNavigation/BottomNavigationBar/ */
@@ -56,59 +76,34 @@ const BottomTabBar = ({
   />
 );
 
-const BottomTabBarWrapper = (
-  props: BottomTabBarProps,
-  handleLayout: (event: LayoutChangeEvent) => void
-) => (
-  <View onLayout={handleLayout} testID="bottomTabBarWrapper">
-    <BottomTabBar {...props} />
-  </View>
-);
-
 const CreateTabBarIcon =
   (name: (typeof Icon)["name"]): BottomTabNavigationOptions["tabBarIcon"] =>
   ({color, size}) => <Icon name={name} size={size} color={color} />;
 
-const LoggedInBottomTabNavigator = () => {
-  const [bottomNavBarHeight, setBottomNavBarHeight] = useState<number>();
-
-  const handleLayout = (event: LayoutChangeEvent) => {
-    const {height} = event.nativeEvent.layout;
-    setBottomNavBarHeight(height);
-  };
-
-  return (
-    <>
-      {/* The tab navigator is used instead of the BottomNavigation from react-native-paper because
-      the height of the bottom navigation bar is needed to place the hold confirmation bottom sheet
-      properly, and it does not seem there is a way to get this height from the BottomNavigation component. */}
-      <BottomTab.Navigator
-        screenOptions={{
-          headerShown: false
-        }}
-        tabBar={props => BottomTabBarWrapper(props, handleLayout)}>
-        <BottomTab.Screen
-          name="RushShows"
-          component={RushShowNavigator}
-          options={{
-            tabBarLabel: "Rush Shows",
-            tabBarIcon: CreateTabBarIcon("drama-masks")
-          }}
-        />
-        <BottomTab.Screen
-          name="Settings"
-          component={SettingsScreen}
-          options={{
-            tabBarLabel: "Settings",
-            tabBarIcon: CreateTabBarIcon("cog")
-          }}
-        />
-      </BottomTab.Navigator>
-      {bottomNavBarHeight && (
-        <HoldConfirmationBottomSheet bottomInset={bottomNavBarHeight} />
-      )}
-    </>
-  );
-};
+const LoggedInBottomTabNavigator = () => (
+  /* The tab navigator is used instead of the BottomNavigation from react-native-paper because
+  the height of the bottom navigation bar is needed to place the hold confirmation bottom sheet
+  properly, and it does not seem there is a way to get this height from the BottomNavigation component. */
+  <BottomTab.Navigator
+    screenOptions={{headerShown: false}}
+    tabBar={BottomTabBarWrapper}>
+    <BottomTab.Screen
+      name="RushShows"
+      component={RushShowNavigator}
+      options={{
+        tabBarLabel: "Rush Shows",
+        tabBarIcon: CreateTabBarIcon("drama-masks")
+      }}
+    />
+    <BottomTab.Screen
+      name="Settings"
+      component={SettingsScreen}
+      options={{
+        tabBarLabel: "Settings",
+        tabBarIcon: CreateTabBarIcon("cog")
+      }}
+    />
+  </BottomTab.Navigator>
+);
 
 export default LoggedInBottomTabNavigator;
