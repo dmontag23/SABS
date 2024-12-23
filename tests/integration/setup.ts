@@ -14,11 +14,6 @@ setUpTests();
 
 jest.mock("@react-native-async-storage/async-storage", () => MockAsyncStorage);
 
-jest.mock("@gorhom/bottom-sheet", () => ({
-  ...require("@gorhom/bottom-sheet/mock"),
-  __esModule: true
-}));
-
 jest.mock("@sentry/react-native", () => ({
   init: jest.fn()
 }));

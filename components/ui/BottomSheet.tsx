@@ -2,23 +2,31 @@ import React, {useCallback, useEffect, useState} from "react";
 import {StyleSheet, View, useWindowDimensions} from "react-native";
 
 import {Gesture, GestureDetector} from "react-native-gesture-handler";
-import {useTheme} from "react-native-paper";
+import {Portal, useTheme} from "react-native-paper";
 import Animated, {
   clamp,
   useAnimatedStyle,
   useSharedValue,
   withSpring
 } from "react-native-reanimated";
+import {useSafeAreaInsets} from "react-native-safe-area-context";
 
 export const ELEMENT_GAP = 15;
 export const HANDLE_HEIGHT = 6;
 export const BORDER_WIDTH = 3;
 
+type PortalWrapperProps = {isFullScreen?: boolean; children: JSX.Element};
+
+const PortalWrapper = ({isFullScreen, children}: PortalWrapperProps) =>
+  isFullScreen ? <Portal>{children}</Portal> : children;
+
 type BottomSheetProps = {
   header?: JSX.Element;
   content?: JSX.Element;
   isOpen?: boolean;
+  isFullScreen?: boolean;
   bottomInset?: number;
+  testID?: string;
 };
 
 /* This is a simple bottom sheet component. It snaps to the header and the full content of the bottom sheet and cannot be closed via a swipe down gesture.
@@ -32,7 +40,9 @@ const BottomSheet = ({
   header,
   content,
   isOpen = true,
-  bottomInset = 0
+  isFullScreen,
+  bottomInset = 0,
+  testID = "bottom-sheet"
 }: BottomSheetProps) => {
   const {colors} = useTheme();
 
@@ -52,18 +62,31 @@ const BottomSheet = ({
   const headerSnapPoint = handleSnapPoint - headerHeight;
   const contentSnapPoint = headerSnapPoint - contentHeight;
 
-  const userSnapPoints = [headerSnapPoint, contentSnapPoint];
+  const {top} = useSafeAreaInsets();
 
-  const yPosition = useSharedValue(contentSnapPoint);
+  const userSnapPoints = isFullScreen
+    ? /*TODO: Allow user to close by panning down in full screen mode by adding [bottomSnapPoint, top].
+      Note that this does not change isOpen to false, which is needed to re-open the bottom sheet. However,
+      trying to maintain an isOpen state and set it in the pan gesture leads to a reanimated error.
+      This can be tested with the location bottom sheet.
+       */
+      [top]
+    : [headerSnapPoint, contentSnapPoint];
+  const lowestSnapPoint = userSnapPoints[0];
+  const highestSnapPoint = userSnapPoints.slice(-1)[0];
+
+  const yPosition = useSharedValue(bottomSnapPoint);
 
   const openBottomSheet = useCallback(() => {
-    yPosition.value = withSpring(contentSnapPoint, {
-      clamp: {min: contentSnapPoint}
+    yPosition.value = withSpring(highestSnapPoint, {
+      clamp: {min: highestSnapPoint}
     });
-  }, [contentSnapPoint, yPosition]);
+  }, [highestSnapPoint, yPosition]);
 
   const closeBottomSheet = useCallback(() => {
-    yPosition.value = withSpring(bottomSnapPoint);
+    yPosition.value = withSpring(bottomSnapPoint, {
+      clamp: {max: bottomSnapPoint}
+    });
   }, [bottomSnapPoint, yPosition]);
 
   useEffect(
@@ -75,22 +98,22 @@ const BottomSheet = ({
     .onChange(({changeY}) => {
       yPosition.value = clamp(
         yPosition.value + changeY,
-        contentSnapPoint,
-        headerSnapPoint
+        highestSnapPoint,
+        lowestSnapPoint
       );
     })
     .onEnd(({velocityY}) => {
       const pointToSnapTo =
         velocityY <= 0
           ? userSnapPoints.find(snapPoint => snapPoint < yPosition.value) ??
-            userSnapPoints.slice(-1)[0]
+            highestSnapPoint
           : userSnapPoints
               .slice()
               .reverse()
               .find(snapPoint => snapPoint > yPosition.value) ??
-            userSnapPoints[0];
+            lowestSnapPoint;
       yPosition.value = withSpring(pointToSnapTo, {
-        clamp: {min: contentSnapPoint, max: headerSnapPoint}
+        clamp: {min: highestSnapPoint, max: lowestSnapPoint}
       });
     })
     .withTestId("bottom-sheet-pan-gesture");
@@ -100,38 +123,41 @@ const BottomSheet = ({
   }));
 
   return (
-    <GestureDetector gesture={pan}>
-      <Animated.View
-        style={[
-          styles.container,
-          {
-            backgroundColor: colors.background,
-            borderColor: colors.primary
-          },
-          animatedStyle
-        ]}
-        testID="bottom-sheet">
-        <View style={[styles.handle, {backgroundColor: colors.primary}]} />
-        {/* The header and content components should not be conditionally rendered because,
+    <PortalWrapper isFullScreen={isFullScreen}>
+      <GestureDetector gesture={pan}>
+        <Animated.View
+          style={[
+            styles.container,
+            {
+              backgroundColor: colors.background,
+              borderColor: colors.primary
+            },
+            isFullScreen ? styles.fullScreenContainer : {},
+            animatedStyle
+          ]}
+          testID={testID}>
+          <View style={[styles.handle, {backgroundColor: colors.primary}]} />
+          {/* The header and content components should not be conditionally rendered because,
         if the header or content is removed and the bottom sheet is re-rendered, onLayout will not
         be re-run, and so the height of the previous header or content remains in state, and so 
         the size of the re-rendered bottom sheet is wrong. */}
-        <View
-          onLayout={({nativeEvent}) =>
-            setHeaderHeight(nativeEvent.layout.height)
-          }
-          style={header && styles.elementContainer}>
-          {header}
-        </View>
-        <View
-          onLayout={({nativeEvent}) =>
-            setContentHeight(nativeEvent.layout.height)
-          }
-          style={content && styles.elementContainer}>
-          {content}
-        </View>
-      </Animated.View>
-    </GestureDetector>
+          <View
+            onLayout={({nativeEvent}) =>
+              setHeaderHeight(nativeEvent.layout.height)
+            }
+            style={header && styles.elementContainer}>
+            {header}
+          </View>
+          <View
+            onLayout={({nativeEvent}) =>
+              setContentHeight(nativeEvent.layout.height)
+            }
+            style={content && styles.elementContainer}>
+            {content}
+          </View>
+        </Animated.View>
+      </GestureDetector>
+    </PortalWrapper>
   );
 };
 
@@ -145,6 +171,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: "5%"
   },
   elementContainer: {paddingBottom: ELEMENT_GAP},
+  fullScreenContainer: {height: "100%"},
   handle: {
     width: "10%",
     height: HANDLE_HEIGHT,

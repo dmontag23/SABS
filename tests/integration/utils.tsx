@@ -1,7 +1,6 @@
 import React, {ReactElement, ReactNode} from "react";
 import {PropsWithChildren} from "react";
 
-import {BottomSheetModalProvider} from "@gorhom/bottom-sheet";
 import {NavigationContainer} from "@react-navigation/native";
 import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
 import {
@@ -40,9 +39,7 @@ const Providers = ({children}: PropsWithChildren) => (
     <NavigationContainer>
       <SelectedShowtimeContextProvider>
         <HoldContextProvider>
-          <PaperProvider theme={LIGHT_THEME}>
-            <BottomSheetModalProvider>{children}</BottomSheetModalProvider>
-          </PaperProvider>
+          <PaperProvider theme={LIGHT_THEME}>{children}</PaperProvider>
         </HoldContextProvider>
       </SelectedShowtimeContextProvider>
     </NavigationContainer>

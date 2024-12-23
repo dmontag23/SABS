@@ -1,7 +1,6 @@
 import React from "react";
-import {StyleSheet} from "react-native";
+import {ScrollView, StyleSheet} from "react-native";
 
-import {BottomSheetScrollView} from "@gorhom/bottom-sheet";
 import {useTheme} from "react-native-paper";
 
 import LocationItem from "./LocationItem";
@@ -23,7 +22,7 @@ const LocationsContainer = ({onItemPress}: LocationsContainerProps) => {
   ) as Array<keyof typeof TodayTixLocation>;
 
   return (
-    <BottomSheetScrollView
+    <ScrollView
       contentContainerStyle={[
         styles.locationsContainer,
         {backgroundColor: colors.surfaceVariant}
@@ -36,7 +35,7 @@ const LocationsContainer = ({onItemPress}: LocationsContainerProps) => {
           onPress={onItemPress}
         />
       ))}
-    </BottomSheetScrollView>
+    </ScrollView>
   );
 };
 
@@ -46,7 +45,7 @@ const styles = StyleSheet.create({
   locationsContainer: {
     gap: 10,
     marginHorizontal: "10%",
-    marginTop: 20,
+    marginTop: 15,
     borderRadius: 10
   }
 });
