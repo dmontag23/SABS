@@ -57,6 +57,7 @@ describe("Rush shows", () => {
     // navigate back to the original show and ensure the original selection remains
     await backButton.tap();
     await guysAndDollsText.tap();
+    await element(by.text("Cancel")).swipe("down");
     await expect(numberOfTicketText).toBeVisible();
   });
 });

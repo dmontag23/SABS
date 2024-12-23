@@ -30,13 +30,6 @@ describe("Holds", () => {
     await expect(element(by.text("Row J, Seat 28"))).toBeVisible();
     await expect(element(by.text("Order Total"))).toBeVisible();
     await expect(element(by.text("£29.50"))).toBeVisible();
-    await expect(
-      element(
-        by.text(
-          "IMPORTANT: Hard-close the TodayTix app before pressing the Purchase button!"
-        )
-      )
-    ).toBeVisible();
     await expect(element(by.text("Purchase on TodayTix"))).toBeVisible();
     await expect(element(by.text("Release tickets"))).toBeVisible();
 
@@ -139,18 +132,23 @@ describe("Holds", () => {
     await element(by.text("2")).tap();
 
     // retry the request for tickets
-    const errorMessage = element(
-      by.text(
-        "Oh no! There was an error getting tickets to SIX the Musical:\nSorry, all remaining tickets are currently being held by other customers. Please try again later."
-      )
+    const errorHeaderMessage = element(
+      by.text("Error getting tickets to SIX the Musical")
     );
-    await expect(errorMessage).toBeVisible();
+    await expect(errorHeaderMessage).toBeVisible();
+    await expect(
+      element(
+        by.text(
+          "Sorry, all remaining tickets are currently being held by other customers. Please try again later."
+        )
+      )
+    ).toBeVisible();
     const retryButton = element(by.text("Retry"));
     await expect(retryButton).toBeVisible();
     await retryButton.tap();
-    await expect(errorMessage).toBeVisible();
+    await expect(errorHeaderMessage).toBeVisible();
     await showtime.tap();
-    await expect(errorMessage).not.toBeVisible();
+    await expect(errorHeaderMessage).not.toBeVisible();
   });
 
   it("can cancel hold", async () => {
