@@ -1,5 +1,5 @@
 import React, {useCallback, useEffect, useState} from "react";
-import {Dimensions, StyleSheet, View} from "react-native";
+import {StyleSheet, View, useWindowDimensions} from "react-native";
 
 import {Gesture, GestureDetector} from "react-native-gesture-handler";
 import {useTheme} from "react-native-paper";
@@ -36,7 +36,7 @@ const BottomSheet = ({
 }: BottomSheetProps) => {
   const {colors} = useTheme();
 
-  const {height: screenHeight} = Dimensions.get("window");
+  const {height: screenHeight} = useWindowDimensions();
   const [headerHeight, setHeaderHeight] = useState(0);
   const [contentHeight, setContentHeight] = useState(0);
 
