@@ -1534,7 +1534,7 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - RNReanimated (3.16.5):
+  - RNReanimated (3.16.6):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1554,10 +1554,10 @@ PODS:
     - ReactCodegen
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
-    - RNReanimated/reanimated (= 3.16.5)
-    - RNReanimated/worklets (= 3.16.5)
+    - RNReanimated/reanimated (= 3.16.6)
+    - RNReanimated/worklets (= 3.16.6)
     - Yoga
-  - RNReanimated/reanimated (3.16.5):
+  - RNReanimated/reanimated (3.16.6):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1577,30 +1577,9 @@ PODS:
     - ReactCodegen
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
-    - RNReanimated/reanimated/apple (= 3.16.5)
+    - RNReanimated/reanimated/apple (= 3.16.6)
     - Yoga
-  - RNReanimated/reanimated/apple (3.16.5):
-    - DoubleConversion
-    - glog
-    - hermes-engine
-    - RCT-Folly (= 2024.01.01.00)
-    - RCTRequired
-    - RCTTypeSafety
-    - React-Core
-    - React-debug
-    - React-Fabric
-    - React-featureflags
-    - React-graphics
-    - React-ImageManager
-    - React-NativeModulesApple
-    - React-RCTFabric
-    - React-rendererdebug
-    - React-utils
-    - ReactCodegen
-    - ReactCommon/turbomodule/bridging
-    - ReactCommon/turbomodule/core
-    - Yoga
-  - RNReanimated/worklets (3.16.5):
+  - RNReanimated/reanimated/apple (3.16.6):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1621,7 +1600,28 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - RNScreens (4.3.0):
+  - RNReanimated/worklets (3.16.6):
+    - DoubleConversion
+    - glog
+    - hermes-engine
+    - RCT-Folly (= 2024.01.01.00)
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - Yoga
+  - RNScreens (4.4.0):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1960,8 +1960,8 @@ SPEC CHECKSUMS:
   ReactCommon: 422e364463f33e336fc4db196aeb50fd801d90d6
   RNCAsyncStorage: ec53e44dc3e75b44aa2a9f37618a49c3bc080a7a
   RNGestureHandler: aa9690789023c9be8f06aa90e10ce637ea788f4d
-  RNReanimated: 77edb855d7bb668567759c0c9fa42bd3bb860122
-  RNScreens: b03d696c70cc5235ce4587fcc27ae1a93a48f98c
+  RNReanimated: ac21443586c889b6eae9e50d9011ced1a64eb548
+  RNScreens: e52d2e7e5fa29266d6f8f68e8229452e5b2f4236
   RNSentry: 6747516b98b64d55d115ade591143803dbbf9851
   RNSVG: 7ff26379b2d1871b8571e6f9bc9630de6baf9bdf
   Sentry: 54d0fe6c0df448497c8ed4cce66ccf7027e1823e
