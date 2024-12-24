@@ -48,7 +48,7 @@ describe("App component", () => {
     /* since jest does not run in a native environment, onLayout needs to be manually triggered
     see https://github.com/callstack/react-native-testing-library/issues/240#issuecomment-559877887 */
     await waitFor(() =>
-      fireEvent(getByTestId("bottomTabBarWrapper"), "onLayout", {
+      fireEvent(getByTestId("bottom-tab-bar-wrapper"), "onLayout", {
         nativeEvent: {layout: {width: 1, height: 1}}
       })
     );

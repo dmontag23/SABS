@@ -9,7 +9,7 @@ type LoadingSpinnerProps = {
 };
 
 const LoadingSpinner = ({size, style}: LoadingSpinnerProps) => (
-  <ActivityIndicator size={size} style={style} testID="loadingSpinner" />
+  <ActivityIndicator size={size} style={style} testID="loading-spinner" />
 );
 
 export default LoadingSpinner;

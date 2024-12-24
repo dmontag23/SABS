@@ -189,7 +189,7 @@ describe("Rush show list", () => {
     await userEvent.press(showCard);
 
     // load the header image
-    const loadingSpinner = getByTestId("loadingSpinner");
+    const loadingSpinner = getByTestId("loading-spinner");
     expect(loadingSpinner).toBeVisible();
     await waitFor(() => {
       fireEvent(getByLabelText("Header image"), "onLoadEnd");
@@ -363,7 +363,7 @@ describe("Rush show list", () => {
       </Stack.Navigator>
     );
 
-    expect(getByTestId("loadingSpinner")).toBeVisible();
+    expect(getByTestId("loading-spinner")).toBeVisible();
   });
 
   it("shows not unlocked text for shows that have not been unlocked for rush", async () => {

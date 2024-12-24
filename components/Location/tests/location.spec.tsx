@@ -1,9 +1,16 @@
 import React from "react";
+import {Dimensions} from "react-native";
 
-import {describe, expect, it} from "@jest/globals";
+import {describe, expect, it, jest} from "@jest/globals";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import nock from "nock";
-import {fireEvent, render, userEvent, waitFor} from "testing-library/extension";
+import {
+  act,
+  fireEvent,
+  render,
+  userEvent,
+  waitFor
+} from "testing-library/extension";
 
 import LoggedInBottomTabNavigator from "../../screens/LoggedInBottomTabNavigator";
 
@@ -38,7 +45,7 @@ describe("Locations", () => {
         ]
       });
 
-    const {getByText, getAllByText, getByRole} = render(
+    const {getByText, getAllByText, getByRole, getByTestId} = render(
       <LoggedInBottomTabNavigator />
     );
 
@@ -54,16 +61,21 @@ describe("Locations", () => {
     // TODO: Investigate why userEvent.press(settingsTab) does not work here
     fireEvent(settingsTab, "click");
     await waitFor(() => expect(getAllByText("Settings")).toHaveLength(3));
-    await waitFor(() => expect(getAllByText("London")[0]).toBeVisible());
+    expect(getAllByText("Location")).toHaveLength(2);
+    expect(getAllByText("London")).toHaveLength(2);
 
     // open the location bottom sheet
-    /* note that gorhom/react-native-bottom-sheet package contains a bug; its mock
-    does not toggle the bottom sheet modal visibility, and so the test
-    sill passes even if the next line is commented out */
     await userEvent.press(getAllByText("London")[0]);
-    // check that the bottom sheet header elements are visible
-    expect(getAllByText("Location")).toHaveLength(2);
+    act(() => jest.advanceTimersByTime(1500));
+
+    // check that the bottom sheet elements are visible
+    const bottomSheetElement = getByTestId("location-bottom-sheet");
+    expect(bottomSheetElement).toHaveAnimatedStyle({
+      height: "100%",
+      transform: [{translateY: 0}]
+    });
     expect(getByText("Close")).toBeVisible();
+
     // check that all of the available locations are visible
     [
       "Adelaide",
@@ -82,9 +94,13 @@ describe("Locations", () => {
       expect(getByRole("button", {name: location})).toBeVisible();
     });
 
-    // change the location
+    // change the location and check the bottom sheet is closed
     await userEvent.press(getByText("New York"));
-    await waitFor(() => expect(getAllByText("New York")).toHaveLength(2));
+    act(() => jest.advanceTimersByTime(1500));
+    expect(getAllByText("New York")).toHaveLength(2);
+    expect(bottomSheetElement).toHaveAnimatedStyle({
+      transform: [{translateY: Dimensions.get("window").height}]
+    });
 
     // check the rush bottom tab is visible
     const rushTab = getByRole("button", {name: "Rush Shows"});

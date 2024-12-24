@@ -6,7 +6,6 @@ import {useSafeAreaInsets} from "react-native-safe-area-context";
 
 import RushShowTicketSelection from "./RushShowTicketSelection";
 
-import HoldBanner from "../HoldBanner";
 import LoadingSpinner from "../ui/LoadingSpinner";
 
 import TodayTixBanner from "../../assets/TodayTixBanner.jpg";
@@ -46,7 +45,6 @@ const ShowDetailsScreen = ({
             onPress={navigation.goBack}
             style={[styles.backButton, {marginTop: top}]}
           />
-          <HoldBanner />
           <ScrollView
             contentContainerStyle={{paddingBottom: bottom + 15}}
             style={styles.showDetailContainer}>

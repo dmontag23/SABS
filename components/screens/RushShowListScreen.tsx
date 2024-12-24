@@ -3,7 +3,6 @@ import {ScrollView, StyleSheet, View} from "react-native";
 
 import {useSafeAreaInsets} from "react-native-safe-area-context";
 
-import HoldBanner from "../HoldBanner";
 import ShowCard, {isShowActive} from "../ShowCard";
 import LoadingSpinner from "../ui/LoadingSpinner";
 
@@ -94,12 +93,11 @@ const RushShowListScreen = ({
 
   return (
     <View style={styles.container}>
-      <HoldBanner style={{paddingTop: top}} />
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={[
           styles.scrollContentContainer,
-          {paddingBottom: bottom}
+          {paddingTop: top, paddingBottom: bottom}
         ]}
         testID="rushShows">
         {sortedRushShows.map(({show, showtimes}) => (

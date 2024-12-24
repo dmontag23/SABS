@@ -1,11 +1,12 @@
-import React, {useCallback, useRef} from "react";
+import React, {useState} from "react";
 import {SafeAreaView, StyleSheet, View} from "react-native";
 
-import {BottomSheetModal} from "@gorhom/bottom-sheet";
 import {List, Surface, Text} from "react-native-paper";
 
-import LocationBottomSheetModal from "../Location/LocationBottomSheetModal";
+import LocationHeader from "../Location/LocationHeader";
+import LocationsContainer from "../Location/LocationsContainer";
 import {formatLocationName} from "../Location/locationUtils";
+import BottomSheet from "../ui/BottomSheet";
 
 import useGetLocation from "../../hooks/asyncStorageHooks/useGetLocation";
 import {TodayTixLocation} from "../../types/shows";
@@ -24,12 +25,11 @@ const createRightElement = (location: TodayTixLocation) => (
 const SettingsScreen = () => {
   const {data: location} = useGetLocation();
 
-  const locationBottomSheetModalRef = useRef<BottomSheetModal>(null);
+  const [isLocationBottomSheetOpen, setIsLocationBottomSheetOpen] =
+    useState(false);
 
-  const handleLocationPress = useCallback(
-    () => locationBottomSheetModalRef.current?.present(),
-    []
-  );
+  const handleLocationPress = () => setIsLocationBottomSheetOpen(true);
+  const handleClose = () => setIsLocationBottomSheetOpen(false);
 
   return (
     <>
@@ -46,7 +46,17 @@ const SettingsScreen = () => {
           />
         </Surface>
       </SafeAreaView>
-      <LocationBottomSheetModal innerRef={locationBottomSheetModalRef} />
+      <BottomSheet
+        isOpen={isLocationBottomSheetOpen}
+        isFullScreen
+        content={
+          <>
+            <LocationHeader onCloseButtonPress={handleClose} />
+            <LocationsContainer onItemPress={handleClose} />
+          </>
+        }
+        testID="location-bottom-sheet"
+      />
     </>
   );
 };
