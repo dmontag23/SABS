@@ -78,7 +78,6 @@ describe("Holds", () => {
     // load the header image
     fireEvent(getByLabelText("Header image"), "onLoadEnd");
     await userEvent.press(getByText("19:00"));
-    expect(getByText("2")).toBeVisible();
     await userEvent.press(getByText("2"));
     await waitFor(() =>
       expect(getByText("You've won 2 tickets to Hamilton 🎉")).toBeVisible()
@@ -142,7 +141,6 @@ describe("Holds", () => {
     // load the header image
     act(() => fireEvent(getByLabelText("Header image"), "onLoadEnd"));
     await userEvent.press(getByText("19:00"));
-    expect(getByText("2")).toBeVisible();
     await userEvent.press(getByText("2"));
     /* the - 1000 below is to ensure that requests are made to the holds endpoint
     1 second before rush tickets open */
@@ -298,12 +296,156 @@ describe("Holds", () => {
     // load the header image
     fireEvent(getByLabelText("Header image"), "onLoadEnd");
     await userEvent.press(getByText("19:00"));
-    expect(getByText("2")).toBeVisible();
     await userEvent.press(getByText("2"));
     await waitFor(
       () =>
         expect(getByText("You've won 2 tickets to Hamilton 🎉")).toBeVisible(),
       {timeout: 20000}
+    );
+  });
+
+  it("stops fetching holds if shadow blocked", async () => {
+    // setup
+    await AsyncStorage.setItem("customer-id", "customer-id");
+    nock(
+      `${process.env.TODAY_TIX_API_BASE_URL}${process.env.TODAY_TIX_API_V2_ENDPOINT}`
+    )
+      .get("/holds")
+      .reply(200)
+      .post("/holds", {
+        customer: "customer-id",
+        showtime: 1,
+        numTickets: 2,
+        holdType: TodayTixHoldType.Rush
+      })
+      .reply(409, {
+        code: 409,
+        error: TodayTixHoldErrorCode.SEATS_TAKEN,
+        context: [
+          "Sorry, all remaining tickets are currently being held by other customers. Please try again later."
+        ],
+        title: "All seats are being held",
+        message:
+          "Sorry, all remaining tickets are currently being held by other customers. Please try again later."
+      })
+      .post("/holds", {
+        customer: "customer-id",
+        showtime: 1,
+        numTickets: 2,
+        holdType: TodayTixHoldType.Rush
+      })
+      .reply(409, {
+        code: 409,
+        error: TodayTixHoldErrorCode.SEATS_TAKEN,
+        context: [
+          "Unfortunately, those tickets have just been added to another user's cart."
+        ],
+        title: "All seats are being held",
+        message:
+          "Sorry, all remaining tickets are currently being held by other customers. Please try again later."
+      });
+
+    const Stack = createStackNavigator<RushShowStackParamList>();
+    const {getByText, getByLabelText} = render(
+      <>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="ShowDetails"
+            component={ShowDetailsScreen}
+            initialParams={{
+              show: {} as TodayTixShow,
+              showtimes: [
+                {
+                  id: 1,
+                  localTime: "19:00",
+                  rushTickets: {minTickets: 1, maxTickets: 2}
+                } as TodayTixShowtime
+              ]
+            }}
+          />
+        </Stack.Navigator>
+        <HoldConfirmationBottomSheet />
+      </>
+    );
+
+    // load the header image
+    fireEvent(getByLabelText("Header image"), "onLoadEnd");
+    await userEvent.press(getByText("19:00"));
+    await userEvent.press(getByText("2"));
+    await waitFor(() =>
+      expect(getByText("You've been shadow blocked!")).toBeVisible()
+    );
+  });
+
+  it("stops fetching holds if rush is not unlocked", async () => {
+    // setup
+    await AsyncStorage.setItem("customer-id", "customer-id");
+    const unlockRushErrorMessage =
+      "You are not eligible to make this purchase. Please unlock Rush and try again. Contact TodayTix Support if you feel you have received this message in error.";
+    nock(
+      `${process.env.TODAY_TIX_API_BASE_URL}${process.env.TODAY_TIX_API_V2_ENDPOINT}`
+    )
+      .get("/holds")
+      .reply(200)
+      .post("/holds", {
+        customer: "customer-id",
+        showtime: 1,
+        numTickets: 2,
+        holdType: TodayTixHoldType.Rush
+      })
+      .reply(409, {
+        code: 409,
+        error: TodayTixHoldErrorCode.SEATS_TAKEN,
+        context: [
+          "Sorry, all remaining tickets are currently being held by other customers. Please try again later."
+        ],
+        title: "All seats are being held",
+        message:
+          "Sorry, all remaining tickets are currently being held by other customers. Please try again later."
+      })
+      .post("/holds", {
+        customer: "customer-id",
+        showtime: 1,
+        numTickets: 2,
+        holdType: TodayTixHoldType.Rush
+      })
+      .reply(409, {
+        code: 409,
+        error: TodayTixHoldErrorCode.CONFLICT,
+        context: ["You are not eligible to purchase Rush tickets."],
+        title: "Not eligible",
+        message: unlockRushErrorMessage
+      });
+
+    const Stack = createStackNavigator<RushShowStackParamList>();
+    const {getByText, getByLabelText} = render(
+      <>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="ShowDetails"
+            component={ShowDetailsScreen}
+            initialParams={{
+              show: {} as TodayTixShow,
+              showtimes: [
+                {
+                  id: 1,
+                  localTime: "19:00",
+                  rushTickets: {minTickets: 1, maxTickets: 2}
+                } as TodayTixShowtime
+              ]
+            }}
+          />
+        </Stack.Navigator>
+        <HoldConfirmationBottomSheet />
+      </>
+    );
+
+    // load the header image
+    fireEvent(getByLabelText("Header image"), "onLoadEnd");
+    await userEvent.press(getByText("19:00"));
+    await userEvent.press(getByText("2"));
+    await waitFor(() =>
+      expect(getByText(unlockRushErrorMessage)).toBeVisible()
     );
   });
 

@@ -11,6 +11,7 @@ import BottomSheet from "../ui/BottomSheet";
 import LoadingSpinner from "../ui/LoadingSpinner";
 import {pluralize} from "../utils";
 
+import {isShadowBlocked} from "../../hooks/todayTixHooks/usePostHolds";
 import useCountdown from "../../hooks/useCountdown";
 import HoldContext from "../../store/hold-context";
 import SelectedShowtimeContext from "../../store/selected-showtime-context";
@@ -64,17 +65,25 @@ const HoldConfirmationBottomSheet = ({
           </View>
         )
       };
-    if (createHoldError)
+    if (createHoldError) {
+      const shadowBlock = isShadowBlocked(createHoldError);
       return {
         header: createHeaderText(
-          `Error getting tickets to ${show?.displayName}`
+          shadowBlock
+            ? "You've been shadow blocked!"
+            : `Error getting tickets to ${show?.displayName}`
         ),
         content: (
           <HoldErrorContent
-            message={createHoldError.message ?? createHoldError.error}
+            message={
+              shadowBlock
+                ? "TodayTix is putting you at the back of the queue. You can try to get tickets again, but you will only get them if someone else does not ask for them too. Please create a new TodayTix account to ensure you get tickets."
+                : createHoldError.message ?? createHoldError.error
+            }
           />
         )
       };
+    }
     if (hold)
       return {
         header: createHeaderText(

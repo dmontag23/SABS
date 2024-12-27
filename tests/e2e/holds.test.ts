@@ -124,14 +124,32 @@ describe("Holds", () => {
     await expect(
       element(by.text("Rush is not unlocked for this show.")).atIndex(0)
     ).not.toBeVisible();
-    // select a showtime that has all tickets currently reserved
+
+    // select a showtime that is shadow blocked
     await element(by.text("SIX the Musical")).tap();
     await expect(element(by.text("Select a Time"))).toBeVisible();
     const showtime = element(by.text("19:00"));
     await showtime.tap();
-    await element(by.text("2")).tap();
+    await element(by.text("1")).tap();
+    const shadowBlockedHeaderText = element(
+      by.text("You've been shadow blocked!")
+    );
+    await expect(shadowBlockedHeaderText).toBeVisible();
+    await expect(
+      element(
+        by.text(
+          "TodayTix is putting you at the back of the queue. You can try to get tickets again, but you will only get them if someone else does not ask for them too. Please create a new TodayTix account to ensure you get tickets."
+        )
+      )
+    ).toBeVisible();
+    const retryButton = element(by.text("Retry"));
+    await expect(retryButton).toBeVisible();
+    await retryButton.tap();
+    await expect(shadowBlockedHeaderText).toBeVisible();
+    await shadowBlockedHeaderText.swipe("down");
 
-    // retry the request for tickets
+    // select a showtime that has all tickets currently reserved
+    await element(by.text("2")).tap();
     const errorHeaderMessage = element(
       by.text("Error getting tickets to SIX the Musical")
     );
@@ -143,7 +161,6 @@ describe("Holds", () => {
         )
       )
     ).toBeVisible();
-    const retryButton = element(by.text("Retry"));
     await expect(retryButton).toBeVisible();
     await retryButton.tap();
     await expect(errorHeaderMessage).toBeVisible();

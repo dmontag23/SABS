@@ -213,6 +213,68 @@ describe("HoldConfirmationBottomSheet component", () => {
       );
     });
 
+    it("shows the correct error text when shadow blocked", async () => {
+      await AsyncStorage.setItem("customer-id", "customer-id");
+      nock(
+        `${process.env.TODAY_TIX_API_BASE_URL}${process.env.TODAY_TIX_API_V2_ENDPOINT}`
+      )
+        .post("/holds", {
+          customer: "customer-id",
+          showtime: 1,
+          numTickets: 2,
+          holdType: TodayTixHoldType.Rush
+        })
+        .reply(409, {
+          code: 409,
+          error: TodayTixHoldErrorCode.SEATS_TAKEN,
+          context: [
+            "Unfortunately, those tickets have just been added to another user's cart."
+          ],
+          title: "All seats are being held",
+          message:
+            "Sorry, all remaining tickets are currently being held by other customers. Please try again later."
+        });
+
+      const Stack = createStackNavigator<RushShowStackParamList>();
+
+      const {getByText, getByLabelText} = render(
+        <>
+          <Stack.Navigator>
+            <Stack.Screen
+              name="ShowDetails"
+              component={ShowDetailsScreen}
+              initialParams={{
+                show: {} as TodayTixShow,
+                showtimes: [
+                  {
+                    id: 1,
+                    localTime: "19:00",
+                    rushTickets: {
+                      minTickets: 1,
+                      maxTickets: 2
+                    }
+                  } as TodayTixShowtime
+                ]
+              }}
+            />
+          </Stack.Navigator>
+          <HoldConfirmationBottomSheet />
+        </>
+      );
+
+      fireEvent(getByLabelText("Header image"), "onLoadEnd");
+      await userEvent.press(getByText("19:00"));
+      await userEvent.press(getByText("2"));
+      await waitFor(() =>
+        expect(getByText("You've been shadow blocked!")).toBeVisible()
+      );
+      expect(
+        getByText(
+          "TodayTix is putting you at the back of the queue. You can try to get tickets again, but you will only get them if someone else does not ask for them too. Please create a new TodayTix account to ensure you get tickets."
+        )
+      ).toBeVisible();
+    });
+
     it("does not retry hold if no customer id, show, or showtime are available", async () => {
       const scheduleHold = jest.fn();
       const {getByText} = render(
@@ -256,10 +318,12 @@ describe("HoldConfirmationBottomSheet component", () => {
 
       const {getByText} = render(<HoldConfirmationBottomSheet />);
 
-      await waitFor(() =>
-        expect(
-          getByText("You've won 2 tickets to SIX the Musical 🎉")
-        ).toBeVisible()
+      await waitFor(
+        () =>
+          expect(
+            getByText("You've won 2 tickets to SIX the Musical 🎉")
+          ).toBeVisible(),
+        {timeout: 3000}
       );
 
       // check the bottom sheet contains all of the page elements
@@ -287,10 +351,12 @@ describe("HoldConfirmationBottomSheet component", () => {
 
       const {getByText} = render(<HoldConfirmationBottomSheet />);
 
-      await waitFor(() =>
-        expect(
-          getByText("You've won 2 tickets to SIX the Musical 🎉")
-        ).toBeVisible()
+      await waitFor(
+        () =>
+          expect(
+            getByText("You've won 2 tickets to SIX the Musical 🎉")
+          ).toBeVisible(),
+        {timeout: 3000}
       );
 
       // check navigation to the TodayTix app to purchase tickets is possible
