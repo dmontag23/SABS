@@ -2,14 +2,14 @@ import {Router} from "express";
 
 import {writeItemToStore} from "./utils";
 
-import {TodayTixAPIError, TodayTixAPIRes} from "../types/base";
+import {TodayTixAPIv2ErrorResponse, TodayTixAPIv2Response} from "../types/base";
 import {TodayTixRushGrant, TodayTixRushGrantsReq} from "../types/rushGrants";
 
 type RouteParams = {
   customerId: string;
 };
 
-const postRushGrants401Response: TodayTixAPIError = {
+const postRushGrants401Response: TodayTixAPIv2ErrorResponse = {
   code: 401,
   error: "UnauthenticatedException",
   context: null,
@@ -22,7 +22,7 @@ const postRushGrantsRoute = (router: Router) =>
   router.post<
     "/customers/:customerId/rushGrants",
     RouteParams,
-    TodayTixAPIRes<TodayTixRushGrant> | TodayTixAPIError,
+    TodayTixAPIv2Response<TodayTixRushGrant> | TodayTixAPIv2ErrorResponse,
     TodayTixRushGrantsReq
   >("/customers/:customerId/rushGrants", (req, res) => {
     if (req.body.showId === 4) {

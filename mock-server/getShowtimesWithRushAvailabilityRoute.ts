@@ -1,9 +1,11 @@
 import {Router} from "express";
 
-import {TodayTixAPIError, TodayTixAPIRes} from "../types/base";
+import {TodayTixAPIv2ErrorResponse, TodayTixAPIv2Response} from "../types/base";
 import {DayOfWeek, Daypart, TodayTixShowtime} from "../types/showtimes";
 
-const getShowtimesWithRushSix200Response: TodayTixAPIRes<TodayTixShowtime[]> = {
+const getShowtimesWithRushSix200Response: TodayTixAPIv2Response<
+  TodayTixShowtime[]
+> = {
   code: 200,
   data: [
     {
@@ -49,14 +51,14 @@ const getShowtimesWithRushSix200Response: TodayTixAPIRes<TodayTixShowtime[]> = {
   ]
 };
 
-const getShowtimesWithRushWicked200Response: TodayTixAPIRes<
+const getShowtimesWithRushWicked200Response: TodayTixAPIv2Response<
   TodayTixShowtime[]
 > = {
   code: 200,
   data: []
 };
 
-const getShowtimesWithRushGuysNDolls200Response: TodayTixAPIRes<
+const getShowtimesWithRushGuysNDolls200Response: TodayTixAPIv2Response<
   TodayTixShowtime[]
 > = {
   code: 200,
@@ -146,54 +148,55 @@ const getShowtimesWithRushGuysNDolls200Response: TodayTixAPIRes<
   ]
 };
 
-const getShowtimesWithRushTina200Response: TodayTixAPIRes<TodayTixShowtime[]> =
-  {
-    code: 200,
-    data: [
-      {
-        _type: "Showtime",
-        id: 4,
-        admissionType: "TIMED",
-        endDatetime: null,
-        endDatetimeEpoch: null,
-        endLocalDate: null,
-        endLocalTime: null,
-        datetime: "2024-02-27T19:00:00.000",
-        datetimeEpoch: 1709060400,
-        daypart: Daypart.Evening,
-        dayOfWeek: DayOfWeek.Tuesday,
-        localDate: "2024-02-27",
-        localTime: "19:00",
-        lotteryTickets: null,
-        numDaysOut: 0,
-        partTwoDatetime: null,
-        partTwoDatetimeEpoch: null,
-        providerShowtimeId: null,
-        regularTickets: null,
-        rushTickets: {
-          _type: "RushTicketsInfo",
-          availableAfter: "2024-02-27T09:30:00.000",
-          availableAfterEpoch: 1709026200,
-          availableUntil: "2024-02-27T16:00:00.000",
-          availableUntilEpoch: 1709049600,
-          lowPrice: {
-            value: 25,
-            currency: "GBP",
-            display: "£25",
-            displayRounded: "£25"
-          },
-          maxContiguousSeats: 2,
-          maxTickets: 2,
-          minTickets: 1,
-          quantityAvailable: 7,
-          quantityHeld: 0,
-          rushBannerText: "£25 Rush tickets"
-        }
+const getShowtimesWithRushTina200Response: TodayTixAPIv2Response<
+  TodayTixShowtime[]
+> = {
+  code: 200,
+  data: [
+    {
+      _type: "Showtime",
+      id: 4,
+      admissionType: "TIMED",
+      endDatetime: null,
+      endDatetimeEpoch: null,
+      endLocalDate: null,
+      endLocalTime: null,
+      datetime: "2024-02-27T19:00:00.000",
+      datetimeEpoch: 1709060400,
+      daypart: Daypart.Evening,
+      dayOfWeek: DayOfWeek.Tuesday,
+      localDate: "2024-02-27",
+      localTime: "19:00",
+      lotteryTickets: null,
+      numDaysOut: 0,
+      partTwoDatetime: null,
+      partTwoDatetimeEpoch: null,
+      providerShowtimeId: null,
+      regularTickets: null,
+      rushTickets: {
+        _type: "RushTicketsInfo",
+        availableAfter: "2024-02-27T09:30:00.000",
+        availableAfterEpoch: 1709026200,
+        availableUntil: "2024-02-27T16:00:00.000",
+        availableUntilEpoch: 1709049600,
+        lowPrice: {
+          value: 25,
+          currency: "GBP",
+          display: "£25",
+          displayRounded: "£25"
+        },
+        maxContiguousSeats: 2,
+        maxTickets: 2,
+        minTickets: 1,
+        quantityAvailable: 7,
+        quantityHeld: 0,
+        rushBannerText: "£25 Rush tickets"
       }
-    ]
-  };
+    }
+  ]
+};
 
-const getShowtimesWithRush400Response: TodayTixAPIError = {
+const getShowtimesWithRush400Response: TodayTixAPIv2ErrorResponse = {
   code: 400,
   error: "InvalidParameter",
   context: {
@@ -210,7 +213,7 @@ const getShowtimesWithRushAvailabilityRoute = (router: Router) =>
   router.get<
     "/shows/:showId/showtimes/with_rush_availability",
     {showId: string},
-    TodayTixAPIRes<TodayTixShowtime[]> | TodayTixAPIError
+    TodayTixAPIv2Response<TodayTixShowtime[]> | TodayTixAPIv2ErrorResponse
   >("/shows/:showId/showtimes/with_rush_availability", (req, res) => {
     switch (req.params.showId) {
       case "1":

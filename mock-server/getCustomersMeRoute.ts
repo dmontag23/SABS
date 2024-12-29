@@ -1,13 +1,13 @@
 import {Router} from "express";
 
-import {TodayTixAPIError, TodayTixAPIRes} from "../types/base";
+import {TodayTixAPIv2ErrorResponse, TodayTixAPIv2Response} from "../types/base";
 import {
   MarketingEmailConsent,
   PrivacyLaw,
   TodayTixCustomer
 } from "../types/customer";
 
-const getCustomersMe200Response: TodayTixAPIRes<TodayTixCustomer> = {
+const getCustomersMe200Response: TodayTixAPIv2Response<TodayTixCustomer> = {
   code: 200,
   data: {
     _type: "Customer",
@@ -53,7 +53,7 @@ const getCustomersMe200Response: TodayTixAPIRes<TodayTixCustomer> = {
   pagination: null
 };
 
-const getCustomersMe401Response: TodayTixAPIError = {
+const getCustomersMe401Response: TodayTixAPIv2ErrorResponse = {
   code: 401,
   error: "UnauthenticatedException",
   context: null,
@@ -66,7 +66,7 @@ const getCustomersMeRoute = (router: Router) =>
   router.get<
     "/customers/me",
     null,
-    TodayTixAPIRes<TodayTixCustomer> | TodayTixAPIError
+    TodayTixAPIv2Response<TodayTixCustomer> | TodayTixAPIv2ErrorResponse
   >("/customers/me", (req, res) => {
     if (req.headers["return-status"] === "401") {
       res.status(401).json(getCustomersMe401Response);

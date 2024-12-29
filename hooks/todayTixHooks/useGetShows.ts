@@ -1,7 +1,7 @@
 import {useQuery} from "@tanstack/react-query";
 
 import {todayTixAPIv2} from "../../api/axiosConfig";
-import {TodayTixAPIError} from "../../types/base";
+import {TodayTixAPIv2ErrorResponse} from "../../types/base";
 import {
   TodayTixFieldset,
   TodayTixLocation,
@@ -9,7 +9,7 @@ import {
   TodayTixShowsReqQueryParams
 } from "../../types/shows";
 
-const getShows = (
+const getShows = async (
   areAccessProgramsActive?: boolean,
   fieldset?: TodayTixFieldset,
   limit?: number,
@@ -25,9 +25,11 @@ const getShows = (
   ]
     .filter(param => param)
     .join("&");
-  return todayTixAPIv2.get<TodayTixShow[]>(
-    `shows${queryParams ? `?${queryParams}` : ""}`
-  );
+  return (
+    await todayTixAPIv2.get<TodayTixShow[]>(
+      `shows${queryParams ? `?${queryParams}` : ""}`
+    )
+  ).data.data;
 };
 
 type UseGetShowsProps = {
@@ -42,7 +44,7 @@ const useGetShows = ({
   const {areAccessProgramsActive, fieldset, limit, location, offset} =
     requestParams;
 
-  return useQuery<TodayTixShow[], TodayTixAPIError>({
+  return useQuery<TodayTixShow[], TodayTixAPIv2ErrorResponse>({
     queryKey: [
       "shows",
       areAccessProgramsActive,

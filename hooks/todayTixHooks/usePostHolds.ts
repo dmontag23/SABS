@@ -1,7 +1,7 @@
 import {useMutation, useQueryClient} from "@tanstack/react-query";
 
 import {todayTixAPIv2} from "../../api/axiosConfig";
-import {TodayTixAPIError} from "../../types/base";
+import {TodayTixAPIv2ErrorResponse} from "../../types/base";
 import {
   TodayTixHold,
   TodayTixHoldErrorCode,
@@ -9,10 +9,10 @@ import {
   TodayTixHoldsReq
 } from "../../types/holds";
 
-const isRushLocked = ({message}: TodayTixAPIError) =>
+const isRushLocked = ({message}: TodayTixAPIv2ErrorResponse) =>
   Boolean(message?.includes("unlock Rush"));
 
-export const isShadowBlocked = ({error, context}: TodayTixAPIError) =>
+export const isShadowBlocked = ({error, context}: TodayTixAPIv2ErrorResponse) =>
   error === TodayTixHoldErrorCode.SEATS_TAKEN &&
   Array.isArray(context) &&
   context[0].includes("Unfortunately");
@@ -23,18 +23,28 @@ export type PostHoldsVariables = {
   numTickets: number;
 };
 
-const postHolds = ({customerId, showtimeId, numTickets}: PostHoldsVariables) =>
-  todayTixAPIv2.post<TodayTixHoldsReq, TodayTixHold>(`holds`, {
-    customer: customerId,
-    showtime: showtimeId,
-    numTickets,
-    holdType: TodayTixHoldType.Rush
-  });
+const postHolds = async ({
+  customerId,
+  showtimeId,
+  numTickets
+}: PostHoldsVariables) =>
+  (
+    await todayTixAPIv2.post<TodayTixHoldsReq, TodayTixHold>(`holds`, {
+      customer: customerId,
+      showtime: showtimeId,
+      numTickets,
+      holdType: TodayTixHoldType.Rush
+    })
+  ).data.data;
 
 const usePostHolds = () => {
   const queryClient = useQueryClient();
 
-  return useMutation<TodayTixHold, TodayTixAPIError, PostHoldsVariables>({
+  return useMutation<
+    TodayTixHold,
+    TodayTixAPIv2ErrorResponse,
+    PostHoldsVariables
+  >({
     mutationFn: postHolds,
     retry: (failureCount, error) =>
       /* failureCount < 59 will try the mutation at most 60 times before failing.

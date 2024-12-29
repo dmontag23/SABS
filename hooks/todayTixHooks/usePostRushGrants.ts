@@ -1,7 +1,7 @@
 import {useMutation} from "@tanstack/react-query";
 
 import {todayTixAPIv2} from "../../api/axiosConfig";
-import {TodayTixAPIError} from "../../types/base";
+import {TodayTixAPIv2ErrorResponse} from "../../types/base";
 import {TodayTixRushGrant, TodayTixRushGrantsReq} from "../../types/rushGrants";
 
 type PostRushGrantsVariables = {
@@ -9,14 +9,20 @@ type PostRushGrantsVariables = {
   showId: number;
 };
 
-const postRushGrant = ({customerId, showId}: PostRushGrantsVariables) =>
-  todayTixAPIv2.post<TodayTixRushGrantsReq, TodayTixRushGrant>(
-    `customers/${customerId}/rushGrants`,
-    {showId}
-  );
+const postRushGrant = async ({customerId, showId}: PostRushGrantsVariables) =>
+  (
+    await todayTixAPIv2.post<TodayTixRushGrantsReq, TodayTixRushGrant>(
+      `customers/${customerId}/rushGrants`,
+      {showId}
+    )
+  ).data.data;
 
 const usePostRushGrants = () =>
-  useMutation<TodayTixRushGrant, TodayTixAPIError, PostRushGrantsVariables>({
+  useMutation<
+    TodayTixRushGrant,
+    TodayTixAPIv2ErrorResponse,
+    PostRushGrantsVariables
+  >({
     mutationFn: postRushGrant
     /* The rushGrants query is not invalidated here because, when granting access to many shows at one time,
       the query invalidation would be run for each mutate function that resolves. This could lead to several

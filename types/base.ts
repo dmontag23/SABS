@@ -8,7 +8,7 @@ type Pagination = {
   total: number;
 };
 
-export type TodayTixAPIRes<T> = {
+export type TodayTixAPIv2Response<T> = {
   code: number;
   data: T;
   metadata?: Metadata;
@@ -20,7 +20,7 @@ type TodayTixAPIErrorContext = {
   internalMessage: string;
 };
 
-export type TodayTixAPIError = {
+export type TodayTixAPIv2ErrorResponse = {
   code?: number;
   error: string;
   context?: TodayTixAPIErrorContext | string[] | null;
@@ -28,7 +28,7 @@ export type TodayTixAPIError = {
   message?: string;
 };
 
-export type TodayTixOauthAPIError = {
+export type TodayTixOauthAPIErrorResponse = {
   error: string;
   error_description: string;
 };

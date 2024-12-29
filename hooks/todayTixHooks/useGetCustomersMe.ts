@@ -1,18 +1,18 @@
 import {useQuery} from "@tanstack/react-query";
 
 import {todayTixAPIv2} from "../../api/axiosConfig";
-import {TodayTixAPIError} from "../../types/base";
+import {TodayTixAPIv2ErrorResponse} from "../../types/base";
 import {TodayTixCustomer} from "../../types/customer";
 
-const getCurrentCustomer = () =>
-  todayTixAPIv2.get<TodayTixCustomer>("customers/me");
+const getCurrentCustomer = async () =>
+  (await todayTixAPIv2.get<TodayTixCustomer>("customers/me")).data.data;
 
 type UseGetCustomersMeProps = {
   enabled?: boolean;
 };
 
 const useGetCustomersMe = ({enabled}: UseGetCustomersMeProps = {}) =>
-  useQuery<TodayTixCustomer, TodayTixAPIError>({
+  useQuery<TodayTixCustomer, TodayTixAPIv2ErrorResponse>({
     queryKey: ["customer"],
     queryFn: getCurrentCustomer,
     enabled

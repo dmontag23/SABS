@@ -2,10 +2,10 @@ import {Router} from "express";
 
 import {getItemsFromStore} from "./utils";
 
-import {TodayTixAPIError, TodayTixAPIRes} from "../types/base";
+import {TodayTixAPIv2ErrorResponse, TodayTixAPIv2Response} from "../types/base";
 import {TodayTixRushGrant} from "../types/rushGrants";
 
-const getRushGrants401Response: TodayTixAPIError = {
+const getRushGrants401Response: TodayTixAPIv2ErrorResponse = {
   code: 401,
   error: "UnauthenticatedException",
   context: null,
@@ -18,7 +18,7 @@ const getRushGrantsRoute = (router: Router) =>
   router.get<
     "/customers/me/rushGrants",
     null,
-    TodayTixAPIRes<TodayTixRushGrant[]> | TodayTixAPIError
+    TodayTixAPIv2Response<TodayTixRushGrant[]> | TodayTixAPIv2ErrorResponse
   >("/customers/me/rushGrants", (req, res) => {
     if (req.headers["return-status"] === "401") {
       res.status(401).json(getRushGrants401Response);

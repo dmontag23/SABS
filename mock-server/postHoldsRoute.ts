@@ -2,7 +2,7 @@ import {Router} from "express";
 
 import {getItemFromStore, writeItemToStore} from "./utils";
 
-import {TodayTixAPIError, TodayTixAPIRes} from "../types/base";
+import {TodayTixAPIv2ErrorResponse, TodayTixAPIv2Response} from "../types/base";
 import {
   DeliveryMethodEnum,
   ProviderPlatformEnum,
@@ -348,7 +348,7 @@ const guysAndDollsHold: TodayTixHold = {
   voucherDiscount: null
 };
 
-const postHolds401Response: TodayTixAPIError = {
+const postHolds401Response: TodayTixAPIv2ErrorResponse = {
   code: 401,
   error: TodayTixHoldErrorCode.UNAUTHENTICATED,
   context: null,
@@ -357,7 +357,7 @@ const postHolds401Response: TodayTixAPIError = {
     "Sorry, something went wrong. Please try signing in again and contact TodayTix Support if the issue persists."
 };
 
-const postHolds409AddedToAnotherCartResponse: TodayTixAPIError = {
+const postHolds409AddedToAnotherCartResponse: TodayTixAPIv2ErrorResponse = {
   code: 409,
   error: TodayTixHoldErrorCode.SEATS_TAKEN,
   context: [
@@ -368,7 +368,7 @@ const postHolds409AddedToAnotherCartResponse: TodayTixAPIError = {
     "Sorry, all remaining tickets are currently being held by other customers. Please try again later."
 };
 
-const postHolds409SeatsTakenResponse: TodayTixAPIError = {
+const postHolds409SeatsTakenResponse: TodayTixAPIv2ErrorResponse = {
   code: 409,
   error: TodayTixHoldErrorCode.SEATS_TAKEN,
   context: [
@@ -379,7 +379,7 @@ const postHolds409SeatsTakenResponse: TodayTixAPIError = {
     "Sorry, all remaining tickets are currently being held by other customers. Please try again later."
 };
 
-const postHolds409RushNotUnlockedResponse: TodayTixAPIError = {
+const postHolds409RushNotUnlockedResponse: TodayTixAPIv2ErrorResponse = {
   code: 409,
   error: TodayTixHoldErrorCode.CONFLICT,
   context: ["You are not eligible to purchase Rush tickets."],
@@ -392,7 +392,7 @@ const postHoldsRoute = (router: Router) =>
   router.post<
     "/holds",
     null,
-    TodayTixAPIRes<TodayTixHold> | TodayTixAPIError,
+    TodayTixAPIv2Response<TodayTixHold> | TodayTixAPIv2ErrorResponse,
     TodayTixHoldsReq
   >("/holds", (req, res) => {
     /* When trying to get tickets to SIX, return

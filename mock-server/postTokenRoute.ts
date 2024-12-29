@@ -1,6 +1,6 @@
 import {Router} from "express";
 
-import {TodayTixOauthAPIError} from "../types/base";
+import {TodayTixOauthAPIErrorResponse} from "../types/base";
 import {
   TodayTixRefreshTokenReq,
   TodayTixRefreshTokenRes
@@ -14,7 +14,7 @@ const postToken200Response: TodayTixRefreshTokenRes = {
   scope: "customer"
 };
 
-const postToken400Response: TodayTixOauthAPIError = {
+const postToken400Response: TodayTixOauthAPIErrorResponse = {
   error_description: "Request is missing username parameter.",
   error: "invalid_request"
 };
@@ -23,7 +23,7 @@ const postTokenRoute = (router: Router) =>
   router.post<
     "/token",
     null,
-    TodayTixRefreshTokenRes | TodayTixOauthAPIError,
+    TodayTixRefreshTokenRes | TodayTixOauthAPIErrorResponse,
     TodayTixRefreshTokenReq
   >("/token", (req, res) => {
     if (req.body.refresh_token === "refresh-token") {

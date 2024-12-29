@@ -7,18 +7,22 @@ import usePostHolds, {
   PostHoldsVariables
 } from "../hooks/todayTixHooks/usePostHolds";
 import useScheduleCallback from "../hooks/useScheduleCallback";
-import {TodayTixAPIError} from "../types/base";
+import {TodayTixAPIv2ErrorResponse} from "../types/base";
 import {TodayTixHold} from "../types/holds";
 
 const HoldContext = createContext<{
   isCreatingHold: boolean;
-  createHoldError: TodayTixAPIError | null;
+  createHoldError: TodayTixAPIv2ErrorResponse | null;
   isHoldScheduled: boolean;
   scheduleHold: (
     runAtEpochTimeInSeconds: number,
     variables: PostHoldsVariables,
     options?:
-      | MutateOptions<TodayTixHold, TodayTixAPIError, PostHoldsVariables>
+      | MutateOptions<
+          TodayTixHold,
+          TodayTixAPIv2ErrorResponse,
+          PostHoldsVariables
+        >
       | undefined
   ) => void;
   cancelHold: () => void;

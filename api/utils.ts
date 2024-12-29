@@ -4,6 +4,7 @@ import {todayTixOAuthAPI} from "./axiosConfig";
 
 import {log} from "../config/logger";
 import {getTokens, storeTokens} from "../store/asyncStorageUtils";
+import {AxiosTodayTixAPIv2Response} from "../types/api";
 import {
   TodayTixClient,
   TodayTixGrantType,
@@ -46,6 +47,9 @@ const refreshAndStoreNewAccessToken = async (
   return newAccessToken;
 };
 
+const REQUEST_DURATION_HEADER_NAME = "request-duration";
+const REQUEST_START_TIME_HEADER_NAME = "request-start-time";
+
 export const handleTodayTixApiRequest = async (
   request: InternalAxiosRequestConfig
 ) => {
@@ -64,8 +68,8 @@ export const handleTodayTixApiRequest = async (
       ? await refreshAndStoreNewAccessToken(currentAccessToken, refreshToken)
       : currentAccessToken;
 
-  log.info(
-    "Request: ",
+  log.debug(
+    "Making a TodayTix API v2 request: ",
     request.method,
     request.baseURL,
     request.url,
@@ -75,7 +79,20 @@ export const handleTodayTixApiRequest = async (
     ...request,
     headers: new AxiosHeaders({
       ...request.headers,
-      Authorization: `Bearer ${accessToken}`
+      Authorization: `Bearer ${accessToken}`,
+      [REQUEST_START_TIME_HEADER_NAME]: new Date().getTime()
     })
   };
 };
+
+export const handleTodayTixApiResponse = (
+  response: AxiosTodayTixAPIv2Response
+) => ({
+  ...response,
+  headers: new AxiosHeaders({
+    ...response.headers,
+    [REQUEST_DURATION_HEADER_NAME]:
+      new Date().getTime() -
+      response.config.headers[REQUEST_START_TIME_HEADER_NAME]
+  })
+});
