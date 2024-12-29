@@ -47,8 +47,8 @@ const refreshAndStoreNewAccessToken = async (
   return newAccessToken;
 };
 
-const REQUEST_DURATION_HEADER_NAME = "request-duration";
-const REQUEST_START_TIME_HEADER_NAME = "request-start-time";
+export const REQUEST_DURATION_HEADER_NAME = "request-duration";
+export const REQUEST_START_TIME_HEADER_NAME = "request-start-time";
 
 export const handleTodayTixApiRequest = async (
   request: InternalAxiosRequestConfig

@@ -8,7 +8,7 @@ const getHold = async () => {
   const {data} = await todayTixAPIv2.get<TodayTixHold[]>("holds");
 
   // It seems TodayTix only ever lets you have one hold at a time
-  return data.data[0];
+  return data.data[0] ?? null;
 };
 
 const useGetHold = () =>
