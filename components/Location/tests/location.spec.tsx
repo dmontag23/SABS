@@ -1,20 +1,20 @@
 import React from "react";
 import {Dimensions} from "react-native";
 
-import {describe, expect, it, jest} from "@jest/globals";
+import {describe, expect, it} from "@jest/globals";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import nock from "nock";
 import {
-  act,
   fireEvent,
   render,
   userEvent,
-  waitFor
+  waitFor,
+  within
 } from "testing-library/extension";
 
-import LoggedInBottomTabNavigator from "../../screens/LoggedInBottomTabNavigator";
+import LoggedInScreen from "../../screens/LoggedInScreen";
 
-import {TodayTixFieldset, TodayTixLocation} from "../../../types/shows";
+import {TodayTixFieldset} from "../../../types/shows";
 
 describe("Locations", () => {
   it("can change the location and see the updated shows", async () => {
@@ -22,22 +22,31 @@ describe("Locations", () => {
     nock(
       `${process.env.TODAY_TIX_API_BASE_URL}${process.env.TODAY_TIX_API_V2_ENDPOINT}`
     )
+      .get("/customers/me")
+      .reply(200, {data: {homeLocationId: 2}})
       .get("/shows")
       .query({
         areAccessProgramsActive: 1,
         fieldset: TodayTixFieldset.Summary,
         limit: 10000,
-        location: TodayTixLocation.London
+        location: 2
       })
       .reply(200, {
         data: [{id: 1, displayName: "SIX the Musical", isRushActive: true}]
       })
+      .get("/locations")
+      .reply(200, {
+        data: [
+          {id: 1, name: "New York"},
+          {id: 2, name: "London"}
+        ]
+      })
       .get("/shows")
       .query({
         areAccessProgramsActive: 1,
         fieldset: TodayTixFieldset.Summary,
         limit: 10000,
-        location: TodayTixLocation.NewYork
+        location: 1
       })
       .reply(200, {
         data: [
@@ -45,9 +54,8 @@ describe("Locations", () => {
         ]
       });
 
-    const {getByText, getAllByText, getByRole, getByTestId} = render(
-      <LoggedInBottomTabNavigator />
-    );
+    const {getByText, getAllByText, getByRole, getByTestId, getAllByTestId} =
+      render(<LoggedInScreen />);
 
     // check the London shows are visible
     await waitFor(() => expect(getByText("SIX the Musical")).toBeVisible());
@@ -60,47 +68,50 @@ describe("Locations", () => {
     // navigate to the settings tab
     // TODO: Investigate why userEvent.press(settingsTab) does not work here
     fireEvent(settingsTab, "click");
-    await waitFor(() => expect(getAllByText("Settings")).toHaveLength(3));
+    const loadingSpinner = getAllByTestId("loading-spinner");
+    expect(loadingSpinner).toHaveLength(2);
+    await waitFor(() => expect(getAllByText("London")).toHaveLength(2));
+    expect(loadingSpinner[0]).not.toBeOnTheScreen();
+    expect(loadingSpinner[1]).not.toBeOnTheScreen();
+    expect(getAllByText("Settings")).toHaveLength(3);
     expect(getAllByText("Location")).toHaveLength(2);
-    expect(getAllByText("London")).toHaveLength(2);
 
     // open the location bottom sheet
     await userEvent.press(getAllByText("London")[0]);
-    act(() => jest.advanceTimersByTime(1500));
 
     // check that the bottom sheet elements are visible
     const bottomSheetElement = getByTestId("location-bottom-sheet");
-    expect(bottomSheetElement).toHaveAnimatedStyle({
-      height: "100%",
-      transform: [{translateY: 0}]
-    });
+    await waitFor(
+      () =>
+        expect(bottomSheetElement).toHaveAnimatedStyle({
+          height: "100%",
+          transform: [{translateY: 0}]
+        }),
+      {timeout: 2000}
+    );
     expect(getByText("Close")).toBeVisible();
 
-    // check that all of the available locations are visible
-    [
-      "Adelaide",
-      "Brisbane",
-      "Chicago",
-      "London",
-      "Los Angeles And Orange County",
-      "Melbourne",
-      "New York",
-      "Perth",
-      "San Francisco",
-      "Sydney",
-      "Washington D.C.",
-      "Other Cities"
-    ].forEach(location => {
-      expect(getByRole("button", {name: location})).toBeVisible();
+    // check that all of the available locations are visible in the correct order
+    const {getAllByRole} = within(bottomSheetElement);
+    const allBottomSheetButtons = getAllByRole("button");
+    expect(allBottomSheetButtons[0]).toHaveTextContent("Close");
+    ["London", "New York"].forEach((location, i) => {
+      expect(allBottomSheetButtons[i + 1]).toBeVisible();
+      expect(allBottomSheetButtons[i + 1]).toHaveTextContent(location, {
+        exact: false
+      });
     });
 
     // change the location and check the bottom sheet is closed
     await userEvent.press(getByText("New York"));
-    act(() => jest.advanceTimersByTime(1500));
+    await waitFor(
+      () =>
+        expect(bottomSheetElement).toHaveAnimatedStyle({
+          transform: [{translateY: Dimensions.get("window").height}]
+        }),
+      {timeout: 2000}
+    );
     expect(getAllByText("New York")).toHaveLength(2);
-    expect(bottomSheetElement).toHaveAnimatedStyle({
-      transform: [{translateY: Dimensions.get("window").height}]
-    });
 
     // check the rush bottom tab is visible
     const rushTab = getByRole("button", {name: "Rush Shows"});

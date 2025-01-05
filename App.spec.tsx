@@ -7,7 +7,6 @@ import {fireEvent, render, waitFor} from "@testing-library/react-native";
 import nock from "nock";
 
 import App from "./App";
-import {TodayTixFieldset, TodayTixLocation} from "./types/shows";
 
 describe("App component", () => {
   it("re-fetches data when the app is brought into the foreground", async () => {
@@ -21,15 +20,6 @@ describe("App component", () => {
     nock(
       `${process.env.TODAY_TIX_API_BASE_URL}${process.env.TODAY_TIX_API_V2_ENDPOINT}`
     )
-      .get("/shows")
-      .query({
-        areAccessProgramsActive: 1,
-        fieldset: TodayTixFieldset.Summary,
-        limit: 10000,
-        location: TodayTixLocation.London
-      })
-      .twice()
-      .reply(200, {data: []})
       .get("/holds")
       .reply(200, {
         data: [

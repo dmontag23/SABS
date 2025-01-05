@@ -1,12 +1,14 @@
 import React from "react";
-import {ScrollView, StyleSheet} from "react-native";
+import {ScrollView, StyleSheet, View} from "react-native";
 
 import {useTheme} from "react-native-paper";
 
 import LocationItem from "./LocationItem";
 
-import useGetLocation from "../../hooks/asyncStorageHooks/useGetLocation";
-import {TodayTixLocation} from "../../types/shows";
+import LoadingSpinner from "../ui/LoadingSpinner";
+
+import useGetLocationId from "../../hooks/asyncStorageHooks/useGetLocationId";
+import useGetLocations from "../../hooks/todayTixHooks/useGetLocations";
 
 type LocationsContainerProps = {
   onItemPress?: () => void;
@@ -15,26 +17,35 @@ type LocationsContainerProps = {
 const LocationsContainer = ({onItemPress}: LocationsContainerProps) => {
   const {colors} = useTheme();
 
-  const {data: currentLocation} = useGetLocation();
+  const {
+    data: locations,
+    isPending: isLocationsLoading,
+    isSuccess: isLocationsSuccess
+  } = useGetLocations();
+  const {data: currentLocationId, isPending: isCurrentLocationIdLoading} =
+    useGetLocationId();
 
-  const locations = Object.keys(TodayTixLocation).filter(key =>
-    isNaN(Number(key))
-  ) as Array<keyof typeof TodayTixLocation>;
-
-  return (
+  return isLocationsLoading || isCurrentLocationIdLoading ? (
+    <View style={styles.loadingSpinnerContainer}>
+      <LoadingSpinner size="large" />
+    </View>
+  ) : (
     <ScrollView
       contentContainerStyle={[
         styles.locationsContainer,
         {backgroundColor: colors.surfaceVariant}
       ]}>
-      {locations.map((location, i) => (
-        <LocationItem
-          key={i}
-          location={location}
-          isChecked={currentLocation === TodayTixLocation[location]}
-          onPress={onItemPress}
-        />
-      ))}
+      {isLocationsSuccess &&
+        locations
+          .sort((a, b) => (a.name < b.name ? -1 : 1))
+          .map(location => (
+            <LocationItem
+              key={location.id}
+              location={location}
+              isChecked={currentLocationId === location.id}
+              onPress={onItemPress}
+            />
+          ))}
     </ScrollView>
   );
 };
@@ -42,6 +53,7 @@ const LocationsContainer = ({onItemPress}: LocationsContainerProps) => {
 export default LocationsContainer;
 
 const styles = StyleSheet.create({
+  loadingSpinnerContainer: {marginTop: 50},
   locationsContainer: {
     gap: 10,
     marginHorizontal: "10%",

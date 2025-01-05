@@ -6,7 +6,7 @@ import {useSafeAreaInsets} from "react-native-safe-area-context";
 import ShowCard, {isShowActive} from "../ShowCard";
 import LoadingSpinner from "../ui/LoadingSpinner";
 
-import useGetLocation from "../../hooks/asyncStorageHooks/useGetLocation";
+import useGetLocationId from "../../hooks/asyncStorageHooks/useGetLocationId";
 import useGetShows from "../../hooks/todayTixHooks/useGetShows";
 import useGetShowtimesWithRushAvailability from "../../hooks/todayTixHooks/useGetShowtimesWithRushAvailability";
 import useGrantRushAccessForAllShows from "../../hooks/useGrantRushAccessForAllShows";
@@ -29,16 +29,17 @@ const RushShowListScreen = ({
 }: RushShowsStackScreenProps<"RushShowList">) => {
   const {top, bottom} = useSafeAreaInsets();
 
-  const {data: location, isPending: isLoadingLocation} = useGetLocation();
+  const {data: currentLocationId, isPending: isLoadingLocation} =
+    useGetLocationId();
   const {data: rushAndLotteryShows, isPending: isLoadingRushAndLotteryShows} =
     useGetShows({
       requestParams: {
         areAccessProgramsActive: true,
         fieldset: TodayTixFieldset.Summary,
         limit: 10000,
-        location
+        locationId: currentLocationId
       },
-      enabled: Boolean(location)
+      enabled: Boolean(currentLocationId)
     });
 
   const rushShows = useMemo(

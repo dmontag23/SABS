@@ -7,7 +7,7 @@ import {render, waitFor} from "testing-library/extension";
 
 import RootNavigator from "../RootNavigator";
 
-import {TodayTixFieldset, TodayTixLocation} from "../../../types/shows";
+import {TodayTixFieldset} from "../../../types/shows";
 
 describe("The root navigator", () => {
   it("renders the splash screen when loading the access tokens", async () => {
@@ -20,7 +20,7 @@ describe("The root navigator", () => {
         areAccessProgramsActive: 1,
         fieldset: TodayTixFieldset.Summary,
         limit: 10000,
-        location: TodayTixLocation.London
+        location: 2
       })
       .reply(200, {
         code: 200,
@@ -47,7 +47,7 @@ describe("The root navigator", () => {
         areAccessProgramsActive: 1,
         fieldset: TodayTixFieldset.Summary,
         limit: 10000,
-        location: TodayTixLocation.London
+        location: 2
       })
       .delay(5000)
       .reply(200, {
@@ -73,7 +73,7 @@ describe("The root navigator", () => {
         areAccessProgramsActive: 1,
         fieldset: TodayTixFieldset.Summary,
         limit: 10000,
-        location: TodayTixLocation.London
+        location: 2
       })
       .reply(200, {
         code: 200,
@@ -109,7 +109,7 @@ describe("The root navigator", () => {
         areAccessProgramsActive: 1,
         fieldset: TodayTixFieldset.Summary,
         limit: 10000,
-        location: TodayTixLocation.London
+        location: 2
       })
       .reply(200, {
         code: 200,
@@ -140,7 +140,7 @@ describe("The root navigator", () => {
           areAccessProgramsActive: 1,
           fieldset: TodayTixFieldset.Summary,
           limit: 10000,
-          location: TodayTixLocation.London
+          location: 2
         })
         .reply(200, {
           code: 200,
@@ -160,42 +160,24 @@ describe("The root navigator", () => {
 
   it("renders the home screen with an access and refresh token", async () => {
     // setup
-    await AsyncStorage.setItem("customer-id", "customer-id");
     await AsyncStorage.setItem("access-token", "access-token");
     await AsyncStorage.setItem("refresh-token", "refresh-token");
-    await AsyncStorage.setItem(
-      "token-ttl",
-      new Date("01-01-2024").getTime().toString()
-    );
     nock(
       `${process.env.TODAY_TIX_API_BASE_URL}${process.env.TODAY_TIX_API_V2_ENDPOINT}`
     )
-      .get("/customers/me/rushGrants")
-      .reply(200, {data: [{showId: 1, showName: "SIX the Musical"}]})
       .get("/shows")
       .query({
         areAccessProgramsActive: 1,
         fieldset: TodayTixFieldset.Summary,
         limit: 10000,
-        location: TodayTixLocation.London
+        location: 2
       })
-      .reply(200, {
-        code: 200,
-        data: [
-          {
-            id: 1,
-            displayName: "SIX the Musical",
-            isRushActive: true
-          }
-        ]
-      });
+      .reply(200, {data: []});
 
     // render
-    const {getByText} = render(<RootNavigator />);
+    const {getAllByText} = render(<RootNavigator />);
 
     // assert
-    await waitFor(() => expect(getByText("SIX the Musical")).toBeVisible(), {
-      timeout: 3000
-    });
+    await waitFor(() => expect(getAllByText("Rush Shows")).toHaveLength(2));
   });
 });

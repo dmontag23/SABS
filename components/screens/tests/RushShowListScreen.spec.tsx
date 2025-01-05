@@ -18,7 +18,7 @@ import ShowDetailsScreen from "../../ShowDetails/ShowDetailsScreen";
 
 import {hadestownLightThemeColors} from "../../../themes";
 import {RushShowStackParamList} from "../../../types/navigation";
-import {TodayTixFieldset, TodayTixLocation} from "../../../types/shows";
+import {TodayTixFieldset} from "../../../types/shows";
 
 describe("Rush show list", () => {
   beforeEach(async () => {
@@ -26,7 +26,8 @@ describe("Rush show list", () => {
       ["access-token", "access-token"],
       ["refresh-token", "refresh-token"],
       ["token-ttl", new Date("2024-01-01").getTime().toString()],
-      ["customer-id", "customer-id"]
+      ["customer-id", "customer-id"],
+      ["location-id", "2"]
     ]);
   });
 
@@ -47,7 +48,7 @@ describe("Rush show list", () => {
         areAccessProgramsActive: 1,
         fieldset: TodayTixFieldset.Summary,
         limit: 10000,
-        location: TodayTixLocation.London
+        location: 2
       })
       .reply(200, {
         data: [
@@ -149,7 +150,7 @@ describe("Rush show list", () => {
         areAccessProgramsActive: 1,
         fieldset: TodayTixFieldset.Summary,
         limit: 10000,
-        location: TodayTixLocation.London
+        location: 2
       })
       .reply(200, {
         data: [
@@ -215,7 +216,7 @@ describe("Rush show list", () => {
         areAccessProgramsActive: 1,
         fieldset: TodayTixFieldset.Summary,
         limit: 10000,
-        location: TodayTixLocation.London
+        location: 2
       })
       .reply(200, {
         data: [
@@ -348,7 +349,7 @@ describe("Rush show list", () => {
         areAccessProgramsActive: 1,
         fieldset: TodayTixFieldset.Summary,
         limit: 10000,
-        location: TodayTixLocation.London
+        location: 2
       })
       .reply(200, {
         data: [
@@ -387,7 +388,7 @@ describe("Rush show list", () => {
         areAccessProgramsActive: 1,
         fieldset: TodayTixFieldset.Summary,
         limit: 10000,
-        location: TodayTixLocation.London
+        location: 2
       })
       .reply(200, {
         data: [
@@ -475,7 +476,7 @@ describe("Rush show list", () => {
         areAccessProgramsActive: 1,
         fieldset: TodayTixFieldset.Summary,
         limit: 10000,
-        location: TodayTixLocation.London
+        location: 2
       })
       .reply(200, {
         data: [

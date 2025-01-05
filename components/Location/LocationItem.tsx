@@ -4,29 +4,27 @@ import {StyleSheet, View} from "react-native";
 import {Button, Text} from "react-native-paper";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
-import {formatLocationName} from "./locationUtils";
-
-import useStoreLocation from "../../hooks/asyncStorageHooks/useStoreLocation";
-import {TodayTixLocation} from "../../types/shows";
+import useStoreLocationId from "../../hooks/asyncStorageHooks/useStoreLocationId";
+import {TodayTixLocation} from "../../types/locations";
 
 type LocationItemProps = {
-  location: keyof typeof TodayTixLocation;
+  location: TodayTixLocation;
   isChecked: boolean;
   onPress?: () => void;
 };
 
 const LocationItem = ({location, isChecked, onPress}: LocationItemProps) => {
-  const {mutate: storeLocation} = useStoreLocation();
+  const {mutate: storeLocationId} = useStoreLocationId();
 
   return (
     <Button
       onPress={() => {
-        storeLocation(TodayTixLocation[location]);
+        storeLocationId(location.id);
         onPress?.();
       }}
       labelStyle={styles.buttonLabel}>
       <View style={styles.labelContainer}>
-        <Text>{formatLocationName(location)}</Text>
+        <Text>{location.name}</Text>
         {isChecked && <MaterialCommunityIcons name="check" size={24} />}
       </View>
     </Button>

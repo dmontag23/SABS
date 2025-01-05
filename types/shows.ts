@@ -2,21 +2,6 @@ export enum TodayTixFieldset {
   Summary = "SHOW_SUMMARY"
 }
 
-export enum TodayTixLocation {
-  Adelaide = 95,
-  Brisbane = 19,
-  Chicago = 3,
-  London = 2,
-  LosAngelesAndOrangeCounty = 5,
-  Melbourne = 18,
-  NewYork = 1,
-  Perth = 93,
-  SanFrancisco = 4,
-  Sydney = 17,
-  WashingtonDC = 6,
-  OtherCities = 98
-}
-
 export enum AnchorPosition {
   Top = "TOP",
   Center = "CENTER"
@@ -170,13 +155,13 @@ export type TodayTixShow = {
   isLotteryActive?: boolean;
   isRushActive?: boolean;
   location?: Location;
-  locationId?: TodayTixLocation;
+  locationId?: number;
   locationSeoName?: string;
   lotteryBannerText?: string | null;
   lowPriceForLotteryTickets?: Money | null;
   lowPriceForRegularTickets?: Money;
   lowPriceForRushTickets?: Money | null;
-  marketableLocationIds?: TodayTixLocation[];
+  marketableLocationIds?: number[];
   maxDiscountPercentage?: number;
   name: string;
   numRatings?: number;
@@ -204,6 +189,6 @@ export type TodayTixShowsReqQueryParams = {
   areAccessProgramsActive?: boolean;
   fieldset?: TodayTixFieldset;
   limit?: number;
-  location?: TodayTixLocation;
+  location?: number;
   offset?: number;
 };

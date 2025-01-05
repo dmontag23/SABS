@@ -16,11 +16,7 @@ import HoldContext from "../../../store/hold-context";
 import {hadestownLightThemeColors} from "../../../themes";
 import {TodayTixHoldErrorCode, TodayTixHoldType} from "../../../types/holds";
 import {RushShowStackParamList} from "../../../types/navigation";
-import {
-  TodayTixFieldset,
-  TodayTixLocation,
-  TodayTixShow
-} from "../../../types/shows";
+import {TodayTixFieldset, TodayTixShow} from "../../../types/shows";
 import {TodayTixShowtime} from "../../../types/showtimes";
 
 describe("HoldConfirmationBottomSheet component", () => {
@@ -499,7 +495,7 @@ describe("HoldConfirmationBottomSheet component", () => {
 
   it("persists bottom sheet across screens", async () => {
     await AsyncStorage.setItem("customer-id", "customer-id");
-
+    await AsyncStorage.setItem("location-id", "2");
     nock(
       `${process.env.TODAY_TIX_API_BASE_URL}${process.env.TODAY_TIX_API_V2_ENDPOINT}`
     )
@@ -514,7 +510,7 @@ describe("HoldConfirmationBottomSheet component", () => {
         areAccessProgramsActive: 1,
         fieldset: TodayTixFieldset.Summary,
         limit: 10000,
-        location: TodayTixLocation.London
+        location: 2
       })
       .reply(200, {
         data: [{id: 1, displayName: "SIX the Musical", isRushActive: true}]

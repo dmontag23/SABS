@@ -5,31 +5,37 @@ import {List, Surface, Text} from "react-native-paper";
 
 import LocationHeader from "../Location/LocationHeader";
 import LocationsContainer from "../Location/LocationsContainer";
-import {formatLocationName} from "../Location/locationUtils";
 import BottomSheet from "../ui/BottomSheet";
+import LoadingSpinner from "../ui/LoadingSpinner";
 
-import useGetLocation from "../../hooks/asyncStorageHooks/useGetLocation";
-import {TodayTixLocation} from "../../types/shows";
+import useGetLocationId from "../../hooks/asyncStorageHooks/useGetLocationId";
+import useGetLocations from "../../hooks/todayTixHooks/useGetLocations";
+import {TodayTixLocation} from "../../types/locations";
 
-const createRightElement = (location: TodayTixLocation) => (
+const createRightElement = (currentLocation?: TodayTixLocation) => (
   <View style={styles.rightElement}>
-    <Text variant="bodyMedium">
-      {formatLocationName(
-        TodayTixLocation[location] as keyof typeof TodayTixLocation
-      )}
-    </Text>
+    {currentLocation ? (
+      <Text variant="bodyMedium">{currentLocation.name}</Text>
+    ) : (
+      <LoadingSpinner />
+    )}
     <List.Icon icon="chevron-right" />
   </View>
 );
 
 const SettingsScreen = () => {
-  const {data: location} = useGetLocation();
+  const {data: locations} = useGetLocations();
+  const {data: currentLocationId} = useGetLocationId();
 
   const [isLocationBottomSheetOpen, setIsLocationBottomSheetOpen] =
     useState(false);
 
   const handleLocationPress = () => setIsLocationBottomSheetOpen(true);
   const handleClose = () => setIsLocationBottomSheetOpen(false);
+
+  const currentLocation = (locations ?? []).find(
+    ({id}) => id === currentLocationId
+  );
 
   return (
     <>
@@ -41,7 +47,7 @@ const SettingsScreen = () => {
           <List.Item
             title="Location"
             onPress={handleLocationPress}
-            right={() => location && createRightElement(location)}
+            right={() => createRightElement(currentLocation)}
             style={[styles.itemSurface, styles.listItem]}
           />
         </Surface>

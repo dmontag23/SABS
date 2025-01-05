@@ -22,27 +22,8 @@ describe("Rush shows", () => {
     const closeButton = element(by.text("Close"));
     await expect(closeButton).toBeVisible();
 
-    const locations = [
-      "Adelaide",
-      "Brisbane",
-      "Chicago",
-      "London",
-      "Los Angeles And Orange County",
-      "Melbourne",
-      "New York",
-      "Perth",
-      "San Francisco",
-      "Sydney",
-      "Washington D.C.",
-      "Other Cities"
-    ];
-    for (const location of locations) {
-      if (location === "London") {
-        await expect(element(by.text(location)).atIndex(1)).toBeVisible();
-        continue;
-      }
-      await expect(element(by.text(location))).toBeVisible();
-    }
+    await expect(element(by.text("London")).atIndex(0)).toBeVisible();
+    await expect(element(by.text("New York"))).toBeVisible();
 
     // close and reopen the location bottom sheet
     await closeButton.tap();

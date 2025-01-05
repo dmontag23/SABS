@@ -19,11 +19,7 @@ import LoggedInBottomTabNavigator from "../screens/LoggedInBottomTabNavigator";
 import {systemTime} from "../../tests/integration/setup";
 import {TodayTixHoldErrorCode, TodayTixHoldType} from "../../types/holds";
 import {RushShowStackParamList} from "../../types/navigation";
-import {
-  TodayTixFieldset,
-  TodayTixLocation,
-  TodayTixShow
-} from "../../types/shows";
+import {TodayTixFieldset, TodayTixShow} from "../../types/shows";
 import {TodayTixShowtime} from "../../types/showtimes";
 
 describe("Holds", () => {
@@ -452,6 +448,7 @@ describe("Holds", () => {
   it("cancels a hold for a show that is yet not open and gets tickets for a new show", async () => {
     // setup
     await AsyncStorage.setItem("customer-id", "customer-id");
+    await AsyncStorage.setItem("location-id", "2");
     const show1TicketAvailabilityDate = new Date(2021, 4, 23, 0, 1);
     nock(
       `${process.env.TODAY_TIX_API_BASE_URL}${process.env.TODAY_TIX_API_V2_ENDPOINT}`
@@ -481,7 +478,7 @@ describe("Holds", () => {
         areAccessProgramsActive: 1,
         fieldset: TodayTixFieldset.Summary,
         limit: 10000,
-        location: TodayTixLocation.London
+        location: 2
       })
       .reply(200, {
         data: [

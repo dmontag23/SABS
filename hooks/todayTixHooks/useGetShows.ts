@@ -4,7 +4,6 @@ import {todayTixAPIv2} from "../../api/axiosConfig";
 import {TodayTixAPIv2ErrorResponse} from "../../types/base";
 import {
   TodayTixFieldset,
-  TodayTixLocation,
   TodayTixShow,
   TodayTixShowsReqQueryParams
 } from "../../types/shows";
@@ -13,14 +12,14 @@ const getShows = async (
   areAccessProgramsActive?: boolean,
   fieldset?: TodayTixFieldset,
   limit?: number,
-  location?: TodayTixLocation,
+  locationId?: number,
   offset?: number
 ) => {
   const queryParams = [
     areAccessProgramsActive && "areAccessProgramsActive=1",
     fieldset && `fieldset=${fieldset}`,
     limit && `limit=${limit}`,
-    location && `location=${location}`,
+    locationId && `location=${locationId}`,
     offset && `offset=${offset}`
   ]
     .filter(param => param)
@@ -33,7 +32,9 @@ const getShows = async (
 };
 
 type UseGetShowsProps = {
-  requestParams?: TodayTixShowsReqQueryParams;
+  requestParams?: Omit<TodayTixShowsReqQueryParams, "location"> & {
+    locationId?: number;
+  };
   enabled?: boolean;
 };
 
@@ -41,7 +42,7 @@ const useGetShows = ({
   requestParams = {},
   enabled = true
 }: UseGetShowsProps = {}) => {
-  const {areAccessProgramsActive, fieldset, limit, location, offset} =
+  const {areAccessProgramsActive, fieldset, limit, locationId, offset} =
     requestParams;
 
   return useQuery<TodayTixShow[], TodayTixAPIv2ErrorResponse>({
@@ -50,11 +51,11 @@ const useGetShows = ({
       areAccessProgramsActive,
       fieldset,
       limit,
-      location,
+      locationId,
       offset
     ],
     queryFn: () =>
-      getShows(areAccessProgramsActive, fieldset, limit, location, offset),
+      getShows(areAccessProgramsActive, fieldset, limit, locationId, offset),
     enabled
   });
 };

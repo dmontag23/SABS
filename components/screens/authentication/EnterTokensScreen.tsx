@@ -14,8 +14,6 @@ import {Button, Text, TextInput, useTheme} from "react-native-paper";
 import {useSafeAreaInsets} from "react-native-safe-area-context";
 import {z} from "zod";
 
-import LoadingSpinner from "../../ui/LoadingSpinner";
-
 import useStoreAuthTokens from "../../../hooks/asyncStorageHooks/useStoreAuthTokens";
 
 const VALIDATION_SCHEMA = z.object({
@@ -161,13 +159,9 @@ const EnterTokensScreen = () => {
         disabled={!isFormValid || isStoreTokensPending || isStoreTokensSuccess}
         onPress={handleSubmit(onSubmit)}
         theme={{roundness: 1}}>
-        {isStoreTokensPending ? (
-          <LoadingSpinner />
-        ) : (
-          <Text variant="titleLarge" style={{color: colors.onPrimary}}>
-            Login
-          </Text>
-        )}
+        <Text variant="titleLarge" style={{color: colors.onPrimary}}>
+          Login
+        </Text>
       </Button>
     </KeyboardAvoidingView>
   );

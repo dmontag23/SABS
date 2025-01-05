@@ -6,7 +6,6 @@ import {
   Platform,
   ProductType,
   RewardType,
-  TodayTixLocation,
   TodayTixShow,
   TodayTixShowsReqQueryParams
 } from "../types/shows";
@@ -295,7 +294,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
       },
       isLotteryActive: true,
       isRushActive: false,
-      locationId: TodayTixLocation.London,
+      locationId: 2,
       locationSeoName: "london",
       lotteryBannerText: "£10 Lottery tickets",
       lowPriceForLotteryTickets: {
@@ -311,7 +310,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
         value: 23.0
       },
       lowPriceForRushTickets: null,
-      marketableLocationIds: [TodayTixLocation.London],
+      marketableLocationIds: [2],
       maxDiscountPercentage: 0,
       name: "Hamilton",
       posterImageUrl:
@@ -469,7 +468,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
       },
       isLotteryActive: false,
       isRushActive: true,
-      locationId: TodayTixLocation.London,
+      locationId: 2,
       locationSeoName: "london",
       lotteryBannerText: null,
       lowPriceForLotteryTickets: null,
@@ -485,7 +484,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
         displayRounded: "£25",
         value: 25
       },
-      marketableLocationIds: [TodayTixLocation.London],
+      marketableLocationIds: [2],
       maxDiscountPercentage: 0,
       name: "SIX",
       posterImageUrl:
@@ -633,7 +632,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
       },
       isLotteryActive: false,
       isRushActive: true,
-      locationId: TodayTixLocation.London,
+      locationId: 2,
       locationSeoName: "london",
       lotteryBannerText: null,
       lowPriceForLotteryTickets: null,
@@ -649,7 +648,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
         displayRounded: "£29.50",
         value: 29.5
       },
-      marketableLocationIds: [TodayTixLocation.London],
+      marketableLocationIds: [2],
       maxDiscountPercentage: 0,
       name: "Wicked",
       posterImageUrl:
@@ -825,7 +824,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
       },
       isLotteryActive: false,
       isRushActive: true,
-      locationId: TodayTixLocation.London,
+      locationId: 2,
       locationSeoName: "london",
       lotteryBannerText: null,
       lowPriceForLotteryTickets: null,
@@ -841,7 +840,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
         display: "£25",
         displayRounded: "£25"
       },
-      marketableLocationIds: [TodayTixLocation.London],
+      marketableLocationIds: [2],
       maxDiscountPercentage: 50,
       name: "Guys & Dolls",
       posterImageUrl:
@@ -976,7 +975,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
       },
       isLotteryActive: false,
       isRushActive: true,
-      locationId: TodayTixLocation.London,
+      locationId: 2,
       locationSeoName: "london",
       lotteryBannerText: null,
       lowPriceForLotteryTickets: null,
@@ -992,7 +991,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
         displayRounded: "£25",
         value: 25
       },
-      marketableLocationIds: [TodayTixLocation.London],
+      marketableLocationIds: [2],
       maxDiscountPercentage: 0,
       name: "Tina - The Tina Turner Musical",
       posterImageUrl:
@@ -1144,7 +1143,7 @@ const getRushAndLotteryShowsNewYork200Response: TodayTixAPIv2Response<
       },
       isLotteryActive: false,
       isRushActive: true,
-      locationId: TodayTixLocation.NewYork,
+      locationId: 1,
       lowPriceForRegularTickets: {
         value: 112,
         currency: "USD",
@@ -1157,7 +1156,7 @@ const getRushAndLotteryShowsNewYork200Response: TodayTixAPIv2Response<
         display: "$50",
         displayRounded: "$50"
       },
-      marketableLocationIds: [TodayTixLocation.NewYork],
+      marketableLocationIds: [1],
       name: "Little Shop of Horrors",
       productType: ProductType.Show,
       ratingCount: 9111,
@@ -1177,7 +1176,7 @@ const getShowsRoute = (router: Router) =>
   >("/shows", (req, res) => {
     if (req.query.areAccessProgramsActive) {
       res.json(
-        Number(req.query.location) === TodayTixLocation.NewYork
+        Number(req.query.location) === 1
           ? getRushAndLotteryShowsNewYork200Response
           : getRushAndLotteryShowsLondon200Response
       );
