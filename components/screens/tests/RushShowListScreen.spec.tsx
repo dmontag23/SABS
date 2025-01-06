@@ -505,16 +505,16 @@ describe("Rush show list", () => {
     );
 
     await waitFor(() => expect(getByText("SIX the Musical")).toBeVisible());
-    const showCard = getByLabelText("Show card");
-
-    expect(showCard).toHaveTextContent("SIX the Musical", {exact: false});
-    expect(showCard).toHaveTextContent("Tickets: 6", {exact: false});
     await waitFor(() =>
       expect(getByLabelText("Show card")).not.toHaveTextContent(
         "Rush is not unlocked for this show.",
         {exact: false}
       )
     );
+
+    const showCard = getByLabelText("Show card");
+    expect(showCard).toHaveTextContent("SIX the Musical", {exact: false});
+    expect(showCard).toHaveTextContent("Tickets: 6", {exact: false});
     expect(queryByLabelText("Inactive card")).toBeNull();
   });
 });
