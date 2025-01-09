@@ -6017,6 +6017,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"expo-font@npm:^13.0.2":
+  version: 13.0.2
+  resolution: "expo-font@npm:13.0.2"
+  dependencies:
+    fontfaceobserver: ^2.1.0
+  peerDependencies:
+    expo: "*"
+    react: "*"
+  checksum: 936d792fac6adc8cd36d9ecf2f17f2aa5f461dd05707a2a68208fb04c32f6e5c99073eddbf198e4bc517c5bece6306bf6c4cc0a3e1a5bea39a7907184ca9ccbf
+  languageName: node
+  linkType: hard
+
 "exponential-backoff@npm:^3.1.1":
   version: 3.1.1
   resolution: "exponential-backoff@npm:3.1.1"
@@ -6229,6 +6241,13 @@ __metadata:
     debug:
       optional: true
   checksum: 859e2bacc7a54506f2bf9aacb10d165df78c8c1b0ceb8023f966621b233717dab56e8d08baadc3ad3b9db58af290413d585c999694b7c146aaf2616340c3d2a6
+  languageName: node
+  linkType: hard
+
+"fontfaceobserver@npm:^2.1.0":
+  version: 2.3.0
+  resolution: "fontfaceobserver@npm:2.3.0"
+  checksum: 5f14715974203b9d68f299f93a7623afd9d5701572d683e861cdbb7514573ac556f56e9b5d07d2d534e01aed19a3b0bbe568e735e0e5494cbea913fc3f12b856
   languageName: node
   linkType: hard
 
@@ -9643,19 +9662,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-paper@npm:^5.12.5":
-  version: 5.12.5
-  resolution: "react-native-paper@npm:5.12.5"
+"react-native-paper@npm:^5.13.0":
+  version: 5.13.0
+  resolution: "react-native-paper@npm:5.13.0"
   dependencies:
     "@callstack/react-theme-provider": ^3.0.9
     color: ^3.1.2
+    expo-font: ^13.0.2
     use-latest-callback: ^0.1.5
   peerDependencies:
     react: "*"
     react-native: "*"
     react-native-safe-area-context: "*"
     react-native-vector-icons: "*"
-  checksum: 35ce56e0bb19c46ce85adc47a504527b7ec455d1a15f3ace0d6fd438abd51b1fe30e1b44351950e16d6376ddbc18ecc94b558e267767d0a9fd886a5f66a4c322
+  checksum: 4b0be9cc3c7bb69b87fafec9afacba05277af6951cca0188514094406fc553c5c0e7cf5d5db63aab37199b88aa07dd56da1479aeb20556e5496484b3d0c8cf08
   languageName: node
   linkType: hard
 
@@ -10200,7 +10220,7 @@ __metadata:
     react-native-dotenv: ^3.4.10
     react-native-gesture-handler: ^2.21.2
     react-native-logs: ^5.3.0
-    react-native-paper: ^5.12.5
+    react-native-paper: ^5.13.0
     react-native-reanimated: ^3.16.6
     react-native-safe-area-context: ^5.1.0
     react-native-screens: ^4.4.0
