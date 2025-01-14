@@ -3348,10 +3348,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/react-native@npm:^13.0.0":
-  version: 13.0.0
-  resolution: "@testing-library/react-native@npm:13.0.0"
+"@testing-library/react-native@npm:^13.0.1":
+  version: 13.0.1
+  resolution: "@testing-library/react-native@npm:13.0.1"
   dependencies:
+    chalk: ^4.1.2
     jest-matcher-utils: ^29.7.0
     pretty-format: ^29.7.0
     redent: ^3.0.0
@@ -3363,7 +3364,7 @@ __metadata:
   peerDependenciesMeta:
     jest:
       optional: true
-  checksum: e49f25ed7c615d34324af8c342ee47dd85f4d6b5bea33a52510962dc4aa9c3d6d71709dbc57d422de0a69afa7521739b3d4050d376d261a89bdf49faf923621d
+  checksum: ee608cd4b255cbc1df84bf75f1ca8d8cd7dcc5813301f08642cb2d5fe8c189b8eca6fe85b74dbfa54d0ec2628321cb4890ac7a0ff288aa8ff74cb71b24bc819a
   languageName: node
   linkType: hard
 
@@ -10179,7 +10180,7 @@ __metadata:
     "@react-navigation/stack": ^7.1.1
     "@sentry/react-native": ^6.5.0
     "@tanstack/react-query": ^5.64.1
-    "@testing-library/react-native": ^13.0.0
+    "@testing-library/react-native": ^13.0.1
     "@trivago/prettier-plugin-sort-imports": ^5.2.1
     "@types/react": ^18.2.6
     "@types/react-native-vector-icons": ^6.4.18
