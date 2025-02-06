@@ -1242,7 +1242,7 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - react-native-safe-area-context (5.1.0):
+  - react-native-safe-area-context (5.2.0):
     - React-Core
   - React-nativeconfig (0.76.1)
   - React-NativeModulesApple (0.76.1):
@@ -1513,7 +1513,7 @@ PODS:
     - React-utils (= 0.76.1)
   - RNCAsyncStorage (1.24.0):
     - React-Core
-  - RNGestureHandler (2.22.1):
+  - RNGestureHandler (2.23.0):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1621,7 +1621,7 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - RNScreens (4.5.0):
+  - RNScreens (4.6.0):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1643,7 +1643,7 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - RNSentry (6.5.0):
+  - RNSentry (6.6.0):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1664,11 +1664,11 @@ PODS:
     - ReactCodegen
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
-    - Sentry/HybridSDK (= 8.43.0)
+    - Sentry/HybridSDK (= 8.44.0)
     - Yoga
   - RNSVG (15.11.1):
     - React-Core
-  - Sentry/HybridSDK (8.43.0)
+  - Sentry/HybridSDK (8.44.0)
   - SocketRocket (0.7.1)
   - Yoga (0.0.0)
 
@@ -1930,7 +1930,7 @@ SPEC CHECKSUMS:
   React-logger: 97c9dafae1f1a638001a9d1d0e93d431f2f9cb7b
   React-Mapbuffer: 3146a13424f9fec2ea1f1462d49d566e4d69b732
   React-microtasksnativemodule: 8fa0a3d8542f6ae7712deebe0802ee17a623718b
-  react-native-safe-area-context: 04803a01f39f31cc6605a5531280b477b48f8a88
+  react-native-safe-area-context: 849d7df29ecb2a7155c769c0b76849ba952c2aa3
   React-nativeconfig: 93fe8c85a8c40820c57814e30f3e44b94c995a7b
   React-NativeModulesApple: b3e076fd0d7b73417fe1e8c8b26e3c57ae9b74aa
   React-perflogger: 1c55bcd3c392137cbaf0d21d8bb87ce9a0cebb15
@@ -1959,12 +1959,12 @@ SPEC CHECKSUMS:
   ReactCodegen: 865bafc5c17ec2181620ced1a32c39c38ab2951d
   ReactCommon: 422e364463f33e336fc4db196aeb50fd801d90d6
   RNCAsyncStorage: ec53e44dc3e75b44aa2a9f37618a49c3bc080a7a
-  RNGestureHandler: f62e64d9e5b74159b0a64af0cc01663db4d3e5e7
+  RNGestureHandler: b03ae9d1ee403a71cead5b6ab74317453cf6080a
   RNReanimated: 849c4bfc1a185b123ca9a89f2a98d679b3d79b4e
-  RNScreens: b51f1a8be0dd7bb470b757f6cca8ba878acb2000
-  RNSentry: e1a16a23ada7d12686dff2f1eeaf55a08738585c
+  RNScreens: d682e5fff3175487730bf2aa308fbf0898b69410
+  RNSentry: 0d36e3836c2380ed8407d47bb1aa70a4cef6f200
   RNSVG: 3271d86d99e0ff3bc1c6cb74f894bab06a261969
-  Sentry: 532b281a53b1b45a523fd592f608956fb36e577c
+  Sentry: 0f9bc9adfc0b960e7f3bb5ec67e9a3d8193f3bdb
   SocketRocket: d4aabe649be1e368d1318fdf28a022d714d65748
   Yoga: db69236006b8b1c6d55ab453390c882306cbf219
 
