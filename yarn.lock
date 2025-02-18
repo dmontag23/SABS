@@ -2129,12 +2129,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hookform/resolvers@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "@hookform/resolvers@npm:4.0.0"
+"@hookform/resolvers@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "@hookform/resolvers@npm:4.1.0"
+  dependencies:
+    caniuse-lite: ^1.0.30001698
   peerDependencies:
     react-hook-form: ^7.0.0
-  checksum: e7b64511f2cc097f0716bb04d400c6d20b54cb75493452cebe5cd596da5730d03087384fceac3613c70eb2ed886c24e7a95865b02c3118dde74f1afdcb6ebb77
+  checksum: ea5520383edc837b742afa8a0fb49f950d0d577ecb2559d5a1584d7f2013075e8722ba14e6de111abfa98c4555cbd86e8fcf6f89ec8187470fffe08dd55f392c
   languageName: node
   linkType: hard
 
@@ -4621,6 +4623,13 @@ __metadata:
   version: 1.0.30001667
   resolution: "caniuse-lite@npm:1.0.30001667"
   checksum: f3c6a40c3e4115c6e5fb46c47884d903191285d29ec8a8b092546efbc9cdedcbd7183cce72dd3cab7dfc16c4d5b2745892876b3d6dda75d4cba49f9389239aa9
+  languageName: node
+  linkType: hard
+
+"caniuse-lite@npm:^1.0.30001698":
+  version: 1.0.30001700
+  resolution: "caniuse-lite@npm:1.0.30001700"
+  checksum: 0e5e1c8648efeae1a2bcf371c872a4e41d9508d58b47133558f78b99c3d58c4b6ce7688068ea872deffbfc7c3c2a117e756fc48e1de7ae6c5540f3c3a4441c7a
   languageName: node
   linkType: hard
 
@@ -10232,7 +10241,7 @@ __metadata:
     "@babel/core": ^7.25.2
     "@babel/preset-env": ^7.25.3
     "@babel/runtime": ^7.25.0
-    "@hookform/resolvers": ^4.0.0
+    "@hookform/resolvers": ^4.1.0
     "@react-native-async-storage/async-storage": ^1.24.0
     "@react-native-community/cli": 15.0.0
     "@react-native-community/cli-platform-android": 15.0.0
