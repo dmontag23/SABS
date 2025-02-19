@@ -9768,16 +9768,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-screens@npm:^4.6.0":
-  version: 4.6.0
-  resolution: "react-native-screens@npm:4.6.0"
+"react-native-screens@npm:^4.8.0":
+  version: 4.8.0
+  resolution: "react-native-screens@npm:4.8.0"
   dependencies:
     react-freeze: ^1.0.0
     warn-once: ^0.1.0
   peerDependencies:
     react: "*"
     react-native: "*"
-  checksum: 9bb769165954e3be8aea76a4ee85d3dacd45358df994eed0b1979235d37c16d0900186c7f358e25f9dffad454c578ada44620b2828416fd7fe98a78a2eef562e
+  checksum: fcc52ed02adb8ea41d07f7c269696279107a3c991b720aecec0ec2a272557a541d119963d63c45b24dd6a00d6f284b688705f55e79d7f44d8583a2299376ab21
   languageName: node
   linkType: hard
 
@@ -10279,7 +10279,7 @@ __metadata:
     react-native-paper: ^5.13.1
     react-native-reanimated: ^3.16.7
     react-native-safe-area-context: ^5.2.0
-    react-native-screens: ^4.6.0
+    react-native-screens: ^4.8.0
     react-native-svg: ^15.11.1
     react-native-vector-icons: ^10.2.0
     react-test-renderer: 18.3.1
