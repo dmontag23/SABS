@@ -3392,14 +3392,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/react-query@npm:^5.66.5":
-  version: 5.66.5
-  resolution: "@tanstack/react-query@npm:5.66.5"
+"@tanstack/react-query@npm:^5.66.7":
+  version: 5.66.7
+  resolution: "@tanstack/react-query@npm:5.66.7"
   dependencies:
     "@tanstack/query-core": 5.66.4
   peerDependencies:
     react: ^18 || ^19
-  checksum: 8a1a905fbb4286632b988aa5ca7ac520f9812d4af2f666019ed9b4338506428103b85225616fed242e606c3558d8f71a12481d123f76d19a192f34bba231999e
+  checksum: e3dfbbd887bf91574b01c3dde960fba22a7b1ffe68a591e73f41ea7ffcc72c276d717b16c76727f60e55e81e1377b0e0af9457952671360b9496c0433332cebd
   languageName: node
   linkType: hard
 
@@ -10255,7 +10255,7 @@ __metadata:
     "@react-navigation/native": ^7.0.14
     "@react-navigation/stack": ^7.1.1
     "@sentry/react-native": ^6.7.0
-    "@tanstack/react-query": ^5.66.5
+    "@tanstack/react-query": ^5.66.7
     "@testing-library/react-native": ^13.0.1
     "@trivago/prettier-plugin-sort-imports": ^5.2.2
     "@types/react": ^18.2.6
