@@ -2129,14 +2129,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hookform/resolvers@npm:^4.1.0":
-  version: 4.1.0
-  resolution: "@hookform/resolvers@npm:4.1.0"
+"@hookform/resolvers@npm:^4.1.2":
+  version: 4.1.2
+  resolution: "@hookform/resolvers@npm:4.1.2"
   dependencies:
-    caniuse-lite: ^1.0.30001698
+    "@standard-schema/utils": ^0.3.0
   peerDependencies:
     react-hook-form: ^7.0.0
-  checksum: ea5520383edc837b742afa8a0fb49f950d0d577ecb2559d5a1584d7f2013075e8722ba14e6de111abfa98c4555cbd86e8fcf6f89ec8187470fffe08dd55f392c
+  checksum: a944c933ec6ab3c9e0ac7db23202a3774082f3144f6bdfbe31999d0cb943c0fb7f73cbb2d92c546595cafa87706ecd4d6a61e1a6aae71c823e321b70afb195f4
   languageName: node
   linkType: hard
 
@@ -3385,6 +3385,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@standard-schema/utils@npm:^0.3.0":
+  version: 0.3.0
+  resolution: "@standard-schema/utils@npm:0.3.0"
+  checksum: 7084f875d322792f2e0a5904009434c8374b9345b09ba89828b68fd56fa3c2b366d35bf340d9e8c72736ef01793c2f70d350c372ed79845dc3566c58d34b4b51
+  languageName: node
+  linkType: hard
+
 "@tanstack/query-core@npm:5.66.4":
   version: 5.66.4
   resolution: "@tanstack/query-core@npm:5.66.4"
@@ -4623,13 +4630,6 @@ __metadata:
   version: 1.0.30001667
   resolution: "caniuse-lite@npm:1.0.30001667"
   checksum: f3c6a40c3e4115c6e5fb46c47884d903191285d29ec8a8b092546efbc9cdedcbd7183cce72dd3cab7dfc16c4d5b2745892876b3d6dda75d4cba49f9389239aa9
-  languageName: node
-  linkType: hard
-
-"caniuse-lite@npm:^1.0.30001698":
-  version: 1.0.30001700
-  resolution: "caniuse-lite@npm:1.0.30001700"
-  checksum: 0e5e1c8648efeae1a2bcf371c872a4e41d9508d58b47133558f78b99c3d58c4b6ce7688068ea872deffbfc7c3c2a117e756fc48e1de7ae6c5540f3c3a4441c7a
   languageName: node
   linkType: hard
 
@@ -10241,7 +10241,7 @@ __metadata:
     "@babel/core": ^7.25.2
     "@babel/preset-env": ^7.25.3
     "@babel/runtime": ^7.25.0
-    "@hookform/resolvers": ^4.1.0
+    "@hookform/resolvers": ^4.1.2
     "@react-native-async-storage/async-storage": ^1.24.0
     "@react-native-community/cli": 15.0.0
     "@react-native-community/cli-platform-android": 15.0.0
