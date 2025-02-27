@@ -5287,9 +5287,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"detox@npm:20.33.0":
-  version: 20.33.0
-  resolution: "detox@npm:20.33.0"
+"detox@npm:20.34.3":
+  version: 20.34.3
+  resolution: "detox@npm:20.34.3"
   dependencies:
     ajv: ^8.6.3
     bunyan: ^1.8.12
@@ -5334,7 +5334,7 @@ __metadata:
       optional: true
   bin:
     detox: local-cli/cli.js
-  checksum: 14a9a230f02c6e7e535e96223a9aacbef05c06c20887eac3d1f1df1aca612a1c529f94e265064df39d1c98ee700fbc2a26ebdd18affea5e60f17a527ae42d6e0
+  checksum: 3e0445c344bc28386df4da9edea3103449a34576c6e35a99bf22535029b6f64125ff572fc6522bbdb92b2c8ae5bce5c01175c0e5a1a5c8b89a97212da1783816
   languageName: node
   linkType: hard
 
@@ -10274,7 +10274,7 @@ __metadata:
     "@types/react-test-renderer": ^18.0.0
     axios: ^1.8.1
     babel-jest: ^29.6.3
-    detox: 20.33.0
+    detox: 20.34.3
     eslint: ^8.19.0
     eslint-config-prettier: ^10.0.2
     eslint-plugin-prettier: ^5.2.3
