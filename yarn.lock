@@ -3410,13 +3410,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/react-native@npm:^13.0.1":
-  version: 13.0.1
-  resolution: "@testing-library/react-native@npm:13.0.1"
+"@testing-library/react-native@npm:^13.1.0":
+  version: 13.1.0
+  resolution: "@testing-library/react-native@npm:13.1.0"
   dependencies:
     chalk: ^4.1.2
     jest-matcher-utils: ^29.7.0
     pretty-format: ^29.7.0
+    react-native-gesture-handler: ^2.23.1
     redent: ^3.0.0
   peerDependencies:
     jest: ">=29.0.0"
@@ -3426,7 +3427,7 @@ __metadata:
   peerDependenciesMeta:
     jest:
       optional: true
-  checksum: ee608cd4b255cbc1df84bf75f1ca8d8cd7dcc5813301f08642cb2d5fe8c189b8eca6fe85b74dbfa54d0ec2628321cb4890ac7a0ff288aa8ff74cb71b24bc819a
+  checksum: 0adb9bdbb4637f92cf1861d5ebd8bc9091310446fba4035a7d6a8902216659fbfec8d8944a6f088f97f8dd6b67d8cf1752c8482f6eabf6973fa62ff1c6baa5a5
   languageName: node
   linkType: hard
 
@@ -9698,7 +9699,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-gesture-handler@npm:^2.24.0":
+"react-native-gesture-handler@npm:^2.23.1, react-native-gesture-handler@npm:^2.24.0":
   version: 2.24.0
   resolution: "react-native-gesture-handler@npm:2.24.0"
   dependencies:
@@ -10267,7 +10268,7 @@ __metadata:
     "@react-navigation/stack": ^7.1.1
     "@sentry/react-native": ^6.9.0
     "@tanstack/react-query": ^5.66.9
-    "@testing-library/react-native": ^13.0.1
+    "@testing-library/react-native": ^13.1.0
     "@trivago/prettier-plugin-sort-imports": ^5.2.2
     "@types/react": ^18.2.6
     "@types/react-native-vector-icons": ^6.4.18
