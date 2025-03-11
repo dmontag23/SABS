@@ -3392,21 +3392,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/query-core@npm:5.67.2":
-  version: 5.67.2
-  resolution: "@tanstack/query-core@npm:5.67.2"
-  checksum: ef0caa99bb71cefc9f217e467e207ea69bf3f5733b883024d7f434a16bb66eafaaa31770021e1d5f4c8ed97a6e4795af41c864289746e10cb7ceadbb8afa432d
+"@tanstack/query-core@npm:5.67.3":
+  version: 5.67.3
+  resolution: "@tanstack/query-core@npm:5.67.3"
+  checksum: e458550919b99de13234b0e684403ba655e3a794e1d9b345d48a272b903380e4b1bfa2594a92a3dc0183cf8ea14bc43e4a8e7ed31b324703c4188b0fb3348506
   languageName: node
   linkType: hard
 
-"@tanstack/react-query@npm:^5.67.2":
-  version: 5.67.2
-  resolution: "@tanstack/react-query@npm:5.67.2"
+"@tanstack/react-query@npm:^5.67.3":
+  version: 5.67.3
+  resolution: "@tanstack/react-query@npm:5.67.3"
   dependencies:
-    "@tanstack/query-core": 5.67.2
+    "@tanstack/query-core": 5.67.3
   peerDependencies:
     react: ^18 || ^19
-  checksum: b6b6077790a48960c2d1e3b8602541d8405785e38b1ace2f702c3c614265d6f0632266bc655ab71f1cafd3a8f9e10b4ce5e4410fca7baafe80c7803eaa9868db
+  checksum: 848415c41f34ce0ee1d9c6375b91ca6098f1bd9162ad5888385c8bff614a8d93c6602c4ad464c4c8c6c902b548edfa47173d5587e7dd055e5f67b4a8d954af14
   languageName: node
   linkType: hard
 
@@ -10266,7 +10266,7 @@ __metadata:
     "@react-navigation/native": ^7.0.15
     "@react-navigation/stack": ^7.1.2
     "@sentry/react-native": ^6.9.0
-    "@tanstack/react-query": ^5.67.2
+    "@tanstack/react-query": ^5.67.3
     "@testing-library/react-native": ^13.2.0
     "@trivago/prettier-plugin-sort-imports": ^5.2.2
     "@types/react": ^18.2.6
