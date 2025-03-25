@@ -3472,9 +3472,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-navigation/core@npm:^7.6.1":
-  version: 7.6.1
-  resolution: "@react-navigation/core@npm:7.6.1"
+"@react-navigation/core@npm:^7.7.0":
+  version: 7.7.0
+  resolution: "@react-navigation/core@npm:7.7.0"
   dependencies:
     "@react-navigation/routers": ^7.3.1
     escape-string-regexp: ^4.0.0
@@ -3485,7 +3485,7 @@ __metadata:
     use-sync-external-store: ^1.2.2
   peerDependencies:
     react: ">= 18.2.0"
-  checksum: edf2a3bd95b306365b47dca1ce63e44212f59db2e0839ae9eb93a515b348389b33ed5d3824a1039ecd24303830259ac66a7ddcb26c49793a0b0900f3062df057
+  checksum: 80d52a6b780480002d805d914e5f5dc72b12aed3eacb40ad24e20820724bedb191dfc852224e8282ebf3cae99b6b15902d5d3219c2a17bf8df812a95709243a5
   languageName: node
   linkType: hard
 
@@ -3525,11 +3525,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-navigation/native@npm:^7.0.18":
-  version: 7.0.18
-  resolution: "@react-navigation/native@npm:7.0.18"
+"@react-navigation/native@npm:^7.0.19":
+  version: 7.0.19
+  resolution: "@react-navigation/native@npm:7.0.19"
   dependencies:
-    "@react-navigation/core": ^7.6.1
+    "@react-navigation/core": ^7.7.0
     escape-string-regexp: ^4.0.0
     fast-deep-equal: ^3.1.3
     nanoid: 3.3.8
@@ -3537,7 +3537,7 @@ __metadata:
   peerDependencies:
     react: ">= 18.2.0"
     react-native: "*"
-  checksum: d2eddfee8529f3ef2508fe643afdf0f5e2c956f57ec6fdba4aef8d677bffbf752ff837005c75f32628eab15f7aced61c9175ce019ace5625e0899006d6f89359
+  checksum: 77680a18001670799ec1e9f677d563f0c6dac82cb09e683d61755ee41c6f7ce9ef823df7afe359c9293d1c90f89e2057c6198a20b5d29b1b0af4786e565569bf
   languageName: node
   linkType: hard
 
@@ -11076,7 +11076,7 @@ __metadata:
     "@react-native/typescript-config": 0.76.1
     "@react-navigation/bottom-tabs": ^7.3.1
     "@react-navigation/elements": ^2.3.1
-    "@react-navigation/native": ^7.0.18
+    "@react-navigation/native": ^7.0.19
     "@react-navigation/stack": ^7.2.3
     "@sentry/react-native": ^6.9.1
     "@tanstack/react-query": ^5.69.0
