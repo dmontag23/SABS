@@ -3507,6 +3507,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-navigation/elements@npm:^2.3.1":
+  version: 2.3.1
+  resolution: "@react-navigation/elements@npm:2.3.1"
+  dependencies:
+    color: ^4.2.3
+  peerDependencies:
+    "@react-native-masked-view/masked-view": ">= 0.2.0"
+    "@react-navigation/native": ^7.0.19
+    react: ">= 18.2.0"
+    react-native: "*"
+    react-native-safe-area-context: ">= 4.0.0"
+  peerDependenciesMeta:
+    "@react-native-masked-view/masked-view":
+      optional: true
+  checksum: 8fc410788f44e0e38af5b30020583dc1edb3d435c45425468604e904f939cf0ecbb48d8575a5c9fa0cfa53263bb0e0882cdce2ccce42e737d52202743b621f60
+  languageName: node
+  linkType: hard
+
 "@react-navigation/native@npm:^7.0.18":
   version: 7.0.18
   resolution: "@react-navigation/native@npm:7.0.18"
@@ -3532,20 +3550,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-navigation/stack@npm:^7.2.1":
-  version: 7.2.1
-  resolution: "@react-navigation/stack@npm:7.2.1"
+"@react-navigation/stack@npm:^7.2.3":
+  version: 7.2.3
+  resolution: "@react-navigation/stack@npm:7.2.3"
   dependencies:
-    "@react-navigation/elements": ^2.2.8
+    "@react-navigation/elements": ^2.3.1
     color: ^4.2.3
   peerDependencies:
-    "@react-navigation/native": ^7.0.17
+    "@react-navigation/native": ^7.0.19
     react: ">= 18.2.0"
     react-native: "*"
     react-native-gesture-handler: ">= 2.0.0"
     react-native-safe-area-context: ">= 4.0.0"
     react-native-screens: ">= 4.0.0"
-  checksum: 3e76b5fd6f89cb62f6d48d447c8f93aa58501ad0d4445f7c44c6c21ad528a028b12118eeb1c1ba545890998f6930fa1f7ae05f644c0fb2adc2e809647b7f3d50
+  checksum: 785b204666d81cbd96a90433ca35f26a4723eb263544dce2de1bb99d61592e72427b6e6249eb1057a5cfbea98290ae826065aeed4cbc2d7fd6cb3d695632ecb8
   languageName: node
   linkType: hard
 
@@ -11059,7 +11077,7 @@ __metadata:
     "@react-navigation/bottom-tabs": ^7.3.1
     "@react-navigation/elements": ^2.2.8
     "@react-navigation/native": ^7.0.18
-    "@react-navigation/stack": ^7.2.1
+    "@react-navigation/stack": ^7.2.3
     "@sentry/react-native": ^6.9.1
     "@tanstack/react-query": ^5.69.0
     "@testing-library/react-native": ^13.2.0
