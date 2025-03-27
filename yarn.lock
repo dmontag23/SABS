@@ -5904,9 +5904,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"detox@npm:20.36.1":
-  version: 20.36.1
-  resolution: "detox@npm:20.36.1"
+"detox@npm:20.36.2":
+  version: 20.36.2
+  resolution: "detox@npm:20.36.2"
   dependencies:
     "@wix-pilot/core": ^3.1.4
     "@wix-pilot/detox": ^1.0.8
@@ -5952,7 +5952,7 @@ __metadata:
       optional: true
   bin:
     detox: local-cli/cli.js
-  checksum: e0bb2f78d66cd815c451b9b34567d0a597013bd747ecbc1bcfd63656b7a6154548dbbe01d5b226c071c5e485df60a842ac9a75b585ca99af0fc81be505319cab
+  checksum: b687fa0c28cbec05aa411f0b6d7325211bf0d27110f1ebf2780b1d934475f6adbfd123f8e612665cb03428213ba081897b0b9dfb16a07788eef23a6b5dc4294d
   languageName: node
   linkType: hard
 
@@ -11356,7 +11356,7 @@ __metadata:
     "@types/react-test-renderer": ^18.0.0
     axios: ^1.8.4
     babel-jest: ^29.6.3
-    detox: 20.36.1
+    detox: 20.36.2
     eslint: ^8.19.0
     eslint-config-prettier: ^10.1.1
     eslint-plugin-prettier: ^5.2.5
