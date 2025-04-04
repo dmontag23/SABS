@@ -15,7 +15,7 @@
     "typecheck": "npx tsc"
   },
   "dependencies": {
-    "@hookform/resolvers": "^4.1.3",
+    "@hookform/resolvers": "^5.0.1",
     "@react-native-async-storage/async-storage": "^1.24.0",
     "@react-navigation/bottom-tabs": "^7.3.4",
     "@react-navigation/elements": "^2.3.6",
