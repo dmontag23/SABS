@@ -3938,11 +3938,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wix-pilot/core@npm:^3.1.6":
-  version: 3.1.6
-  resolution: "@wix-pilot/core@npm:3.1.6"
+"@wix-pilot/core@npm:^3.2.2":
+  version: 3.2.2
+  resolution: "@wix-pilot/core@npm:3.2.2"
   dependencies:
-    ora: ^5.4.1
     pngjs: ^7.0.0
     winston: ^3.17.0
   peerDependencies:
@@ -3950,7 +3949,7 @@ __metadata:
   peerDependenciesMeta:
     expect:
       optional: true
-  checksum: 161d12b77070e8268e856c3e317020a7523c81a9f4d6b6b0112183dc7dd3a9f5133f6cc5768215919e1f6ee1e98d259ca27cd07db2f12f4904338430dc224f52
+  checksum: 1189bbd0666105d82c8c32345a9176b1e4f09ec4935b664dcb6c85ed7a6e39830749ddd83f32acfc75297e1b62464b80bcc69b374b510374aaf9757c3f6f19bd
   languageName: node
   linkType: hard
 
@@ -5450,11 +5449,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"detox@npm:20.36.3":
-  version: 20.36.3
-  resolution: "detox@npm:20.36.3"
+"detox@npm:20.36.4":
+  version: 20.36.4
+  resolution: "detox@npm:20.36.4"
   dependencies:
-    "@wix-pilot/core": ^3.1.6
+    "@wix-pilot/core": ^3.2.2
     "@wix-pilot/detox": ^1.0.11
     ajv: ^8.6.3
     bunyan: ^1.8.12
@@ -5498,7 +5497,7 @@ __metadata:
       optional: true
   bin:
     detox: local-cli/cli.js
-  checksum: bcddcb05064f4796e063d08486e0a1fd540dc82270e88397cbd9e4337126451fb13f3c3c37a4f2974fc185393f05856b518a546e24bf61e2f08ef12b2146deaf
+  checksum: 8d1673e4aa9588588423cc1bc484194c93f3c4443deec79abb2dbf65dfd1ee375e546fcd117f1c54a2034feefb88b968754beb646ea325e9c8b968b90e5e8ae8
   languageName: node
   linkType: hard
 
@@ -10655,7 +10654,7 @@ __metadata:
     "@types/react-test-renderer": ^18.0.0
     axios: ^1.8.4
     babel-jest: ^29.6.3
-    detox: 20.36.3
+    detox: 20.36.4
     eslint: ^8.19.0
     eslint-config-prettier: ^10.1.1
     eslint-plugin-prettier: ^5.2.6
