@@ -2587,9 +2587,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mswjs/interceptors@npm:^0.38.1":
-  version: 0.38.1
-  resolution: "@mswjs/interceptors@npm:0.38.1"
+"@mswjs/interceptors@npm:^0.38.5":
+  version: 0.38.5
+  resolution: "@mswjs/interceptors@npm:0.38.5"
   dependencies:
     "@open-draft/deferred-promise": ^2.2.0
     "@open-draft/logger": ^0.3.0
@@ -2598,7 +2598,7 @@ __metadata:
     jsdom: ^26.0.0
     outvariant: ^1.4.3
     strict-event-emitter: ^0.5.1
-  checksum: a393dbe0044c026553a18eed25b6412308412bcd3f80c7376b917e8cafb4e69e249b365cff469d823402336778522e4fefac3c0581ac8925aaf1f1263544cf8a
+  checksum: e60b1c7b677d7d76b6ceb1d4fdd4aa46f2717804b6f6fde5aab531c245599fca17aeb4e3b985a22effbc12e1e353fc26c40805609a87a83ec4eda7d325eea3a9
   languageName: node
   linkType: hard
 
@@ -9241,14 +9241,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nock@npm:^14.0.3":
-  version: 14.0.3
-  resolution: "nock@npm:14.0.3"
+"nock@npm:^14.0.4":
+  version: 14.0.4
+  resolution: "nock@npm:14.0.4"
   dependencies:
-    "@mswjs/interceptors": ^0.38.1
+    "@mswjs/interceptors": ^0.38.5
     json-stringify-safe: ^5.0.1
     propagate: ^2.0.0
-  checksum: cb9541b56bf913f7eeb82486141435d75b73b035eb78c0a571643c40e0ea83a1e384822b2979f1dfefa69f71e2ccb16c22b02bc41dcfe7aa120d7804a3a6d139
+  checksum: 60425c4b7a706775459479bef488c770ce93bc982cbdb5ea88473cdd4612f40633221bd678c9224d59b0efbfbcda39c282c52f756dbebbe5d5219e8415cd97ff
   languageName: node
   linkType: hard
 
@@ -10641,7 +10641,7 @@ __metadata:
     eslint-config-prettier: ^10.1.2
     eslint-plugin-prettier: ^5.2.6
     jest: ^29.6.3
-    nock: ^14.0.3
+    nock: ^14.0.4
     prettier: 3.2.5
     react: 18.3.1
     react-hook-form: ^7.55.0
