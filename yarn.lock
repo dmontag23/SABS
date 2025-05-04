@@ -2726,7 +2726,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sentry/react-native@npm:^6.11.0":
+"@sentry/react-native@npm:^6.13.0":
   version: 6.13.0
   resolution: "@sentry/react-native@npm:6.13.0"
   dependencies:
@@ -9638,7 +9638,7 @@ __metadata:
     "@react-navigation/elements": "npm:^2.4.0"
     "@react-navigation/native": "npm:^7.1.6"
     "@react-navigation/stack": "npm:^7.3.0"
-    "@sentry/react-native": "npm:^6.11.0"
+    "@sentry/react-native": "npm:^6.13.0"
     "@tanstack/react-query": "npm:^5.75.1"
     "@testing-library/react-native": "npm:^13.2.0"
     "@trivago/prettier-plugin-sort-imports": "npm:^5.2.2"
