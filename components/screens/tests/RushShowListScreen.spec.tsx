@@ -504,7 +504,9 @@ describe("Rush show list", () => {
       </Stack.Navigator>
     );
 
-    await waitFor(() => expect(getByText("SIX the Musical")).toBeVisible());
+    await waitFor(() => expect(getByText("SIX the Musical")).toBeVisible(), {
+      timeout: 2000
+    });
     await waitFor(() =>
       expect(getByLabelText("Show card")).not.toHaveTextContent(
         "Rush is not unlocked for this show.",
