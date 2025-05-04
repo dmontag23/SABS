@@ -5,7 +5,6 @@
   see https://testing-library.com/docs/react-testing-library/setup/#configuring-jest-with-test-utils */
   "compilerOptions": {
     "paths": {
-      "react": ["./node_modules/@types/react"],
       "testing-library/extension": ["./tests/integration/utils"]
     }
   }

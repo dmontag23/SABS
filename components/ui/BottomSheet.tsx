@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from "react";
+import React, {JSX, useCallback, useEffect, useState} from "react";
 import {StyleSheet, View, useWindowDimensions} from "react-native";
 
 import {Gesture, GestureDetector} from "react-native-gesture-handler";

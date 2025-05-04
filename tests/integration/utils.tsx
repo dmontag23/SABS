@@ -1,4 +1,4 @@
-import React, {ReactElement, ReactNode} from "react";
+import React, {JSX, ReactElement, ReactNode} from "react";
 import {PropsWithChildren} from "react";
 
 import {NavigationContainer} from "@react-navigation/native";
