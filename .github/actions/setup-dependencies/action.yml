@@ -3,15 +3,13 @@ description: "Setup Node.js, install dependencies, and configure environment"
 runs:
   using: "composite"
   steps:
+    - name: Enable Corepack
+      run: corepack enable
     - name: Setup node and cache yarn
       uses: actions/setup-node@v4
       with:
         node-version: 22.x
         cache: yarn
-    - name: Enable Corepack and yarn
-      run: |
-        corepack enable
-        yarn set version 4.9.1
       shell: bash
     - name: Install dependencies
       run: yarn
