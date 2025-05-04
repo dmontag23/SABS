@@ -8,6 +8,11 @@ runs:
       with:
         node-version: 22.x
         cache: yarn
+    - name: Enable Corepack and yarn
+      run: |
+        corepack enable
+        yarn set version 4.9.1
+      shell: bash
     - name: Install dependencies
       run: yarn
       shell: bash
