@@ -10,7 +10,6 @@ runs:
       with:
         node-version: 22.x
         cache: yarn
-      shell: bash
     - name: Install dependencies
       run: yarn
       shell: bash
