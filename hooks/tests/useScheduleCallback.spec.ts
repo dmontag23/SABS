@@ -1,4 +1,3 @@
-import {describe, expect, it, jest} from "@jest/globals";
 import {act, renderHook} from "testing-library/extension";
 
 import useScheduleCallback from "../useScheduleCallback";

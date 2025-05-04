@@ -1,4 +1,3 @@
-import {describe, expect, it} from "@jest/globals";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {AxiosHeaders} from "axios";
 import nock from "nock";

@@ -1,7 +1,6 @@
 import React from "react";
 import {Dimensions} from "react-native";
 
-import {describe, expect, it} from "@jest/globals";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import nock from "nock";
 import {

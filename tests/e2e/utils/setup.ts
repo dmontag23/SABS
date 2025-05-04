@@ -1,5 +1,3 @@
-import {beforeEach} from "@jest/globals";
-
 import {clearAllMockServerData} from "./utils";
 
 beforeEach(async () => {

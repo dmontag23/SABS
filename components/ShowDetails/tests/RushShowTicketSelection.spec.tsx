@@ -1,6 +1,5 @@
 import React from "react";
 
-import {describe, expect, it} from "@jest/globals";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {render, userEvent} from "testing-library/extension";
 

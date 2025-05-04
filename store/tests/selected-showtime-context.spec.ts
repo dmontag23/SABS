@@ -1,6 +1,5 @@
 import {useContext} from "react";
 
-import {describe, expect, it} from "@jest/globals";
 import {renderHook} from "testing-library/extension";
 
 import SelectedShowtimeContext from "../selected-showtime-context";

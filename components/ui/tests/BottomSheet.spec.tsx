@@ -1,7 +1,6 @@
 import React from "react";
 import {Dimensions} from "react-native";
 
-import {describe, expect, it, jest} from "@jest/globals";
 import {PanGesture} from "react-native-gesture-handler";
 import {
   fireGestureHandler,

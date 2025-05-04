@@ -1,6 +1,5 @@
 import React from "react";
 
-import {describe, expect, it, jest} from "@jest/globals";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {createStackNavigator} from "@react-navigation/stack";
 import {render, userEvent, waitFor} from "testing-library/extension";

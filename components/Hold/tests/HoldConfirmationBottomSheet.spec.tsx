@@ -1,7 +1,6 @@
 import React from "react";
 import {Linking} from "react-native";
 
-import {describe, expect, it, jest} from "@jest/globals";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {createStackNavigator} from "@react-navigation/stack";
 import nock from "nock";

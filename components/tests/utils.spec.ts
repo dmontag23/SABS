@@ -1,5 +1,3 @@
-import {describe, expect, it} from "@jest/globals";
-
 import {pluralize} from "../utils";
 
 describe("pluralize", () => {

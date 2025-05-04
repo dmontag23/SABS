@@ -1,4 +1,3 @@
-import {beforeEach, describe, it} from "@jest/globals";
 import axios from "axios";
 import {expect} from "detox";
 

@@ -1,4 +1,3 @@
-import {describe, it} from "@jest/globals";
 import {expect} from "detox";
 
 describe("Authentication flow", () => {

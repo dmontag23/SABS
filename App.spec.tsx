@@ -1,7 +1,6 @@
 import React from "react";
 import {AppState} from "react-native";
 
-import {describe, expect, it, jest} from "@jest/globals";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {fireEvent, render, waitFor} from "@testing-library/react-native";
 import nock from "nock";

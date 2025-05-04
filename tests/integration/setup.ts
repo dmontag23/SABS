@@ -1,4 +1,3 @@
-import {afterEach, beforeEach, jest} from "@jest/globals";
 /* The following import and mock are needed for AsyncStorage.
 See https://react-native-async-storage.github.io/async-storage/docs/advanced/jest */
 import MockAsyncStorage from "@react-native-async-storage/async-storage/jest/async-storage-mock";
