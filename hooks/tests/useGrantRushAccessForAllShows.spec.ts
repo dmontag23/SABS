@@ -31,9 +31,11 @@ describe("useGrantRushAccessForAllShows hook", () => {
     await waitFor(() => expect(result.current.isGrantingAccess).toBe(false), {
       timeout: 5000
     });
-    expect(result.current.rushGrants).toEqual([
-      {showId: 1, showName: "SIX the Musical"}
-    ]);
+    await waitFor(() =>
+      expect(result.current.rushGrants).toEqual([
+        {showId: 1, showName: "SIX the Musical"}
+      ])
+    );
   });
 
   it("does not grant rush access to shows if no customer id exists", async () => {

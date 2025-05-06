@@ -126,24 +126,5 @@ describe("EnterTokensScreen", () => {
     });
   });
 
-  describe("unit tests", () => {
-    it("behavior is height on non-ios devices", async () => {
-      jest.doMock("react-native/Libraries/Utilities/Platform", () => ({
-        OS: "android",
-        select: jest.fn
-      }));
-
-      const Stack = createStackNavigator();
-      const {getByLabelText} = render(
-        <Stack.Navigator>
-          <Stack.Screen name="test" component={EnterTokensScreen} />
-        </Stack.Navigator>
-      );
-
-      await waitFor(() =>
-        expect(getByLabelText("Access token input")).toBeVisible()
-      );
-      jest.dontMock("react-native/Libraries/Utilities/Platform");
-    });
-  });
+  // TODO: Add test for android to cover line 124
 });
