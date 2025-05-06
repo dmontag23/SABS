@@ -2861,14 +2861,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/react-query@npm:^5.75.1":
-  version: 5.75.1
-  resolution: "@tanstack/react-query@npm:5.75.1"
+"@tanstack/react-query@npm:^5.75.2":
+  version: 5.75.2
+  resolution: "@tanstack/react-query@npm:5.75.2"
   dependencies:
     "@tanstack/query-core": "npm:5.75.0"
   peerDependencies:
     react: ^18 || ^19
-  checksum: 10/0131145e7b9fc0e0eea8fe42cab1cd62ec6772946358540d16c783e0ed6db6b880859d0c3e4449cac66bdf9d36d493d067b10e884dc132de54d0d61222e0c75c
+  checksum: 10/c0c3ab5ac003b47a7754f2453a21a9682abd6b9ac5e8bc9447c02b0bafd87e54fe670f3bf7f4db543ca7d6e5ac0b76a21540151ccf59771b7168007b2ac0b20b
   languageName: node
   linkType: hard
 
@@ -9657,7 +9657,7 @@ __metadata:
     "@react-navigation/native": "npm:^7.1.6"
     "@react-navigation/stack": "npm:^7.3.0"
     "@sentry/react-native": "npm:^6.13.1"
-    "@tanstack/react-query": "npm:^5.75.1"
+    "@tanstack/react-query": "npm:^5.75.2"
     "@testing-library/react-native": "npm:^13.2.0"
     "@trivago/prettier-plugin-sort-imports": "npm:^5.2.2"
     "@types/jest": "npm:^29.5.13"
