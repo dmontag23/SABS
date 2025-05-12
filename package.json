@@ -18,7 +18,7 @@
     "@hookform/resolvers": "^5.0.1",
     "@react-native-async-storage/async-storage": "^1.24.0",
     "@react-navigation/bottom-tabs": "^7.3.12",
-    "@react-navigation/elements": "^2.4.1",
+    "@react-navigation/elements": "^2.4.2",
     "@react-navigation/native": "^7.1.8",
     "@react-navigation/stack": "^7.3.1",
     "@sentry/react-native": "^6.13.1",
