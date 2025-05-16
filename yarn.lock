@@ -2472,19 +2472,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-navigation/bottom-tabs@npm:^7.3.12":
-  version: 7.3.12
-  resolution: "@react-navigation/bottom-tabs@npm:7.3.12"
+"@react-navigation/bottom-tabs@npm:^7.3.13":
+  version: 7.3.13
+  resolution: "@react-navigation/bottom-tabs@npm:7.3.13"
   dependencies:
-    "@react-navigation/elements": "npm:^2.4.1"
+    "@react-navigation/elements": "npm:^2.4.2"
     color: "npm:^4.2.3"
   peerDependencies:
-    "@react-navigation/native": ^7.1.8
+    "@react-navigation/native": ^7.1.9
     react: ">= 18.2.0"
     react-native: "*"
     react-native-safe-area-context: ">= 4.0.0"
     react-native-screens: ">= 4.0.0"
-  checksum: 10/5313745b4291516a231cbfefe3c63daab7c7a6d7a4bd0c408f9603f8dda79f887943b754aaed94de74a62e6d6a702d2af9582cf044f14e3658eac945981fa7e4
+  checksum: 10/e3ce1779bfc7c635710eff837ad37c407a8c57825072709400c12ca1b5c0490d70b08709e6fbb1a45d8075261c24b204d5e7953ff709eb8a1c00e0d7a24a9225
   languageName: node
   linkType: hard
 
@@ -2502,24 +2502,6 @@ __metadata:
   peerDependencies:
     react: ">= 18.2.0"
   checksum: 10/8611aee122935e87936329104da1e978970c81edb9e1a26e27e2fe25338b8a5b675172ce5507aed7a0cddfe885e8d775d9970e5c4fd94229492a3c11918ca6b7
-  languageName: node
-  linkType: hard
-
-"@react-navigation/elements@npm:^2.4.1":
-  version: 2.4.1
-  resolution: "@react-navigation/elements@npm:2.4.1"
-  dependencies:
-    color: "npm:^4.2.3"
-  peerDependencies:
-    "@react-native-masked-view/masked-view": ">= 0.2.0"
-    "@react-navigation/native": ^7.1.8
-    react: ">= 18.2.0"
-    react-native: "*"
-    react-native-safe-area-context: ">= 4.0.0"
-  peerDependenciesMeta:
-    "@react-native-masked-view/masked-view":
-      optional: true
-  checksum: 10/b6a00fa7dbe5c2245ac910f7b42049effc8a4349b7b23942bb11aea19534ddbc8e1ddcfdb85b7632e7800ac844ce63d9a07c85603cf9ee4f00b75f947e5f437f
   languageName: node
   linkType: hard
 
@@ -9652,7 +9634,7 @@ __metadata:
     "@react-native/eslint-config": "npm:0.79.2"
     "@react-native/metro-config": "npm:0.79.2"
     "@react-native/typescript-config": "npm:0.79.2"
-    "@react-navigation/bottom-tabs": "npm:^7.3.12"
+    "@react-navigation/bottom-tabs": "npm:^7.3.13"
     "@react-navigation/elements": "npm:^2.4.2"
     "@react-navigation/native": "npm:^7.1.8"
     "@react-navigation/stack": "npm:^7.3.2"
