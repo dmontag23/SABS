@@ -3286,9 +3286,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wix-pilot/core@npm:^3.2.2":
-  version: 3.2.6
-  resolution: "@wix-pilot/core@npm:3.2.6"
+"@wix-pilot/core@npm:^3.3.0":
+  version: 3.3.1
+  resolution: "@wix-pilot/core@npm:3.3.1"
   dependencies:
     chalk: "npm:^4.1.0"
     pngjs: "npm:^7.0.0"
@@ -3298,7 +3298,7 @@ __metadata:
   peerDependenciesMeta:
     expect:
       optional: true
-  checksum: 10/4ac5a3affd87ba332830d897ac04c8bfe2c93ac826e2797c02bd0ec3b0131737a18aa5924ede5d54ae5e3d24795ed75c9dff87bd39262a01e12d73397301a594
+  checksum: 10/3b38f00b0e81ab94b69631ef7f65e869b22f81e9c902298014432ca33fb599c8d9abd93dad436c22b49fca133b86e83a0a416150c187d5dde7b20b300f7f38f3
   languageName: node
   linkType: hard
 
@@ -4736,11 +4736,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"detox@npm:20.38.0":
-  version: 20.38.0
-  resolution: "detox@npm:20.38.0"
+"detox@npm:20.39.0":
+  version: 20.39.0
+  resolution: "detox@npm:20.39.0"
   dependencies:
-    "@wix-pilot/core": "npm:^3.2.2"
+    "@wix-pilot/core": "npm:^3.3.0"
     "@wix-pilot/detox": "npm:^1.0.11"
     ajv: "npm:^8.6.3"
     bunyan: "npm:^1.8.12"
@@ -4784,7 +4784,7 @@ __metadata:
       optional: true
   bin:
     detox: local-cli/cli.js
-  checksum: 10/eea22b2a5eee12fcc1350845317f8ee32275bd8e0b08b6447f322af655cdf4ecace6e211f349c2aa8afb90e26b85a15b4eb98657e9c8a7990197d343857eaeef
+  checksum: 10/2315874a1bd90695bcfefdc58bb402f6b692e0e077c015c7cff7fdd4c3e49e630fa9fd04ef88287e121a03f6863fcd1d3b5f9abca8392b0c4070d64f586eca8f
   languageName: node
   linkType: hard
 
@@ -9647,7 +9647,7 @@ __metadata:
     "@types/react-native-vector-icons": "npm:^6.4.18"
     "@types/react-test-renderer": "npm:^19.0.0"
     axios: "npm:^1.9.0"
-    detox: "npm:20.38.0"
+    detox: "npm:20.39.0"
     eslint: "npm:^8.19.0"
     eslint-config-prettier: "npm:^10.1.5"
     eslint-plugin-prettier: "npm:^5.4.0"
