@@ -9178,9 +9178,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-reanimated@npm:^3.17.5":
-  version: 3.17.5
-  resolution: "react-native-reanimated@npm:3.17.5"
+"react-native-reanimated@npm:^3.18.0":
+  version: 3.18.0
+  resolution: "react-native-reanimated@npm:3.18.0"
   dependencies:
     "@babel/plugin-transform-arrow-functions": "npm:^7.0.0-0"
     "@babel/plugin-transform-class-properties": "npm:^7.0.0-0"
@@ -9198,7 +9198,7 @@ __metadata:
     "@babel/core": ^7.0.0-0
     react: "*"
     react-native: "*"
-  checksum: 10/63501d8ac0cb2039e60ac93bc779e946af267bb55f95cf53ed538bcf9bfca030fa5d84d5c9343dcbc4d8df0d5e9d7c58ca5647d43b17f8399dec11d812da11fc
+  checksum: 10/aec34f97393b3189fc727cee306481af0f6f47309589f04d4ece89cae69144131f896ddc226f786c2261c828091481494cbd6c442d1152461da83334fc643def
   languageName: node
   linkType: hard
 
@@ -9662,7 +9662,7 @@ __metadata:
     react-native-gesture-handler: "npm:^2.25.0"
     react-native-logs: "npm:^5.3.0"
     react-native-paper: "npm:^5.14.5"
-    react-native-reanimated: "npm:^3.17.5"
+    react-native-reanimated: "npm:^3.18.0"
     react-native-safe-area-context: "npm:^5.4.1"
     react-native-screens: "npm:^4.11.1"
     react-native-svg: "npm:^15.12.0"
