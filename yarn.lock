@@ -9654,7 +9654,7 @@ __metadata:
     "@react-native/metro-config": "npm:0.79.2"
     "@react-native/typescript-config": "npm:0.79.2"
     "@react-navigation/bottom-tabs": "npm:^7.3.14"
-    "@react-navigation/elements": "npm:^2.4.2"
+    "@react-navigation/elements": "npm:^2.4.3"
     "@react-navigation/native": "npm:^7.1.9"
     "@react-navigation/stack": "npm:^7.3.2"
     "@sentry/react-native": "npm:^6.14.0"
