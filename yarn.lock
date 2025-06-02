@@ -2505,24 +2505,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-navigation/elements@npm:^2.4.2":
-  version: 2.4.2
-  resolution: "@react-navigation/elements@npm:2.4.2"
-  dependencies:
-    color: "npm:^4.2.3"
-  peerDependencies:
-    "@react-native-masked-view/masked-view": ">= 0.2.0"
-    "@react-navigation/native": ^7.1.9
-    react: ">= 18.2.0"
-    react-native: "*"
-    react-native-safe-area-context: ">= 4.0.0"
-  peerDependenciesMeta:
-    "@react-native-masked-view/masked-view":
-      optional: true
-  checksum: 10/831a8f1cc334def0355a9f764b89a979907bff413f4bf07c4349443347ae159f16ef85f0d55223795f3e1db9020544c8d8b37e0346f08b38803120117ff8d187
-  languageName: node
-  linkType: hard
-
 "@react-navigation/elements@npm:^2.4.3":
   version: 2.4.3
   resolution: "@react-navigation/elements@npm:2.4.3"
@@ -2566,20 +2548,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-navigation/stack@npm:^7.3.2":
-  version: 7.3.2
-  resolution: "@react-navigation/stack@npm:7.3.2"
+"@react-navigation/stack@npm:^7.3.3":
+  version: 7.3.3
+  resolution: "@react-navigation/stack@npm:7.3.3"
   dependencies:
-    "@react-navigation/elements": "npm:^2.4.2"
+    "@react-navigation/elements": "npm:^2.4.3"
     color: "npm:^4.2.3"
   peerDependencies:
-    "@react-navigation/native": ^7.1.9
+    "@react-navigation/native": ^7.1.10
     react: ">= 18.2.0"
     react-native: "*"
     react-native-gesture-handler: ">= 2.0.0"
     react-native-safe-area-context: ">= 4.0.0"
     react-native-screens: ">= 4.0.0"
-  checksum: 10/9a075259b1e50473f706a1e42da7cb0e47d6a249655acc203ce6db65dac38cb73368b55df069b737c00dcfd0cf5eb65f6f6937283301da6059f53334420c5031
+  checksum: 10/ef1ff8ea4989d63b80170532409e4a850acca70d4bcfa718b77ae36f79dac89d47177cc58bcf6ce87e1922b04275dd2513cf94fd377edeb4d0c3ebb6f71cbc84
   languageName: node
   linkType: hard
 
@@ -9656,7 +9638,7 @@ __metadata:
     "@react-navigation/bottom-tabs": "npm:^7.3.14"
     "@react-navigation/elements": "npm:^2.4.3"
     "@react-navigation/native": "npm:^7.1.10"
-    "@react-navigation/stack": "npm:^7.3.2"
+    "@react-navigation/stack": "npm:^7.3.3"
     "@sentry/react-native": "npm:^6.14.0"
     "@tanstack/react-query": "npm:^5.79.2"
     "@testing-library/react-native": "npm:^13.2.0"

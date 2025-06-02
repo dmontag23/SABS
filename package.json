@@ -20,7 +20,7 @@
     "@react-navigation/bottom-tabs": "^7.3.14",
     "@react-navigation/elements": "^2.4.3",
     "@react-navigation/native": "^7.1.10",
-    "@react-navigation/stack": "^7.3.2",
+    "@react-navigation/stack": "^7.3.3",
     "@sentry/react-native": "^6.14.0",
     "@tanstack/react-query": "^5.79.2",
     "axios": "^1.9.0",
