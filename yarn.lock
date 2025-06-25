@@ -2505,26 +2505,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-navigation/elements@npm:^2.4.6":
-  version: 2.4.6
-  resolution: "@react-navigation/elements@npm:2.4.6"
-  dependencies:
-    color: "npm:^4.2.3"
-    use-latest-callback: "npm:^0.2.4"
-    use-sync-external-store: "npm:^1.5.0"
-  peerDependencies:
-    "@react-native-masked-view/masked-view": ">= 0.2.0"
-    "@react-navigation/native": ^7.1.13
-    react: ">= 18.2.0"
-    react-native: "*"
-    react-native-safe-area-context: ">= 4.0.0"
-  peerDependenciesMeta:
-    "@react-native-masked-view/masked-view":
-      optional: true
-  checksum: 10/da131f7a9b8819c7ce69ec0e74463750c3c733fba3c3ac594e6fd2de8dfe1381adc4604598008160747aeb93cf9f0477f12a53ff58a0b146868d5fc50faf2cf0
-  languageName: node
-  linkType: hard
-
 "@react-navigation/elements@npm:^2.5.1":
   version: 2.5.1
   resolution: "@react-navigation/elements@npm:2.5.1"
@@ -2542,6 +2522,26 @@ __metadata:
     "@react-native-masked-view/masked-view":
       optional: true
   checksum: 10/008b6db98cf94b3ef218668bf1fb5777c560337e6f5cbf9e34cd8001199fdef00665f7e702e7932393a5450b741138e3601c4a723042c6201fb402474a1d96b7
+  languageName: node
+  linkType: hard
+
+"@react-navigation/elements@npm:^2.5.2":
+  version: 2.5.2
+  resolution: "@react-navigation/elements@npm:2.5.2"
+  dependencies:
+    color: "npm:^4.2.3"
+    use-latest-callback: "npm:^0.2.4"
+    use-sync-external-store: "npm:^1.5.0"
+  peerDependencies:
+    "@react-native-masked-view/masked-view": ">= 0.2.0"
+    "@react-navigation/native": ^7.1.14
+    react: ">= 18.2.0"
+    react-native: "*"
+    react-native-safe-area-context: ">= 4.0.0"
+  peerDependenciesMeta:
+    "@react-native-masked-view/masked-view":
+      optional: true
+  checksum: 10/f6c472f82487661aee6f41e82e453cb80fea85e3956d94e58aa45b7c3f5ae04e4862df400439d0a58e6c54f8e091d7e08c547a153165d881fa8c74fd3b63d6a3
   languageName: node
   linkType: hard
 
@@ -9658,7 +9658,7 @@ __metadata:
     "@react-native/metro-config": "npm:0.79.2"
     "@react-native/typescript-config": "npm:0.79.2"
     "@react-navigation/bottom-tabs": "npm:^7.4.1"
-    "@react-navigation/elements": "npm:^2.4.6"
+    "@react-navigation/elements": "npm:^2.5.2"
     "@react-navigation/native": "npm:^7.1.14"
     "@react-navigation/stack": "npm:^7.4.1"
     "@sentry/react-native": "npm:^6.15.1"
