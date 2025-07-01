@@ -9204,13 +9204,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-safe-area-context@npm:^5.5.0":
-  version: 5.5.0
-  resolution: "react-native-safe-area-context@npm:5.5.0"
+"react-native-safe-area-context@npm:^5.5.1":
+  version: 5.5.1
+  resolution: "react-native-safe-area-context@npm:5.5.1"
   peerDependencies:
     react: "*"
     react-native: "*"
-  checksum: 10/6b8ea4199ac9e5136091c8193e78e1d4d0539d2831c4ae6d51b2f0e31766184bfee09a5b57fec83bbb208349aec590f5abfaeae27a08090ab5f67dd37e28c7a9
+  checksum: 10/eebb52854549172c1c639908f687ccde0e74261df977eae2b9998643f57eb5c28928934842840c418f628a6d0af783dfb72b4dbce742a2e199ae76a4f7fdc0d4
   languageName: node
   linkType: hard
 
@@ -9665,7 +9665,7 @@ __metadata:
     react-native-logs: "npm:^5.3.0"
     react-native-paper: "npm:^5.14.5"
     react-native-reanimated: "npm:^3.18.0"
-    react-native-safe-area-context: "npm:^5.5.0"
+    react-native-safe-area-context: "npm:^5.5.1"
     react-native-screens: "npm:^4.11.1"
     react-native-svg: "npm:^15.12.0"
     react-native-vector-icons: "npm:^10.2.0"
