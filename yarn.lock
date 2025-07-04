@@ -9671,7 +9671,7 @@ __metadata:
     react-native-vector-icons: "npm:^10.2.0"
     react-test-renderer: "npm:19.0.0"
     typescript: "npm:5.0.4"
-    zod: "npm:^3.25.69"
+    zod: "npm:^3.25.74"
   languageName: unknown
   linkType: soft
 
@@ -11285,9 +11285,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zod@npm:^3.25.69":
-  version: 3.25.69
-  resolution: "zod@npm:3.25.69"
-  checksum: 10/12d8119b6b9aa22e4ff25a46c04e3ecd3a6a9363349488077b2dd1cfb32ae8602afe70388e2767258db96023644f8552387783b6d5d80e125eb2fe209faefe75
+"zod@npm:^3.25.74":
+  version: 3.25.74
+  resolution: "zod@npm:3.25.74"
+  checksum: 10/2db3efb6ed77996c880486bf966419e3d611808a5972f7f7da599b01f7af55393facee5f6dba1be626a052985b8dbc3c151efc3ee62832067b788946aebd0364
   languageName: node
   linkType: hard
