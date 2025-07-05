@@ -2728,9 +2728,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sentry/react-native@npm:^6.16.0":
-  version: 6.16.0
-  resolution: "@sentry/react-native@npm:6.16.0"
+"@sentry/react-native@npm:^6.16.1":
+  version: 6.16.1
+  resolution: "@sentry/react-native@npm:6.16.1"
   dependencies:
     "@sentry/babel-plugin-component-annotate": "npm:3.5.0"
     "@sentry/browser": "npm:8.54.0"
@@ -2748,7 +2748,7 @@ __metadata:
       optional: true
   bin:
     sentry-expo-upload-sourcemaps: scripts/expo-upload-sourcemaps.js
-  checksum: 10/c53fe757535ce96e750547972665dd4596fd31f958725d8950a8d91eee633ce8068bf0b4d0c93740399d25a248784d7b0aafd0aa3ca368c3be02988dec3f72de
+  checksum: 10/502395b92f637cbf4ebbc1fab55b5444c0b129ffe50518e646c4eb2d03589ae985fd4be7da5fe12a1efbb85cff73edf43aeedb858d3e97771a6457a8612ea41a
   languageName: node
   linkType: hard
 
@@ -9641,7 +9641,7 @@ __metadata:
     "@react-navigation/elements": "npm:^2.5.2"
     "@react-navigation/native": "npm:^7.1.14"
     "@react-navigation/stack": "npm:^7.4.2"
-    "@sentry/react-native": "npm:^6.16.0"
+    "@sentry/react-native": "npm:^6.16.1"
     "@tanstack/react-query": "npm:^5.81.5"
     "@testing-library/react-native": "npm:^13.2.0"
     "@trivago/prettier-plugin-sort-imports": "npm:^5.2.2"
