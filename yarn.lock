@@ -4738,9 +4738,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"detox@npm:20.39.0":
-  version: 20.39.0
-  resolution: "detox@npm:20.39.0"
+"detox@npm:20.40.0":
+  version: 20.40.0
+  resolution: "detox@npm:20.40.0"
   dependencies:
     "@wix-pilot/core": "npm:^3.3.0"
     "@wix-pilot/detox": "npm:^1.0.11"
@@ -4772,7 +4772,7 @@ __metadata:
     stream-json: "npm:^1.7.4"
     strip-ansi: "npm:^6.0.1"
     telnet-client: "npm:1.2.8"
-    tempfile: "npm:^2.0.0"
+    tmp: "npm:^0.2.1"
     trace-event-lib: "npm:^1.3.1"
     which: "npm:^1.3.1"
     ws: "npm:^7.0.0"
@@ -4786,7 +4786,7 @@ __metadata:
       optional: true
   bin:
     detox: local-cli/cli.js
-  checksum: 10/2315874a1bd90695bcfefdc58bb402f6b692e0e077c015c7cff7fdd4c3e49e630fa9fd04ef88287e121a03f6863fcd1d3b5f9abca8392b0c4070d64f586eca8f
+  checksum: 10/0fd7b67435885c99265b45c32ae38be0943325186c38e76aba3988784e4f7a62b4ba1a6f1ea6de98bc5ce2d5afd3b0704008bf0c085c52dd455ce050f04187cf
   languageName: node
   linkType: hard
 
@@ -9650,7 +9650,7 @@ __metadata:
     "@types/react-native-vector-icons": "npm:^6.4.18"
     "@types/react-test-renderer": "npm:^19.0.0"
     axios: "npm:^1.10.0"
-    detox: "npm:20.39.0"
+    detox: "npm:20.40.0"
     eslint: "npm:^8.19.0"
     eslint-config-prettier: "npm:^10.1.5"
     eslint-plugin-prettier: "npm:^5.5.1"
@@ -10412,23 +10412,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"temp-dir@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "temp-dir@npm:1.0.0"
-  checksum: 10/cb2b58ddfb12efa83e939091386ad73b425c9a8487ea0095fe4653192a40d49184a771a1beba99045fbd011e389fd563122d79f54f82be86a55620667e08a6b2
-  languageName: node
-  linkType: hard
-
-"tempfile@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "tempfile@npm:2.0.0"
-  dependencies:
-    temp-dir: "npm:^1.0.0"
-    uuid: "npm:^3.0.1"
-  checksum: 10/9c8ab891c2af333fdc45404812dbcd71023e220dc90842c54042aafd9830e26ee2c7f4f85f949289f79b5a4b0f8049b01d5989383782d59f0a1713d344a16976
-  languageName: node
-  linkType: hard
-
 "terser@npm:^5.15.0":
   version: 5.39.0
   resolution: "terser@npm:5.39.0"
@@ -10482,6 +10465,13 @@ __metadata:
     fdir: "npm:^6.4.4"
     picomatch: "npm:^4.0.2"
   checksum: 10/b04557ee58ad2be5f2d2cbb4b441476436c92bb45ba2e1fc464d686b793392b305ed0bcb8b877429e9b5036bdd46770c161a08384c0720b6682b7cd6ac80e403
+  languageName: node
+  linkType: hard
+
+"tmp@npm:^0.2.1":
+  version: 0.2.3
+  resolution: "tmp@npm:0.2.3"
+  checksum: 10/7b13696787f159c9754793a83aa79a24f1522d47b87462ddb57c18ee93ff26c74cbb2b8d9138f571d2e0e765c728fb2739863a672b280528512c6d83d511c6fa
   languageName: node
   linkType: hard
 
@@ -10851,15 +10841,6 @@ __metadata:
   version: 1.0.1
   resolution: "utils-merge@npm:1.0.1"
   checksum: 10/5d6949693d58cb2e636a84f3ee1c6e7b2f9c16cb1d42d0ecb386d8c025c69e327205aa1c69e2868cc06a01e5e20681fbba55a4e0ed0cce913d60334024eae798
-  languageName: node
-  linkType: hard
-
-"uuid@npm:^3.0.1":
-  version: 3.4.0
-  resolution: "uuid@npm:3.4.0"
-  bin:
-    uuid: ./bin/uuid
-  checksum: 10/4f2b86432b04cc7c73a0dd1bcf11f1fc18349d65d2e4e32dd0fc658909329a1e0cc9244aa93f34c0cccfdd5ae1af60a149251a5f420ec3ac4223a3dab198fb2e
   languageName: node
   linkType: hard
 
