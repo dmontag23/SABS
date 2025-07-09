@@ -4738,9 +4738,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"detox@npm:20.40.0":
-  version: 20.40.0
-  resolution: "detox@npm:20.40.0"
+"detox@npm:20.40.1":
+  version: 20.40.1
+  resolution: "detox@npm:20.40.1"
   dependencies:
     "@wix-pilot/core": "npm:^3.3.0"
     "@wix-pilot/detox": "npm:^1.0.11"
@@ -4755,7 +4755,7 @@ __metadata:
     funpermaproxy: "npm:^1.1.0"
     glob: "npm:^8.0.3"
     ini: "npm:^1.3.4"
-    jest-environment-emit: "npm:^1.0.8"
+    jest-environment-emit: "npm:^1.2.0"
     json-cycle: "npm:^1.3.0"
     lodash: "npm:^4.17.11"
     multi-sort-stream: "npm:^1.0.3"
@@ -4780,13 +4780,13 @@ __metadata:
     yargs-parser: "npm:^21.0.0"
     yargs-unparser: "npm:^2.0.0"
   peerDependencies:
-    jest: 29.x.x || 28.x.x || ^27.2.5
+    jest: 30.x.x || 29.x.x || 28.x.x || ^27.2.5
   peerDependenciesMeta:
     jest:
       optional: true
   bin:
     detox: local-cli/cli.js
-  checksum: 10/0fd7b67435885c99265b45c32ae38be0943325186c38e76aba3988784e4f7a62b4ba1a6f1ea6de98bc5ce2d5afd3b0704008bf0c085c52dd455ce050f04187cf
+  checksum: 10/85f8337abd9137acb80698cae5d043f214a6dbbf54959f6f247a68faff11f118ea4b4bd3608cb643cb434ca32b92feb36445a643527a32b17a8f614b6b8f4802
   languageName: node
   linkType: hard
 
@@ -7005,9 +7005,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-environment-emit@npm:^1.0.8":
-  version: 1.0.8
-  resolution: "jest-environment-emit@npm:1.0.8"
+"jest-environment-emit@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "jest-environment-emit@npm:1.2.0"
   dependencies:
     bunyamin: "npm:^1.5.2"
     bunyan: "npm:^2.0.5"
@@ -7034,7 +7034,7 @@ __metadata:
       optional: true
     jest-environment-node:
       optional: true
-  checksum: 10/db9545ddb7b85db9412b15054a3d01b90d000d7f229e19d63253c60817b6c818bee376d862ce77278866885fa6ffed009ac9eee5979e33b31eb4e10d1e29cc7c
+  checksum: 10/30fe8dc39289be4bcc821610b16e681a562954dd6197b99cea8b338b1c9af3663f0345246960d1fea6d4385889466ca8122e3e468374ba162f85a13c08798764
   languageName: node
   linkType: hard
 
@@ -9650,7 +9650,7 @@ __metadata:
     "@types/react-native-vector-icons": "npm:^6.4.18"
     "@types/react-test-renderer": "npm:^19.0.0"
     axios: "npm:^1.10.0"
-    detox: "npm:20.40.0"
+    detox: "npm:20.40.1"
     eslint: "npm:^8.19.0"
     eslint-config-prettier: "npm:^10.1.5"
     eslint-plugin-prettier: "npm:^5.5.1"
