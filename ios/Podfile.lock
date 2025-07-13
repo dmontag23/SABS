@@ -1332,7 +1332,7 @@ PODS:
     - React-jsiexecutor
     - React-RCTFBReactNativeSpec
     - ReactCommon/turbomodule/core
-  - react-native-safe-area-context (5.4.1):
+  - react-native-safe-area-context (5.5.1):
     - React-Core
   - React-NativeModulesApple (0.79.2):
     - glog
@@ -1831,7 +1831,7 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - RNSentry (6.15.1):
+  - RNSentry (6.17.0):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1854,11 +1854,11 @@ PODS:
     - ReactCodegen
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
-    - Sentry/HybridSDK (= 8.52.1)
+    - Sentry/HybridSDK (= 8.53.1)
     - Yoga
   - RNSVG (15.12.0):
     - React-Core
-  - Sentry/HybridSDK (8.52.1)
+  - Sentry/HybridSDK (8.53.1)
   - SocketRocket (0.7.1)
   - Yoga (0.0.0)
 
@@ -2144,7 +2144,7 @@ SPEC CHECKSUMS:
   React-logger: 8edfcedc100544791cd82692ca5a574240a16219
   React-Mapbuffer: c3f4b608e4a59dd2f6a416ef4d47a14400194468
   React-microtasksnativemodule: 054f34e9b82f02bd40f09cebd4083828b5b2beb6
-  react-native-safe-area-context: dde2052b903c11d677c320b599c3244021c34ce8
+  react-native-safe-area-context: 827032edf27079702cbd006f11dc79451a2d744b
   React-NativeModulesApple: 2c4377e139522c3d73f5df582e4f051a838ff25e
   React-oscompat: ef5df1c734f19b8003e149317d041b8ce1f7d29c
   React-perflogger: 9a151e0b4c933c9205fd648c246506a83f31395d
@@ -2180,9 +2180,9 @@ SPEC CHECKSUMS:
   RNGestureHandler: 428d7b57ca46b96f09b79597167dda208d1ecf31
   RNReanimated: 0719175a224f57c0e6bd16e0a420806816bc9b17
   RNScreens: 62fdbbc4c984150b34c36f095c6ba2510ca9b6a5
-  RNSentry: 4ebc4a48794b704751504d654f5e1ac98f08a819
+  RNSentry: 48da3f6abfa0ed086bd855c7dc5c72aac63df34b
   RNSVG: 4d6e9f0087980e36e14e1739b9c1760e63de5b8c
-  Sentry: 2cbbe3592f30050c60e916c63c7f5a2fa584005e
+  Sentry: 1e4e974d45f09d153af4b30b42acfb1c79e957d3
   SocketRocket: d4aabe649be1e368d1318fdf28a022d714d65748
   Yoga: c758bfb934100bb4bf9cbaccb52557cee35e8bdf
 
