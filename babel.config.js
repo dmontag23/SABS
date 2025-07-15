@@ -8,7 +8,10 @@ module.exports = {
    */
   env: {
     production: {
-      plugins: ["react-native-paper/babel"]
+      plugins: [
+        "@babel/plugin-transform-export-namespace-from",
+        "react-native-paper/babel"
+      ]
     }
   }
 };
