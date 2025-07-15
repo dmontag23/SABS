@@ -3288,9 +3288,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wix-pilot/core@npm:^3.3.0":
-  version: 3.3.1
-  resolution: "@wix-pilot/core@npm:3.3.1"
+"@wix-pilot/core@npm:^3.4.1":
+  version: 3.4.1
+  resolution: "@wix-pilot/core@npm:3.4.1"
   dependencies:
     chalk: "npm:^4.1.0"
     pngjs: "npm:^7.0.0"
@@ -3300,18 +3300,18 @@ __metadata:
   peerDependenciesMeta:
     expect:
       optional: true
-  checksum: 10/3b38f00b0e81ab94b69631ef7f65e869b22f81e9c902298014432ca33fb599c8d9abd93dad436c22b49fca133b86e83a0a416150c187d5dde7b20b300f7f38f3
+  checksum: 10/02e1fd97fe0ad36b68e61b3a0f08d68858dc11e6a076bf6528850445f7c10c1da72b89ea7f4c7c5bb138fa30e2bffade27eaa8531275691554502f5cf2ed8b87
   languageName: node
   linkType: hard
 
-"@wix-pilot/detox@npm:^1.0.11":
-  version: 1.0.11
-  resolution: "@wix-pilot/detox@npm:1.0.11"
+"@wix-pilot/detox@npm:^1.0.13":
+  version: 1.0.13
+  resolution: "@wix-pilot/detox@npm:1.0.13"
   peerDependencies:
-    "@wix-pilot/core": ^3.1.6
+    "@wix-pilot/core": ^3.4.1
     detox: ">=20.33.0"
     expect: 29.x.x || 28.x.x || ^27.2.5
-  checksum: 10/ca8707e666ae17e04a0740742b454ea9642419f1d941fadcf3dd33dd833f4ffa9473b91d5a5a0b123458d9b6cadd2df5ed514b62e456bb07c7760968d0b0107a
+  checksum: 10/5d9599e0236c55e308fe8f625790ecdfde20d8a84a92ccd252ea9d2972a818c2a2c368cb08d443d9d6b7dfd699f6a9549a165871bc548bb52afbb0538ed7ffc5
   languageName: node
   linkType: hard
 
@@ -4738,12 +4738,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"detox@npm:20.40.1":
-  version: 20.40.1
-  resolution: "detox@npm:20.40.1"
+"detox@npm:20.40.2":
+  version: 20.40.2
+  resolution: "detox@npm:20.40.2"
   dependencies:
-    "@wix-pilot/core": "npm:^3.3.0"
-    "@wix-pilot/detox": "npm:^1.0.11"
+    "@wix-pilot/core": "npm:^3.4.1"
+    "@wix-pilot/detox": "npm:^1.0.13"
     ajv: "npm:^8.6.3"
     bunyan: "npm:^1.8.12"
     bunyan-debug-stream: "npm:^3.1.0"
@@ -4786,7 +4786,7 @@ __metadata:
       optional: true
   bin:
     detox: local-cli/cli.js
-  checksum: 10/85f8337abd9137acb80698cae5d043f214a6dbbf54959f6f247a68faff11f118ea4b4bd3608cb643cb434ca32b92feb36445a643527a32b17a8f614b6b8f4802
+  checksum: 10/9e4b2accfe535c7effe2be0990cae11ee2c4b4ab6bf32a33311fe9b11abeae3a543aabea92e8f16c3e0cedaf98bcdd3d37444cb94ff4571ca2240e414f55e417
   languageName: node
   linkType: hard
 
@@ -9650,7 +9650,7 @@ __metadata:
     "@types/react-native-vector-icons": "npm:^6.4.18"
     "@types/react-test-renderer": "npm:^19.0.0"
     axios: "npm:^1.10.0"
-    detox: "npm:20.40.1"
+    detox: "npm:20.40.2"
     eslint: "npm:^8.19.0"
     eslint-config-prettier: "npm:^10.1.5"
     eslint-plugin-prettier: "npm:^5.5.1"
