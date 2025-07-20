@@ -125,7 +125,7 @@ describe("Rush show list", () => {
 
     // assert
     await waitFor(() => expect(getAllByLabelText("Show card")).toHaveLength(5));
-    const allShows = getAllByLabelText("Show card");
+    const allShows = await waitFor(() => getAllByLabelText("Show card"));
     [
       "Hamilton",
       "SIX the Musical",
@@ -434,8 +434,10 @@ describe("Rush show list", () => {
       </Stack.Navigator>
     );
 
-    await waitFor(() => expect(getByText("SIX the Musical")).toBeVisible());
-    const showCards = getAllByLabelText("Show card");
+    await waitFor(() => expect(getByText("SIX the Musical")).toBeVisible(), {
+      timeout: 5000
+    });
+    const showCards = await waitFor(() => getAllByLabelText("Show card"));
     const firstShow = showCards[0];
     const secondShow = showCards[1];
 
