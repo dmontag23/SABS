@@ -73,6 +73,6 @@ jobs:
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: 'E2E test artifacts for commit "${{ github.event.head_commit.message }}"'
+          name: "E2E test artifacts for commit '${{ github.event.head_commit.message }}'"
           path: ./tests/e2e/.artifacts
           include-hidden-files: true
