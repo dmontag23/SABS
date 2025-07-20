@@ -1,13 +1,13 @@
 import axios from "axios";
 
-import {handleTodayTixApiRequest, handleTodayTixApiResponse} from "./utils";
+import { handleTodayTixApiRequest, handleTodayTixApiResponse } from "./utils";
 
-import {log} from "../config/logger";
-import {TodayTixAPIv2AxiosInstance} from "../types/api";
+import { log } from "../config/logger";
+import { TodayTixAPIv2AxiosInstance } from "../types/api";
 
 export const todayTixOAuthAPI = axios.create({
   baseURL: `${process.env.TODAY_TIX_API_BASE_URL}${process.env.TODAY_TIX_API_OAUTH_ENDPOINT}`,
-  headers: {"Content-Type": "application/x-www-form-urlencoded"}
+  headers: { "Content-Type": "application/x-www-form-urlencoded" }
 });
 
 todayTixOAuthAPI.interceptors.response.use(
@@ -21,7 +21,7 @@ todayTixOAuthAPI.interceptors.response.use(
 
 export const todayTixAPIv2: TodayTixAPIv2AxiosInstance = axios.create({
   baseURL: `${process.env.TODAY_TIX_API_BASE_URL}${process.env.TODAY_TIX_API_V2_ENDPOINT}`,
-  headers: {"Content-Type": "application/json"}
+  headers: { "Content-Type": "application/json" }
 });
 
 todayTixAPIv2.interceptors.request.use(handleTodayTixApiRequest);

@@ -1,12 +1,12 @@
-import {useContext} from "react";
+import { useContext } from "react";
 
-import {renderHook} from "testing-library/extension";
+import { renderHook } from "testing-library/extension";
 
 import HoldContext from "../hold-context";
 
 describe("The hold context", () => {
   it("defaults values correctly", () => {
-    const {result} = renderHook(() => useContext(HoldContext));
+    const { result } = renderHook(() => useContext(HoldContext));
 
     expect(result.current.isCreatingHold).toBe(false);
     expect(result.current.createHoldError).toBeNull();

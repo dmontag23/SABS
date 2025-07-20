@@ -1,13 +1,13 @@
 // This file was created following https://reactnavigation.org/docs/typescript/#specifying-default-types-for-usenavigation-link-ref-etc
-import {BottomTabScreenProps} from "@react-navigation/bottom-tabs";
-import type {StackScreenProps} from "@react-navigation/stack";
+import { BottomTabScreenProps } from "@react-navigation/bottom-tabs";
+import type { StackScreenProps } from "@react-navigation/stack";
 
-import {TodayTixShow} from "./shows";
-import {TodayTixShowtime} from "./showtimes";
+import { TodayTixShow } from "./shows";
+import { TodayTixShowtime } from "./showtimes";
 
 export type RushShowStackParamList = {
   RushShowList: undefined;
-  ShowDetails: {show: TodayTixShow; showtimes: TodayTixShowtime[]};
+  ShowDetails: { show: TodayTixShow; showtimes: TodayTixShowtime[] };
 };
 
 export type LoggedInBottomTabParamList = {

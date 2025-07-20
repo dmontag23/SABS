@@ -6,8 +6,8 @@ import React, {
   useState
 } from "react";
 
-import {TodayTixShow} from "../types/shows";
-import {TodayTixShowtime} from "../types/showtimes";
+import { TodayTixShow } from "../types/shows";
+import { TodayTixShowtime } from "../types/showtimes";
 
 const SelectedShowtimeContext = createContext<{
   selectedShow?: TodayTixShow;
@@ -38,7 +38,8 @@ export const SelectedShowtimeContextProvider = ({
         setSelectedShow: setShow,
         setSelectedShowtime: setShowtime,
         setSelectedNumberOfTickets: setNumberOfTickets
-      }}>
+      }}
+    >
       {children}
     </SelectedShowtimeContext.Provider>
   );

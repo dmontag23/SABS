@@ -1,5 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import {AxiosHeaders} from "axios";
+import { AxiosHeaders } from "axios";
 import nock from "nock";
 
 import {
@@ -9,7 +9,7 @@ import {
   handleTodayTixApiResponse
 } from "../utils";
 
-import {TodayTixClient, TodayTixGrantType} from "../../types/loginTokens";
+import { TodayTixClient, TodayTixGrantType } from "../../types/loginTokens";
 
 describe("API utils", () => {
   describe("handleTodayTixApiRequest", () => {
@@ -152,7 +152,7 @@ describe("API utils", () => {
     it("returns the correct duration header", () =>
       expect(
         handleTodayTixApiResponse({
-          data: {code: 0, data: undefined},
+          data: { code: 0, data: undefined },
           status: 0,
           statusText: "",
           headers: new AxiosHeaders(),
@@ -164,6 +164,6 @@ describe("API utils", () => {
         })
       ).toHaveProperty(
         "headers",
-        new AxiosHeaders({[REQUEST_DURATION_HEADER_NAME]: 4000})
+        new AxiosHeaders({ [REQUEST_DURATION_HEADER_NAME]: 4000 })
       )));
 });

@@ -1,15 +1,15 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 
-import {Button} from "react-native-paper";
+import { Button } from "react-native-paper";
 
 import HoldContext from "../../store/hold-context";
 import SelectedShowtimeContext from "../../store/selected-showtime-context";
 
 const ScheduledHoldContent = () => {
-  const {setSelectedShow, setSelectedShowtime, setSelectedNumberOfTickets} =
+  const { setSelectedShow, setSelectedShowtime, setSelectedNumberOfTickets } =
     useContext(SelectedShowtimeContext);
 
-  const {cancelHold} = useContext(HoldContext);
+  const { cancelHold } = useContext(HoldContext);
 
   return (
     <Button
@@ -19,7 +19,8 @@ const ScheduledHoldContent = () => {
         setSelectedShow(undefined);
         setSelectedShowtime(undefined);
         setSelectedNumberOfTickets(NaN);
-      }}>
+      }}
+    >
       Cancel
     </Button>
   );

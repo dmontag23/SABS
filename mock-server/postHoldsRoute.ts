@@ -1,8 +1,11 @@
-import {Router} from "express";
+import { Router } from "express";
 
-import {getItemFromStore, writeItemToStore} from "./utils";
+import { getItemFromStore, writeItemToStore } from "./utils";
 
-import {TodayTixAPIv2ErrorResponse, TodayTixAPIv2Response} from "../types/base";
+import {
+  TodayTixAPIv2ErrorResponse,
+  TodayTixAPIv2Response
+} from "../types/base";
 import {
   DeliveryMethodEnum,
   ProviderPlatformEnum,
@@ -11,9 +14,9 @@ import {
   TodayTixHoldType,
   TodayTixHoldsReq
 } from "../types/holds";
-import {TodayTixRushGrant} from "../types/rushGrants";
-import {ProductType} from "../types/shows";
-import {DayOfWeek, Daypart} from "../types/showtimes";
+import { TodayTixRushGrant } from "../types/rushGrants";
+import { ProductType } from "../types/shows";
+import { DayOfWeek, Daypart } from "../types/showtimes";
 
 const guysAndDollsHold: TodayTixHold = {
   _type: "Hold",

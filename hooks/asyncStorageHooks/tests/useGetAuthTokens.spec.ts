@@ -1,5 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import {renderHook, waitFor} from "testing-library/extension";
+import { renderHook, waitFor } from "testing-library/extension";
 
 import useGetAuthTokens from "../useGetAuthTokens";
 
@@ -9,7 +9,7 @@ describe("useGetAuthTokens hook", () => {
     (
       AsyncStorage.multiGet as jest.MockedFunction<typeof AsyncStorage.multiGet>
     ).mockRejectedValueOnce("Error with AsyncStorage multiGet");
-    const {result} = renderHook(useGetAuthTokens);
+    const { result } = renderHook(useGetAuthTokens);
 
     await waitFor(() => expect(result.current.isError).toBe(true));
     expect(result.current.error).toEqual({

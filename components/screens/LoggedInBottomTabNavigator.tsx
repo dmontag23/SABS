@@ -1,13 +1,13 @@
-import React, {useState} from "react";
-import {View} from "react-native";
+import React, { useState } from "react";
+import { View } from "react-native";
 
 import {
   BottomTabBarProps,
   BottomTabNavigationOptions,
   createBottomTabNavigator
 } from "@react-navigation/bottom-tabs";
-import {CommonActions} from "@react-navigation/native";
-import {BottomNavigation} from "react-native-paper";
+import { CommonActions } from "@react-navigation/native";
+import { BottomNavigation } from "react-native-paper";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 import RushShowNavigator from "./RushShowNavigator";
@@ -15,7 +15,7 @@ import SettingsScreen from "./SettingsScreen";
 
 import HoldConfirmationBottomSheet from "../Hold/HoldConfirmationBottomSheet";
 
-import {LoggedInBottomTabParamList} from "../../types/navigation";
+import { LoggedInBottomTabParamList } from "../../types/navigation";
 
 const BottomTab = createBottomTabNavigator<LoggedInBottomTabParamList>();
 
@@ -28,10 +28,11 @@ const TabBar = (props: BottomTabBarProps) => {
     <>
       <HoldConfirmationBottomSheet bottomInset={bottomNavBarHeight} />
       <View
-        onLayout={({nativeEvent}) =>
+        onLayout={({ nativeEvent }) =>
           setBottomNavBarHeight(nativeEvent.layout.height)
         }
-        testID="bottom-tab-bar-wrapper">
+        testID="bottom-tab-bar-wrapper"
+      >
         <BottomTabBar {...props} />
       </View>
     </>
@@ -49,7 +50,7 @@ const BottomTabBar = ({
   <BottomNavigation.Bar
     navigationState={state}
     safeAreaInsets={insets}
-    onTabPress={({route}) => {
+    onTabPress={({ route }) => {
       navigation.emit({
         type: "tabPress",
         target: route.key,
@@ -61,12 +62,12 @@ const BottomTabBar = ({
         target: state.key
       });
     }}
-    renderIcon={({route, focused, color}) => {
-      const {options} = descriptors[route.key];
-      return options.tabBarIcon?.({focused, color, size: 24});
+    renderIcon={({ route, focused, color }) => {
+      const { options } = descriptors[route.key];
+      return options.tabBarIcon?.({ focused, color, size: 24 });
     }}
-    getLabelText={({route}) => {
-      const {options} = descriptors[route.key];
+    getLabelText={({ route }) => {
+      const { options } = descriptors[route.key];
       /* Technically the tabBarLabel can also be a function that returns a react element, but because
       we have control over what gets passed into the tabBarLabel option in the tabs below, we can always
       ensure a string is passed in. The typecast is a tradeoff - we can either typecast, or not have full
@@ -78,15 +79,16 @@ const BottomTabBar = ({
 
 const CreateTabBarIcon =
   (name: (typeof Icon)["name"]): BottomTabNavigationOptions["tabBarIcon"] =>
-  ({color, size}) => <Icon name={name} size={size} color={color} />;
+  ({ color, size }) => <Icon name={name} size={size} color={color} />;
 
 const LoggedInBottomTabNavigator = () => (
   /* The tab navigator is used instead of the BottomNavigation from react-native-paper because
   the height of the bottom navigation bar is needed to place the hold confirmation bottom sheet
   properly, and it does not seem there is a way to get this height from the BottomNavigation component. */
   <BottomTab.Navigator
-    screenOptions={{headerShown: false}}
-    tabBar={BottomTabBarWrapper}>
+    screenOptions={{ headerShown: false }}
+    tabBar={BottomTabBarWrapper}
+  >
     <BottomTab.Screen
       name="RushShows"
       component={RushShowNavigator}

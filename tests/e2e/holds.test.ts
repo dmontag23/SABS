@@ -1,7 +1,7 @@
 import axios from "axios";
-import {expect} from "detox";
+import { expect } from "detox";
 
-import {login} from "./utils/utils";
+import { login } from "./utils/utils";
 
 describe("Holds", () => {
   beforeEach(login);

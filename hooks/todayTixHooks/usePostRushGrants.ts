@@ -1,19 +1,22 @@
-import {useMutation} from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 
-import {todayTixAPIv2} from "../../api/axiosConfig";
-import {TodayTixAPIv2ErrorResponse} from "../../types/base";
-import {TodayTixRushGrant, TodayTixRushGrantsReq} from "../../types/rushGrants";
+import { todayTixAPIv2 } from "../../api/axiosConfig";
+import { TodayTixAPIv2ErrorResponse } from "../../types/base";
+import {
+  TodayTixRushGrant,
+  TodayTixRushGrantsReq
+} from "../../types/rushGrants";
 
 type PostRushGrantsVariables = {
   customerId: string;
   showId: number;
 };
 
-const postRushGrant = async ({customerId, showId}: PostRushGrantsVariables) =>
+const postRushGrant = async ({ customerId, showId }: PostRushGrantsVariables) =>
   (
     await todayTixAPIv2.post<TodayTixRushGrantsReq, TodayTixRushGrant>(
       `customers/${customerId}/rushGrants`,
-      {showId}
+      { showId }
     )
   ).data.data;
 

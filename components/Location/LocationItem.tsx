@@ -1,11 +1,11 @@
 import React from "react";
-import {StyleSheet, View} from "react-native";
+import { StyleSheet, View } from "react-native";
 
-import {Button, Text} from "react-native-paper";
+import { Button, Text } from "react-native-paper";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
 import useStoreLocationId from "../../hooks/asyncStorageHooks/useStoreLocationId";
-import {TodayTixLocation} from "../../types/locations";
+import { TodayTixLocation } from "../../types/locations";
 
 type LocationItemProps = {
   location: TodayTixLocation;
@@ -13,8 +13,8 @@ type LocationItemProps = {
   onPress?: () => void;
 };
 
-const LocationItem = ({location, isChecked, onPress}: LocationItemProps) => {
-  const {mutate: storeLocationId} = useStoreLocationId();
+const LocationItem = ({ location, isChecked, onPress }: LocationItemProps) => {
+  const { mutate: storeLocationId } = useStoreLocationId();
 
   return (
     <Button
@@ -22,7 +22,8 @@ const LocationItem = ({location, isChecked, onPress}: LocationItemProps) => {
         storeLocationId(location.id);
         onPress?.();
       }}
-      labelStyle={styles.buttonLabel}>
+      labelStyle={styles.buttonLabel}
+    >
       <View style={styles.labelContainer}>
         <Text>{location.name}</Text>
         {isChecked && <MaterialCommunityIcons name="check" size={24} />}
@@ -34,7 +35,7 @@ const LocationItem = ({location, isChecked, onPress}: LocationItemProps) => {
 export default LocationItem;
 
 const styles = StyleSheet.create({
-  buttonLabel: {flex: 1},
+  buttonLabel: { flex: 1 },
   labelContainer: {
     flexDirection: "row",
     justifyContent: "space-between",

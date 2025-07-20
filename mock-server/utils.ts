@@ -50,7 +50,7 @@ export const writeItemToStore = <T>(
   itemToStore: T
 ) => {
   try {
-    fs.mkdirSync(`${STORAGE_ROOT_DIRECTORY}/${storeName}`, {recursive: true});
+    fs.mkdirSync(`${STORAGE_ROOT_DIRECTORY}/${storeName}`, { recursive: true });
     fs.writeFileSync(
       `${STORAGE_ROOT_DIRECTORY}/${storeName}/${key}`,
       JSON.stringify(itemToStore)
@@ -77,7 +77,7 @@ export const removeItemFromStore = (storeName: string, key: string) => {
 
 export const clearAllData = () => {
   try {
-    fs.rmSync(STORAGE_ROOT_DIRECTORY, {recursive: true});
+    fs.rmSync(STORAGE_ROOT_DIRECTORY, { recursive: true });
   } catch (error) {
     console.error("There was an error clearing all the data: ", error);
   }

@@ -1,7 +1,7 @@
-import {useQuery} from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 
-import {todayTixAPIv2} from "../../api/axiosConfig";
-import {TodayTixAPIv2ErrorResponse} from "../../types/base";
+import { todayTixAPIv2 } from "../../api/axiosConfig";
+import { TodayTixAPIv2ErrorResponse } from "../../types/base";
 import {
   TodayTixFieldset,
   TodayTixShow,
@@ -42,7 +42,7 @@ const useGetShows = ({
   requestParams = {},
   enabled = true
 }: UseGetShowsProps = {}) => {
-  const {areAccessProgramsActive, fieldset, limit, locationId, offset} =
+  const { areAccessProgramsActive, fieldset, limit, locationId, offset } =
     requestParams;
 
   return useQuery<TodayTixShow[], TodayTixAPIv2ErrorResponse>({

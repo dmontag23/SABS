@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 
 const getCountdownTime = (finalTimeInEpochSeconds: number) =>
   finalTimeInEpochSeconds * 1000 - new Date().getTime();

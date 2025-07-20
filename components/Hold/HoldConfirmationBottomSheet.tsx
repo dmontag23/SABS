@@ -1,7 +1,7 @@
-import React, {useContext} from "react";
-import {StyleSheet, View} from "react-native";
+import React, { useContext } from "react";
+import { StyleSheet, View } from "react-native";
 
-import {Text} from "react-native-paper";
+import { Text } from "react-native-paper";
 
 import HoldConfirmationContent from "./HoldConfirmationContent";
 import HoldErrorContent from "./HoldErrorContent";
@@ -9,9 +9,9 @@ import ScheduledHoldContent from "./ScheduledHoldContent";
 
 import BottomSheet from "../ui/BottomSheet";
 import LoadingSpinner from "../ui/LoadingSpinner";
-import {pluralize} from "../utils";
+import { pluralize } from "../utils";
 
-import {isShadowBlocked} from "../../hooks/todayTixHooks/usePostHolds";
+import { isShadowBlocked } from "../../hooks/todayTixHooks/usePostHolds";
 import useCountdown from "../../hooks/useCountdown";
 import HoldContext from "../../store/hold-context";
 import SelectedShowtimeContext from "../../store/selected-showtime-context";
@@ -35,14 +35,14 @@ const HoldConfirmationBottomSheet = ({
     selectedNumberOfTickets: numberOfTickets
   } = useContext(SelectedShowtimeContext);
 
-  const {isHoldScheduled, isCreatingHold, createHoldError, hold} =
+  const { isHoldScheduled, isCreatingHold, createHoldError, hold } =
     useContext(HoldContext);
 
   const isVisible = Boolean(
     isHoldScheduled || isCreatingHold || createHoldError || hold
   );
 
-  const {countdown: countdownToRushOpening} = useCountdown(
+  const { countdown: countdownToRushOpening } = useCountdown(
     showtime?.rushTickets?.availableAfterEpoch
   );
 
@@ -108,6 +108,6 @@ const HoldConfirmationBottomSheet = ({
 export default HoldConfirmationBottomSheet;
 
 const styles = StyleSheet.create({
-  headerTitle: {textAlign: "center"},
-  isCreatingHoldHeaderContainer: {flexDirection: "row", columnGap: 15}
+  headerTitle: { textAlign: "center" },
+  isCreatingHoldHeaderContainer: { flexDirection: "row", columnGap: 15 }
 });

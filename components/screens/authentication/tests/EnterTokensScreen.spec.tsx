@@ -1,18 +1,18 @@
 import React from "react";
 
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import {createStackNavigator} from "@react-navigation/stack";
-import {render, userEvent, waitFor} from "testing-library/extension";
+import { createStackNavigator } from "@react-navigation/stack";
+import { render, userEvent, waitFor } from "testing-library/extension";
 
 import EnterTokensScreen from "../EnterTokensScreen";
 
-import {RootStackParamList} from "../../../../types/navigation";
+import { RootStackParamList } from "../../../../types/navigation";
 
 describe("EnterTokensScreen", () => {
   describe("integration tests", () => {
     it("displays elements in their initial state on the screen", () => {
       const Stack = createStackNavigator<RootStackParamList>();
-      const {getByRole, getByText, getByLabelText} = render(
+      const { getByRole, getByText, getByLabelText } = render(
         <Stack.Navigator>
           <Stack.Screen name="EnterTokens" component={EnterTokensScreen} />
         </Stack.Navigator>
@@ -28,20 +28,20 @@ describe("EnterTokensScreen", () => {
       const refreshTokenFormInput = getByLabelText("Refresh token input");
       expect(refreshTokenFormInput).toBeVisible();
       expect(refreshTokenFormInput).toHaveProp("value", "");
-      const loginButton = getByRole("button", {name: "Login"});
+      const loginButton = getByRole("button", { name: "Login" });
       expect(loginButton).toBeVisible();
       expect(loginButton).toBeDisabled();
     });
 
     const dataSet = [
-      {tokenType: "Access token", validationPrefix: "An access token"},
-      {tokenType: "Refresh token", validationPrefix: "A refresh token"}
+      { tokenType: "Access token", validationPrefix: "An access token" },
+      { tokenType: "Refresh token", validationPrefix: "A refresh token" }
     ];
     it.each(dataSet)(
       "displays an $tokenType validation error",
-      async ({tokenType, validationPrefix}) => {
+      async ({ tokenType, validationPrefix }) => {
         const Stack = createStackNavigator<RootStackParamList>();
-        const {getByRole, getByText, getByLabelText} = render(
+        const { getByRole, getByText, getByLabelText } = render(
           <Stack.Navigator>
             <Stack.Screen name="EnterTokens" component={EnterTokensScreen} />
           </Stack.Navigator>
@@ -50,7 +50,7 @@ describe("EnterTokensScreen", () => {
         // enter an invalid link
         await userEvent.type(getByLabelText(`${tokenType} input`), "{Enter}");
         expect(getByText(`${validationPrefix} is required`)).toBeVisible();
-        expect(getByRole("button", {name: "Login"})).toBeDisabled();
+        expect(getByRole("button", { name: "Login" })).toBeDisabled();
       }
     );
 
@@ -63,7 +63,7 @@ describe("EnterTokensScreen", () => {
       ).mockRejectedValueOnce("Error with AsyncStorage multiSet");
 
       const Stack = createStackNavigator<RootStackParamList>();
-      const {getByRole, getByText, getByLabelText} = render(
+      const { getByRole, getByText, getByLabelText } = render(
         <Stack.Navigator>
           <Stack.Screen name="EnterTokens" component={EnterTokensScreen} />
         </Stack.Navigator>
@@ -78,7 +78,7 @@ describe("EnterTokensScreen", () => {
         getByLabelText("Refresh token input"),
         "   refresh-token     "
       );
-      const loginButton = getByRole("button", {name: "Login"});
+      const loginButton = getByRole("button", { name: "Login" });
 
       expect(loginButton).toBeEnabled();
       await userEvent.press(loginButton);
@@ -95,7 +95,7 @@ describe("EnterTokensScreen", () => {
 
     it("can login successfully", async () => {
       const Stack = createStackNavigator<RootStackParamList>();
-      const {getByRole, getByLabelText} = render(
+      const { getByRole, getByLabelText } = render(
         <Stack.Navigator>
           <Stack.Screen name="EnterTokens" component={EnterTokensScreen} />
         </Stack.Navigator>
@@ -115,7 +115,7 @@ describe("EnterTokensScreen", () => {
         getByLabelText("Refresh token input"),
         "refresh-token"
       );
-      const loginButton = getByRole("button", {name: "Login"});
+      const loginButton = getByRole("button", { name: "Login" });
       expect(loginButton).toBeEnabled();
       await userEvent.press(loginButton);
 

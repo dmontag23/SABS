@@ -1,24 +1,24 @@
-import {useEffect, useMemo, useState} from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import useGetRushGrants from "./todayTixHooks/useGetRushGrants";
 import usePostRushGrants from "./todayTixHooks/usePostRushGrants";
 import useGetCustomerId from "./useGetCustomerId";
 
-import {TodayTixShow} from "../types/shows";
+import { TodayTixShow } from "../types/shows";
 
 const useGrantRushAccessForAllShows = (shows: TodayTixShow[]) => {
   /* This piece of state ensures that isGrantingAccess is still true between the
   network requests needed to unlock the rush grants, if any. */
   const [areMoreGrantsToFetch, setAreMoreGrantsToFetch] = useState(true);
 
-  const {customerId, isPending: isGetCustomerIdPending} = useGetCustomerId();
+  const { customerId, isPending: isGetCustomerIdPending } = useGetCustomerId();
 
   const {
     data: rushGrants,
     isFetching: isGetRushGrantsPending,
     isSuccess: isGetRushGrantsSuccess,
     refetch: refetchRushGrants
-  } = useGetRushGrants({enabled: Boolean(customerId)});
+  } = useGetRushGrants({ enabled: Boolean(customerId) });
 
   const {
     mutate: grantAccessToShow,
@@ -36,7 +36,7 @@ const useGrantRushAccessForAllShows = (shows: TodayTixShow[]) => {
     () =>
       isGetRushGrantsSuccess
         ? shows.reduce<number[]>(
-            (rushShowIds, {showId}) =>
+            (rushShowIds, { showId }) =>
               showId && !allGrantedRushShowIds?.includes(showId)
                 ? [...rushShowIds, showId]
                 : rushShowIds,
@@ -52,7 +52,7 @@ const useGrantRushAccessForAllShows = (shows: TodayTixShow[]) => {
     );
     if (customerId)
       showIdsToGrantRushAccessTo.forEach(showId =>
-        grantAccessToShow({customerId, showId})
+        grantAccessToShow({ customerId, showId })
       );
   }, [customerId, grantAccessToShow, showIdsToGrantRushAccessTo]);
 

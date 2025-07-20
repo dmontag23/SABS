@@ -1,7 +1,7 @@
 import React from "react";
-import {KeyboardAvoidingView, Platform, StyleSheet, View} from "react-native";
+import { KeyboardAvoidingView, Platform, StyleSheet, View } from "react-native";
 
-import {zodResolver} from "@hookform/resolvers/zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Control,
   Controller,
@@ -10,9 +10,9 @@ import {
   SubmitHandler,
   useForm
 } from "react-hook-form";
-import {Button, Text, TextInput, useTheme} from "react-native-paper";
-import {useSafeAreaInsets} from "react-native-safe-area-context";
-import {z} from "zod";
+import { Button, Text, TextInput, useTheme } from "react-native-paper";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { z } from "zod";
 
 import useStoreAuthTokens from "../../../hooks/asyncStorageHooks/useStoreAuthTokens";
 
@@ -20,17 +20,17 @@ const VALIDATION_SCHEMA = z.object({
   accessToken: z
     .string()
     .trim()
-    .min(1, {message: "An access token is required"}),
+    .min(1, { message: "An access token is required" }),
   refreshToken: z
     .string()
     .trim()
-    .min(1, {message: "A refresh token is required"})
+    .min(1, { message: "A refresh token is required" })
 });
 
 type FormInputs = z.infer<typeof VALIDATION_SCHEMA>;
 
-const ErrorText = ({message}: {message: string | undefined}) => (
-  <Text variant="titleMedium" style={{color: useTheme().colors.error}}>
+const ErrorText = ({ message }: { message: string | undefined }) => (
+  <Text variant="titleMedium" style={{ color: useTheme().colors.error }}>
     {message}
   </Text>
 );
@@ -51,7 +51,7 @@ const FormInput = ({
   <View style={styles.formSectionGroups}>
     <Controller
       control={control}
-      render={({field: {onChange, onBlur, value}}) => (
+      render={({ field: { onChange, onBlur, value } }) => (
         <TextInput
           label={label}
           accessibilityLabel={`${label} input`}
@@ -101,33 +101,34 @@ const EnterTokensScreen = () => {
   const {
     control,
     handleSubmit,
-    formState: {errors: formErrors, isValid: isFormValid}
+    formState: { errors: formErrors, isValid: isFormValid }
   } = useForm<FormInputs>({
-    defaultValues: {accessToken: "", refreshToken: ""},
+    defaultValues: { accessToken: "", refreshToken: "" },
     mode: "onTouched",
     resolver: zodResolver(VALIDATION_SCHEMA)
   });
 
-  const {top, bottom} = useSafeAreaInsets();
-  const {colors} = useTheme();
+  const { top, bottom } = useSafeAreaInsets();
+  const { colors } = useTheme();
 
-  const onSubmit: SubmitHandler<FormInputs> = ({accessToken, refreshToken}) =>
+  const onSubmit: SubmitHandler<FormInputs> = ({ accessToken, refreshToken }) =>
     /* The TTL here is 0 because it allows the user to enter tokens that may be
     expired, but then will automatically be refreshed upon the first request to the TodayTix
     API. This ensures the user will always have a valid token with which to make requests. */
-    storeTokens({accessToken, refreshToken, ttl: 0});
+    storeTokens({ accessToken, refreshToken, ttl: 0 });
 
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : "height"}
       keyboardVerticalOffset={15}
-      style={[styles.screenContainer, {marginTop: top, marginBottom: bottom}]}>
+      style={[styles.screenContainer, { marginTop: top, marginBottom: bottom }]}
+    >
       <View style={styles.formContainer}>
         <View style={styles.formSectionGroups}>
           <Text variant="headlineLarge" style={styles.title}>
             Sign into TodayTix
           </Text>
-          <Text variant="titleLarge" style={{color: colors.onSurfaceVariant}}>
+          <Text variant="titleLarge" style={{ color: colors.onSurfaceVariant }}>
             Enter the access tokens from the current TodayTix session.
           </Text>
         </View>
@@ -158,8 +159,9 @@ const EnterTokensScreen = () => {
         mode="contained"
         disabled={!isFormValid || isStoreTokensPending || isStoreTokensSuccess}
         onPress={handleSubmit(onSubmit)}
-        theme={{roundness: 1}}>
-        <Text variant="titleLarge" style={{color: colors.onPrimary}}>
+        theme={{ roundness: 1 }}
+      >
+        <Text variant="titleLarge" style={{ color: colors.onPrimary }}>
           Login
         </Text>
       </Button>
@@ -170,14 +172,14 @@ const EnterTokensScreen = () => {
 export default EnterTokensScreen;
 
 const styles = StyleSheet.create({
-  formContainer: {gap: 60},
-  formSectionGroups: {gap: 15},
-  input: {height: 60, lineHeight: 20},
+  formContainer: { gap: 60 },
+  formSectionGroups: { gap: 15 },
+  input: { height: 60, lineHeight: 20 },
   screenContainer: {
     flex: 1,
     justifyContent: "space-between",
     paddingTop: "5%",
     paddingHorizontal: "8%"
   },
-  title: {fontWeight: "bold"}
+  title: { fontWeight: "bold" }
 });

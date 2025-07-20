@@ -1,6 +1,6 @@
-import {Request, Response} from "express";
+import { Request, Response } from "express";
 
-import {clearAllData} from "./utils";
+import { clearAllData } from "./utils";
 
 const clearAllDataRoute = (req: Request, res: Response) => {
   clearAllData();

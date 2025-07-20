@@ -1,7 +1,10 @@
-import {Router} from "express";
+import { Router } from "express";
 
-import {TodayTixAPIv2ErrorResponse, TodayTixAPIv2Response} from "../types/base";
-import {DayOfWeek, Daypart, TodayTixShowtime} from "../types/showtimes";
+import {
+  TodayTixAPIv2ErrorResponse,
+  TodayTixAPIv2Response
+} from "../types/base";
+import { DayOfWeek, Daypart, TodayTixShowtime } from "../types/showtimes";
 
 const getShowtimesWithRushSix200Response: TodayTixAPIv2Response<
   TodayTixShowtime[]
@@ -212,7 +215,7 @@ const getShowtimesWithRush400Response: TodayTixAPIv2ErrorResponse = {
 const getShowtimesWithRushAvailabilityRoute = (router: Router) =>
   router.get<
     "/shows/:showId/showtimes/with_rush_availability",
-    {showId: string},
+    { showId: string },
     TodayTixAPIv2Response<TodayTixShowtime[]> | TodayTixAPIv2ErrorResponse
   >("/shows/:showId/showtimes/with_rush_availability", (req, res) => {
     switch (req.params.showId) {
@@ -229,7 +232,7 @@ const getShowtimesWithRushAvailabilityRoute = (router: Router) =>
         res.json(getShowtimesWithRushTina200Response);
         break;
       case "24608":
-        res.json({code: 200, data: []});
+        res.json({ code: 200, data: [] });
         break;
       default:
         res.status(400).json(getShowtimesWithRush400Response);

@@ -1,4 +1,4 @@
-import {expect} from "detox";
+import { expect } from "detox";
 
 describe("Authentication flow", () => {
   it("should be able to log in", async () => {

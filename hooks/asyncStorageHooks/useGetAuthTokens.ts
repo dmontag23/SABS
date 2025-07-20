@@ -1,6 +1,6 @@
-import {useQuery} from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 
-import {getTokens} from "../../store/asyncStorageUtils";
+import { getTokens } from "../../store/asyncStorageUtils";
 
 const getAllTokenData = async () => {
   const tokens = await getTokens();

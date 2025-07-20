@@ -5,7 +5,7 @@ import {
   AxiosResponse
 } from "axios";
 
-import {TodayTixAPIv2Response} from "./base";
+import { TodayTixAPIv2Response } from "./base";
 
 // TODO: Extend these types if possible to include the custom headers set in the request and response interceptors
 

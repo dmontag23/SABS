@@ -1,10 +1,10 @@
-import {AxiosHeaders, InternalAxiosRequestConfig} from "axios";
+import { AxiosHeaders, InternalAxiosRequestConfig } from "axios";
 
-import {todayTixOAuthAPI} from "./axiosConfig";
+import { todayTixOAuthAPI } from "./axiosConfig";
 
-import {log} from "../config/logger";
-import {getTokens, storeTokens} from "../store/asyncStorageUtils";
-import {AxiosTodayTixAPIv2Response} from "../types/api";
+import { log } from "../config/logger";
+import { getTokens, storeTokens } from "../store/asyncStorageUtils";
+import { AxiosTodayTixAPIv2Response } from "../types/api";
 import {
   TodayTixClient,
   TodayTixGrantType,
@@ -35,7 +35,7 @@ const refreshAndStoreNewAccessToken = async (
   accessToken: string,
   refreshToken: string
 ) => {
-  const {access_token: newAccessToken, expires_in} = await refetchToken(
+  const { access_token: newAccessToken, expires_in } = await refetchToken(
     accessToken,
     refreshToken
   );

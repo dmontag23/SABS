@@ -1,19 +1,19 @@
 import React from "react";
 
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import {render, userEvent} from "testing-library/extension";
+import { render, userEvent } from "testing-library/extension";
 
 import RushShowTicketSelection from "../RushShowTicketSelection";
 
-import {hadestownLightThemeColors} from "../../../themes";
-import {TodayTixShow} from "../../../types/shows";
-import {TodayTixShowtime} from "../../../types/showtimes";
+import { hadestownLightThemeColors } from "../../../themes";
+import { TodayTixShow } from "../../../types/shows";
+import { TodayTixShowtime } from "../../../types/showtimes";
 
 describe("The rush show ticket selection component", () => {
   it("does not show tickets if none are available", () => {
-    const {getByText, queryByRole, queryByText} = render(
+    const { getByText, queryByRole, queryByText } = render(
       <RushShowTicketSelection
-        show={{id: 1, displayName: "SIX the Musical"} as TodayTixShow}
+        show={{ id: 1, displayName: "SIX the Musical" } as TodayTixShow}
         showtimes={[]}
       />
     );
@@ -30,9 +30,9 @@ describe("The rush show ticket selection component", () => {
   it("can select a time and ticket amount", async () => {
     await AsyncStorage.setItem("customer-id", "customer-id");
 
-    const {getByText, queryByText} = render(
+    const { getByText, queryByText } = render(
       <RushShowTicketSelection
-        show={{id: 1, displayName: "SIX the Musical"} as TodayTixShow}
+        show={{ id: 1, displayName: "SIX the Musical" } as TodayTixShow}
         showtimes={[
           {
             id: 1,
@@ -95,19 +95,19 @@ describe("The rush show ticket selection component", () => {
   it("switches number of tickets available per show", async () => {
     await AsyncStorage.setItem("customer-id", "customer-id");
 
-    const {getByText} = render(
+    const { getByText } = render(
       <RushShowTicketSelection
-        show={{id: 1, displayName: "SIX the Musical"} as TodayTixShow}
+        show={{ id: 1, displayName: "SIX the Musical" } as TodayTixShow}
         showtimes={[
           {
             id: 1,
             localTime: "14:30",
-            rushTickets: {minTickets: 1, maxTickets: 4}
+            rushTickets: { minTickets: 1, maxTickets: 4 }
           } as TodayTixShowtime,
           {
             id: 2,
             localTime: "19:45",
-            rushTickets: {minTickets: 1, maxTickets: 2}
+            rushTickets: { minTickets: 1, maxTickets: 2 }
           } as TodayTixShowtime
         ]}
       />

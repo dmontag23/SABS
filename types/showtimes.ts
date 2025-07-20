@@ -1,4 +1,4 @@
-import {Money, Platform, Rewards, TodayTixShow} from "./shows";
+import { Money, Platform, Rewards, TodayTixShow } from "./shows";
 
 export enum Daypart {
   Evening = "EVENING",

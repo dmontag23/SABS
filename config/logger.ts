@@ -1,4 +1,4 @@
-import {consoleTransport, logger} from "react-native-logs";
+import { consoleTransport, logger } from "react-native-logs";
 
 export const log = logger.createLogger({
   dateFormat: "iso",

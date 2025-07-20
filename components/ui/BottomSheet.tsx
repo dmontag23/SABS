@@ -1,23 +1,23 @@
-import React, {JSX, useCallback, useEffect, useState} from "react";
-import {StyleSheet, View, useWindowDimensions} from "react-native";
+import React, { JSX, useCallback, useEffect, useState } from "react";
+import { StyleSheet, View, useWindowDimensions } from "react-native";
 
-import {Gesture, GestureDetector} from "react-native-gesture-handler";
-import {Portal, useTheme} from "react-native-paper";
+import { Gesture, GestureDetector } from "react-native-gesture-handler";
+import { Portal, useTheme } from "react-native-paper";
 import Animated, {
   clamp,
   useAnimatedStyle,
   useSharedValue,
   withSpring
 } from "react-native-reanimated";
-import {useSafeAreaInsets} from "react-native-safe-area-context";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export const ELEMENT_GAP = 15;
 export const HANDLE_HEIGHT = 6;
 export const BORDER_WIDTH = 3;
 
-type PortalWrapperProps = {isFullScreen?: boolean; children: JSX.Element};
+type PortalWrapperProps = { isFullScreen?: boolean; children: JSX.Element };
 
-const PortalWrapper = ({isFullScreen, children}: PortalWrapperProps) =>
+const PortalWrapper = ({ isFullScreen, children }: PortalWrapperProps) =>
   isFullScreen ? <Portal>{children}</Portal> : children;
 
 type BottomSheetProps = {
@@ -44,9 +44,9 @@ const BottomSheet = ({
   bottomInset = 0,
   testID = "bottom-sheet"
 }: BottomSheetProps) => {
-  const {colors} = useTheme();
+  const { colors } = useTheme();
 
-  const {height: screenHeight} = useWindowDimensions();
+  const { height: screenHeight } = useWindowDimensions();
   const [headerHeight, setHeaderHeight] = useState(0);
   const [contentHeight, setContentHeight] = useState(0);
 
@@ -62,7 +62,7 @@ const BottomSheet = ({
   const headerSnapPoint = handleSnapPoint - headerHeight;
   const contentSnapPoint = headerSnapPoint - contentHeight;
 
-  const {top} = useSafeAreaInsets();
+  const { top } = useSafeAreaInsets();
 
   const userSnapPoints = isFullScreen
     ? /*TODO: Allow user to close by panning down in full screen mode by adding [bottomSnapPoint, top].
@@ -79,13 +79,13 @@ const BottomSheet = ({
 
   const openBottomSheet = useCallback(() => {
     yPosition.value = withSpring(highestSnapPoint, {
-      clamp: {min: highestSnapPoint}
+      clamp: { min: highestSnapPoint }
     });
   }, [highestSnapPoint, yPosition]);
 
   const closeBottomSheet = useCallback(() => {
     yPosition.value = withSpring(bottomSnapPoint, {
-      clamp: {max: bottomSnapPoint}
+      clamp: { max: bottomSnapPoint }
     });
   }, [bottomSnapPoint, yPosition]);
 
@@ -95,14 +95,14 @@ const BottomSheet = ({
   );
 
   const pan = Gesture.Pan()
-    .onChange(({changeY}) => {
+    .onChange(({ changeY }) => {
       yPosition.value = clamp(
         yPosition.value + changeY,
         highestSnapPoint,
         lowestSnapPoint
       );
     })
-    .onEnd(({velocityY}) => {
+    .onEnd(({ velocityY }) => {
       const pointToSnapTo =
         velocityY <= 0
           ? userSnapPoints.find(snapPoint => snapPoint < yPosition.value) ??
@@ -113,13 +113,13 @@ const BottomSheet = ({
               .find(snapPoint => snapPoint > yPosition.value) ??
             lowestSnapPoint;
       yPosition.value = withSpring(pointToSnapTo, {
-        clamp: {min: highestSnapPoint, max: lowestSnapPoint}
+        clamp: { min: highestSnapPoint, max: lowestSnapPoint }
       });
     })
     .withTestId("bottom-sheet-pan-gesture");
 
   const animatedStyle = useAnimatedStyle(() => ({
-    transform: [{translateY: yPosition.value}]
+    transform: [{ translateY: yPosition.value }]
   }));
 
   return (
@@ -135,24 +135,27 @@ const BottomSheet = ({
             isFullScreen ? styles.fullScreenContainer : {},
             animatedStyle
           ]}
-          testID={testID}>
-          <View style={[styles.handle, {backgroundColor: colors.primary}]} />
+          testID={testID}
+        >
+          <View style={[styles.handle, { backgroundColor: colors.primary }]} />
           {/* The header and content components should not be conditionally rendered because,
         if the header or content is removed and the bottom sheet is re-rendered, onLayout will not
         be re-run, and so the height of the previous header or content remains in state, and so 
         the size of the re-rendered bottom sheet is wrong. */}
           <View
-            onLayout={({nativeEvent}) =>
+            onLayout={({ nativeEvent }) =>
               setHeaderHeight(nativeEvent.layout.height)
             }
-            style={header && styles.elementContainer}>
+            style={header && styles.elementContainer}
+          >
             {header}
           </View>
           <View
-            onLayout={({nativeEvent}) =>
+            onLayout={({ nativeEvent }) =>
               setContentHeight(nativeEvent.layout.height)
             }
-            style={content && styles.elementContainer}>
+            style={content && styles.elementContainer}
+          >
             {content}
           </View>
         </Animated.View>
@@ -170,8 +173,8 @@ const styles = StyleSheet.create({
     borderTopWidth: BORDER_WIDTH,
     paddingHorizontal: "5%"
   },
-  elementContainer: {paddingBottom: ELEMENT_GAP},
-  fullScreenContainer: {height: "100%"},
+  elementContainer: { paddingBottom: ELEMENT_GAP },
+  fullScreenContainer: { height: "100%" },
   handle: {
     width: "10%",
     height: HANDLE_HEIGHT,

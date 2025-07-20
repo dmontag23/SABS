@@ -1,8 +1,8 @@
 import React from "react";
-import {AppState} from "react-native";
+import { AppState } from "react-native";
 
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import {fireEvent, render, waitFor} from "@testing-library/react-native";
+import { fireEvent, render, waitFor } from "@testing-library/react-native";
 import nock from "nock";
 
 import App from "./App";
@@ -25,20 +25,20 @@ describe("App component", () => {
           {
             id: 1,
             numSeats: 2,
-            showtime: {show: {displayName: "Hamilton"}}
+            showtime: { show: { displayName: "Hamilton" } }
           }
         ]
       })
       .get("/holds")
-      .reply(200, {data: []});
+      .reply(200, { data: [] });
 
-    const {getByText, getByTestId} = render(<App />);
+    const { getByText, getByTestId } = render(<App />);
 
     /* since jest does not run in a native environment, onLayout needs to be manually triggered
     see https://github.com/callstack/react-native-testing-library/issues/240#issuecomment-559877887 */
     await waitFor(() =>
       fireEvent(getByTestId("bottom-tab-bar-wrapper"), "onLayout", {
-        nativeEvent: {layout: {width: 1, height: 1}}
+        nativeEvent: { layout: { width: 1, height: 1 } }
       })
     );
 

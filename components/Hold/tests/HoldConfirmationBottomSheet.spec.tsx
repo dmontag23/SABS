@@ -1,10 +1,15 @@
 import React from "react";
-import {Linking} from "react-native";
+import { Linking } from "react-native";
 
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import {createStackNavigator} from "@react-navigation/stack";
+import { createStackNavigator } from "@react-navigation/stack";
 import nock from "nock";
-import {fireEvent, render, userEvent, waitFor} from "testing-library/extension";
+import {
+  fireEvent,
+  render,
+  userEvent,
+  waitFor
+} from "testing-library/extension";
 
 import HoldConfirmationBottomSheet from "../HoldConfirmationBottomSheet";
 
@@ -12,11 +17,11 @@ import ShowDetailsScreen from "../../ShowDetails/ShowDetailsScreen";
 import LoggedInBottomTabNavigator from "../../screens/LoggedInBottomTabNavigator";
 
 import HoldContext from "../../../store/hold-context";
-import {hadestownLightThemeColors} from "../../../themes";
-import {TodayTixHoldErrorCode, TodayTixHoldType} from "../../../types/holds";
-import {RushShowStackParamList} from "../../../types/navigation";
-import {TodayTixFieldset, TodayTixShow} from "../../../types/shows";
-import {TodayTixShowtime} from "../../../types/showtimes";
+import { hadestownLightThemeColors } from "../../../themes";
+import { TodayTixHoldErrorCode, TodayTixHoldType } from "../../../types/holds";
+import { RushShowStackParamList } from "../../../types/navigation";
+import { TodayTixFieldset, TodayTixShow } from "../../../types/shows";
+import { TodayTixShowtime } from "../../../types/showtimes";
 
 describe("HoldConfirmationBottomSheet component", () => {
   describe("when displaying a scheduled hold", () => {
@@ -26,14 +31,14 @@ describe("HoldConfirmationBottomSheet component", () => {
 
       const ticketAvailabilityTime = new Date().getTime() / 1000 + 120;
 
-      const {getByText, getByLabelText} = render(
+      const { getByText, getByLabelText } = render(
         <>
           <Stack.Navigator>
             <Stack.Screen
               name="ShowDetails"
               component={ShowDetailsScreen}
               initialParams={{
-                show: {displayName: "Guys & Dolls"} as TodayTixShow,
+                show: { displayName: "Guys & Dolls" } as TodayTixShow,
                 showtimes: [
                   {
                     id: 1,
@@ -102,14 +107,14 @@ describe("HoldConfirmationBottomSheet component", () => {
 
       const Stack = createStackNavigator<RushShowStackParamList>();
 
-      const {getByText, getByLabelText, getByTestId} = render(
+      const { getByText, getByLabelText, getByTestId } = render(
         <>
           <Stack.Navigator>
             <Stack.Screen
               name="ShowDetails"
               component={ShowDetailsScreen}
               initialParams={{
-                show: {displayName: "Guys & Dolls"} as TodayTixShow,
+                show: { displayName: "Guys & Dolls" } as TodayTixShow,
                 showtimes: [
                   {
                     id: 1,
@@ -161,19 +166,21 @@ describe("HoldConfirmationBottomSheet component", () => {
         .reply(201)
         .get("/holds")
         .reply(200, {
-          data: [{numSeats: 2, showtime: {show: {displayName: "Guys & Dolls"}}}]
+          data: [
+            { numSeats: 2, showtime: { show: { displayName: "Guys & Dolls" } } }
+          ]
         });
 
       const Stack = createStackNavigator<RushShowStackParamList>();
 
-      const {getByText, getByLabelText} = render(
+      const { getByText, getByLabelText } = render(
         <>
           <Stack.Navigator>
             <Stack.Screen
               name="ShowDetails"
               component={ShowDetailsScreen}
               initialParams={{
-                show: {displayName: "Guys & Dolls"} as TodayTixShow,
+                show: { displayName: "Guys & Dolls" } as TodayTixShow,
                 showtimes: [
                   {
                     id: 1,
@@ -232,7 +239,7 @@ describe("HoldConfirmationBottomSheet component", () => {
 
       const Stack = createStackNavigator<RushShowStackParamList>();
 
-      const {getByText, getByLabelText} = render(
+      const { getByText, getByLabelText } = render(
         <>
           <Stack.Navigator>
             <Stack.Screen
@@ -272,17 +279,18 @@ describe("HoldConfirmationBottomSheet component", () => {
 
     it("does not retry hold if no customer id, show, or showtime are available", async () => {
       const scheduleHold = jest.fn();
-      const {getByText} = render(
+      const { getByText } = render(
         /* There is no way to access the retry function without a customer id via user interaction, and hence
           a dummy context needs to be provided. */
         <HoldContext.Provider
           value={{
             isCreatingHold: false,
-            createHoldError: {error: TodayTixHoldErrorCode.CONFLICT},
+            createHoldError: { error: TodayTixHoldErrorCode.CONFLICT },
             isHoldScheduled: false,
             scheduleHold,
             cancelHold: () => {}
-          }}>
+          }}
+        >
           <HoldConfirmationBottomSheet />
         </HoldContext.Provider>
       );
@@ -303,22 +311,22 @@ describe("HoldConfirmationBottomSheet component", () => {
         .reply(200, {
           data: [
             {
-              configurableTexts: {amountDisplayForWeb: "£25.00"},
+              configurableTexts: { amountDisplayForWeb: "£25.00" },
               numSeats: 2,
-              seatsInfo: {row: "D", seats: ["5", "6"], sectionName: "Stalls"},
-              showtime: {show: {displayName: "SIX the Musical"}}
+              seatsInfo: { row: "D", seats: ["5", "6"], sectionName: "Stalls" },
+              showtime: { show: { displayName: "SIX the Musical" } }
             }
           ]
         });
 
-      const {getByText} = render(<HoldConfirmationBottomSheet />);
+      const { getByText } = render(<HoldConfirmationBottomSheet />);
 
       await waitFor(
         () =>
           expect(
             getByText("You've won 2 tickets to SIX the Musical 🎉")
           ).toBeVisible(),
-        {timeout: 3000}
+        { timeout: 3000 }
       );
 
       // check the bottom sheet contains all of the page elements
@@ -340,18 +348,21 @@ describe("HoldConfirmationBottomSheet component", () => {
         .get("/holds")
         .reply(200, {
           data: [
-            {numSeats: 2, showtime: {show: {displayName: "SIX the Musical"}}}
+            {
+              numSeats: 2,
+              showtime: { show: { displayName: "SIX the Musical" } }
+            }
           ]
         });
 
-      const {getByText} = render(<HoldConfirmationBottomSheet />);
+      const { getByText } = render(<HoldConfirmationBottomSheet />);
 
       await waitFor(
         () =>
           expect(
             getByText("You've won 2 tickets to SIX the Musical 🎉")
           ).toBeVisible(),
-        {timeout: 3000}
+        { timeout: 3000 }
       );
 
       // check navigation to the TodayTix app to purchase tickets is possible
@@ -380,17 +391,17 @@ describe("HoldConfirmationBottomSheet component", () => {
             {
               id: 1,
               numSeats: 2,
-              showtime: {show: {displayName: "SIX the Musical"}}
+              showtime: { show: { displayName: "SIX the Musical" } }
             }
           ]
         })
         .delete("/holds/1")
         .reply(200)
         .get("/holds")
-        .reply(200, {data: []});
+        .reply(200, { data: [] });
 
       const Stack = createStackNavigator<RushShowStackParamList>();
-      const {getByText, queryByText, getByLabelText} = render(
+      const { getByText, queryByText, getByLabelText } = render(
         <>
           <Stack.Navigator>
             <Stack.Screen
@@ -402,7 +413,7 @@ describe("HoldConfirmationBottomSheet component", () => {
                   {
                     id: 1,
                     localTime: "19:00",
-                    rushTickets: {minTickets: 1, maxTickets: 2}
+                    rushTickets: { minTickets: 1, maxTickets: 2 }
                   } as TodayTixShowtime
                 ]
               }}
@@ -452,7 +463,7 @@ describe("HoldConfirmationBottomSheet component", () => {
       });
 
     const Stack = createStackNavigator<RushShowStackParamList>();
-    const {getByText, getByLabelText, queryByText} = render(
+    const { getByText, getByLabelText, queryByText } = render(
       <>
         <Stack.Navigator>
           <Stack.Screen
@@ -501,7 +512,10 @@ describe("HoldConfirmationBottomSheet component", () => {
       .get("/holds")
       .reply(200, {
         data: [
-          {numSeats: 2, showtime: {show: {displayName: "SIX the Musical"}}}
+          {
+            numSeats: 2,
+            showtime: { show: { displayName: "SIX the Musical" } }
+          }
         ]
       })
       .get("/shows")
@@ -512,12 +526,14 @@ describe("HoldConfirmationBottomSheet component", () => {
         location: 2
       })
       .reply(200, {
-        data: [{id: 1, displayName: "SIX the Musical", isRushActive: true}]
+        data: [{ id: 1, displayName: "SIX the Musical", isRushActive: true }]
       })
       .get("/shows/1/showtimes/with_rush_availability")
-      .reply(200, {data: [{id: 1}]});
+      .reply(200, { data: [{ id: 1 }] });
 
-    const {getByText, getByLabelText} = render(<LoggedInBottomTabNavigator />);
+    const { getByText, getByLabelText } = render(
+      <LoggedInBottomTabNavigator />
+    );
 
     const headerText = "You've won 2 tickets to SIX the Musical 🎉";
     await waitFor(() => expect(getByText(headerText)).toBeVisible());

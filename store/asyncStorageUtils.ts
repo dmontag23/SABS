@@ -27,7 +27,7 @@ export const storeTokens = async (
       ["refresh-token", refreshToken],
       ["token-ttl", ttl.toString()]
     ]);
-    return {accessToken, refreshToken, ttl};
+    return { accessToken, refreshToken, ttl };
   } catch (error: unknown) {
     return Promise.reject({
       name: "Cannot store AsyncStorage token data",

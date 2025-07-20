@@ -1,10 +1,10 @@
-const {getDefaultConfig, mergeConfig} = require("@react-native/metro-config");
+const { getDefaultConfig, mergeConfig } = require("@react-native/metro-config");
 
 const {
   wrapWithReanimatedMetroConfig
 } = require("react-native-reanimated/metro-config");
 
-const {withSentryConfig} = require("@sentry/react-native/metro");
+const { withSentryConfig } = require("@sentry/react-native/metro");
 
 /**
  * Metro configuration
@@ -12,7 +12,7 @@ const {withSentryConfig} = require("@sentry/react-native/metro");
  *
  * @type {import('@react-native/metro-config').MetroConfig}
  */
-const config = {resetCache: true};
+const config = { resetCache: true };
 
 module.exports = withSentryConfig(
   wrapWithReanimatedMetroConfig(

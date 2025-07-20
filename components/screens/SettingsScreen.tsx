@@ -1,7 +1,7 @@
-import React, {useState} from "react";
-import {SafeAreaView, StyleSheet, View} from "react-native";
+import React, { useState } from "react";
+import { SafeAreaView, StyleSheet, View } from "react-native";
 
-import {List, Surface, Text} from "react-native-paper";
+import { List, Surface, Text } from "react-native-paper";
 
 import LocationHeader from "../Location/LocationHeader";
 import LocationsContainer from "../Location/LocationsContainer";
@@ -10,7 +10,7 @@ import LoadingSpinner from "../ui/LoadingSpinner";
 
 import useGetLocationId from "../../hooks/asyncStorageHooks/useGetLocationId";
 import useGetLocations from "../../hooks/todayTixHooks/useGetLocations";
-import {TodayTixLocation} from "../../types/locations";
+import { TodayTixLocation } from "../../types/locations";
 
 const createRightElement = (currentLocation?: TodayTixLocation) => (
   <View style={styles.rightElement}>
@@ -24,8 +24,8 @@ const createRightElement = (currentLocation?: TodayTixLocation) => (
 );
 
 const SettingsScreen = () => {
-  const {data: locations} = useGetLocations();
-  const {data: currentLocationId} = useGetLocationId();
+  const { data: locations } = useGetLocations();
+  const { data: currentLocationId } = useGetLocationId();
 
   const [isLocationBottomSheetOpen, setIsLocationBottomSheetOpen] =
     useState(false);
@@ -34,7 +34,7 @@ const SettingsScreen = () => {
   const handleClose = () => setIsLocationBottomSheetOpen(false);
 
   const currentLocation = (locations ?? []).find(
-    ({id}) => id === currentLocationId
+    ({ id }) => id === currentLocationId
   );
 
   return (
@@ -70,9 +70,9 @@ const SettingsScreen = () => {
 export default SettingsScreen;
 
 const styles = StyleSheet.create({
-  container: {marginHorizontal: 10},
-  itemSurface: {borderRadius: 10},
-  listItem: {overflow: "hidden"},
-  rightElement: {flexDirection: "row", alignItems: "center", gap: 5},
-  titleText: {marginVertical: 20, textAlign: "center"}
+  container: { marginHorizontal: 10 },
+  itemSurface: { borderRadius: 10 },
+  listItem: { overflow: "hidden" },
+  rightElement: { flexDirection: "row", alignItems: "center", gap: 5 },
+  titleText: { marginVertical: 20, textAlign: "center" }
 });

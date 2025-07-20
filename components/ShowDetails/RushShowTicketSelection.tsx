@@ -1,13 +1,13 @@
-import React, {useContext} from "react";
-import {StyleSheet, View} from "react-native";
+import React, { useContext } from "react";
+import { StyleSheet, View } from "react-native";
 
-import {Button, Text} from "react-native-paper";
+import { Button, Text } from "react-native-paper";
 
 import useGetCustomerId from "../../hooks/useGetCustomerId";
 import HoldContext from "../../store/hold-context";
 import SelectedShowtimeContext from "../../store/selected-showtime-context";
-import {TodayTixShow} from "../../types/shows";
-import {TodayTixShowtime} from "../../types/showtimes";
+import { TodayTixShow } from "../../types/shows";
+import { TodayTixShowtime } from "../../types/showtimes";
 
 type RushShowTicketSelectionProps = {
   show: TodayTixShow;
@@ -18,7 +18,7 @@ const RushShowTicketSelection = ({
   show,
   showtimes
 }: RushShowTicketSelectionProps) => {
-  const {customerId} = useGetCustomerId();
+  const { customerId } = useGetCustomerId();
   const {
     selectedShowtime,
     selectedNumberOfTickets,
@@ -26,7 +26,7 @@ const RushShowTicketSelection = ({
     setSelectedShowtime,
     setSelectedNumberOfTickets
   } = useContext(SelectedShowtimeContext);
-  const {scheduleHold, cancelHold, hold} = useContext(HoldContext);
+  const { scheduleHold, cancelHold, hold } = useContext(HoldContext);
 
   /* The numberOfTickets array only shows if a showtime is the same as the
   selectedShowtime (this is checked below), and so it is okay to use the
@@ -34,7 +34,7 @@ const RushShowTicketSelection = ({
   const minNumberOfTickets = selectedShowtime?.rushTickets?.minTickets ?? 0;
   const maxNumberOfTickets = selectedShowtime?.rushTickets?.maxTickets ?? 0;
   const numberOfTickets = Array.from(
-    {length: maxNumberOfTickets - minNumberOfTickets + 1},
+    { length: maxNumberOfTickets - minNumberOfTickets + 1 },
     (_, x) => x + minNumberOfTickets
   ).filter(number => number !== 0);
 
@@ -61,7 +61,8 @@ const RushShowTicketSelection = ({
                   setSelectedNumberOfTickets(NaN);
                 }}
                 mode={isSelected ? "contained" : "outlined"}
-                contentStyle={styles.selectionButton}>
+                contentStyle={styles.selectionButton}
+              >
                 {showtime.localTime}
               </Button>
             );
@@ -70,7 +71,7 @@ const RushShowTicketSelection = ({
       </View>
       {customerId &&
         selectedShowtime &&
-        showtimes.some(({id}) => id === selectedShowtime.id) && (
+        showtimes.some(({ id }) => id === selectedShowtime.id) && (
           <View style={styles.selectionContainer}>
             <Text variant="titleLarge">Number of Tickets</Text>
             <View style={styles.selectionButtonsContainer}>
@@ -94,7 +95,8 @@ const RushShowTicketSelection = ({
                       );
                     }}
                     mode={isSelected ? "contained" : "outlined"}
-                    contentStyle={styles.selectionButton}>
+                    contentStyle={styles.selectionButton}
+                  >
                     {number}
                   </Button>
                 );
@@ -109,8 +111,8 @@ const RushShowTicketSelection = ({
 export default RushShowTicketSelection;
 
 const styles = StyleSheet.create({
-  container: {alignItems: "center", rowGap: 30},
-  selectionButton: {minWidth: 100, minHeight: 80},
+  container: { alignItems: "center", rowGap: 30 },
+  selectionButton: { minWidth: 100, minHeight: 80 },
   selectionButtonsContainer: {
     flexDirection: "row",
     flexWrap: "wrap",
@@ -118,5 +120,5 @@ const styles = StyleSheet.create({
     columnGap: 50,
     width: "100%"
   },
-  selectionContainer: {alignItems: "center", rowGap: 10}
+  selectionContainer: { alignItems: "center", rowGap: 10 }
 });

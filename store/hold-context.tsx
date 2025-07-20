@@ -1,14 +1,14 @@
-import React, {PropsWithChildren, createContext} from "react";
+import React, { PropsWithChildren, createContext } from "react";
 
-import {MutateOptions} from "@tanstack/react-query";
+import { MutateOptions } from "@tanstack/react-query";
 
 import useGetHold from "../hooks/todayTixHooks/useGetHold";
 import usePostHolds, {
   PostHoldsVariables
 } from "../hooks/todayTixHooks/usePostHolds";
 import useScheduleCallback from "../hooks/useScheduleCallback";
-import {TodayTixAPIv2ErrorResponse} from "../types/base";
-import {TodayTixHold} from "../types/holds";
+import { TodayTixAPIv2ErrorResponse } from "../types/base";
+import { TodayTixHold } from "../types/holds";
 
 const HoldContext = createContext<{
   isCreatingHold: boolean;
@@ -35,8 +35,8 @@ const HoldContext = createContext<{
   cancelHold: () => {}
 });
 
-export const HoldContextProvider = ({children}: PropsWithChildren) => {
-  const {data: hold} = useGetHold();
+export const HoldContextProvider = ({ children }: PropsWithChildren) => {
+  const { data: hold } = useGetHold();
 
   const {
     mutate: createHold,
@@ -67,7 +67,8 @@ export const HoldContextProvider = ({children}: PropsWithChildren) => {
         scheduleHold,
         cancelHold,
         hold
-      }}>
+      }}
+    >
       {children}
     </HoldContext.Provider>
   );

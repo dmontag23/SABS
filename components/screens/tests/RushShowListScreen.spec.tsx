@@ -1,7 +1,7 @@
 import React from "react";
 
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import {createStackNavigator} from "@react-navigation/stack";
+import { createStackNavigator } from "@react-navigation/stack";
 import nock from "nock";
 import {
   act,
@@ -15,9 +15,9 @@ import RushShowListScreen from "../RushShowListScreen";
 
 import ShowDetailsScreen from "../../ShowDetails/ShowDetailsScreen";
 
-import {hadestownLightThemeColors} from "../../../themes";
-import {RushShowStackParamList} from "../../../types/navigation";
-import {TodayTixFieldset} from "../../../types/shows";
+import { hadestownLightThemeColors } from "../../../themes";
+import { RushShowStackParamList } from "../../../types/navigation";
+import { TodayTixFieldset } from "../../../types/shows";
 
 describe("Rush show list", () => {
   beforeEach(async () => {
@@ -37,9 +37,9 @@ describe("Rush show list", () => {
       .get("/customers/me/rushGrants")
       .reply(200, {
         data: [
-          {showId: 1, showName: "SIX the Musical"},
-          {showId: 3, showName: "Hamilton"},
-          {showId: 5, showName: "Come from Away"}
+          { showId: 1, showName: "SIX the Musical" },
+          { showId: 3, showName: "Hamilton" },
+          { showId: 5, showName: "Come from Away" }
         ]
       })
       .get("/shows")
@@ -57,10 +57,15 @@ describe("Rush show list", () => {
             isRushActive: true,
             showId: 1
           },
-          {id: 2, displayName: "Unfortunate", isRushActive: true, showId: 2},
-          {id: 3, displayName: "Hamilton", isRushActive: true, showId: 3},
-          {id: 4, displayName: "Hadestown", isRushActive: true, showId: 4},
-          {id: 5, displayName: "Come from Away", isRushActive: true, showId: 5}
+          { id: 2, displayName: "Unfortunate", isRushActive: true, showId: 2 },
+          { id: 3, displayName: "Hamilton", isRushActive: true, showId: 3 },
+          { id: 4, displayName: "Hadestown", isRushActive: true, showId: 4 },
+          {
+            id: 5,
+            displayName: "Come from Away",
+            isRushActive: true,
+            showId: 5
+          }
         ]
       })
       .get("/shows/1/showtimes/with_rush_availability")
@@ -77,7 +82,7 @@ describe("Rush show list", () => {
         ]
       })
       .get("/shows/2/showtimes/with_rush_availability")
-      .reply(200, {data: []})
+      .reply(200, { data: [] })
       .get("/shows/3/showtimes/with_rush_availability")
       .reply(200, {
         data: [
@@ -113,11 +118,11 @@ describe("Rush show list", () => {
         ]
       })
       .get("/shows/5/showtimes/with_rush_availability")
-      .reply(200, {data: []});
+      .reply(200, { data: [] });
 
     // render
     const Stack = createStackNavigator<RushShowStackParamList>();
-    const {getByText, getAllByLabelText} = render(
+    const { getByText, getAllByLabelText } = render(
       <Stack.Navigator>
         <Stack.Screen name="RushShowList" component={RushShowListScreen} />
       </Stack.Navigator>
@@ -143,7 +148,7 @@ describe("Rush show list", () => {
       `${process.env.TODAY_TIX_API_BASE_URL}${process.env.TODAY_TIX_API_V2_ENDPOINT}`
     )
       .get("/customers/me/rushGrants")
-      .reply(200, {data: [{showId: 1, showName: "SIX the Musical"}]})
+      .reply(200, { data: [{ showId: 1, showName: "SIX the Musical" }] })
       .get("/shows")
       .query({
         areAccessProgramsActive: 1,
@@ -153,7 +158,12 @@ describe("Rush show list", () => {
       })
       .reply(200, {
         data: [
-          {id: 1, displayName: "SIX the Musical", isRushActive: true, showId: 1}
+          {
+            id: 1,
+            displayName: "SIX the Musical",
+            isRushActive: true,
+            showId: 1
+          }
         ]
       })
       .get("/shows/1/showtimes/with_rush_availability")
@@ -172,7 +182,7 @@ describe("Rush show list", () => {
 
     // render
     const Stack = createStackNavigator<RushShowStackParamList>();
-    const {getByText, getByTestId, getByLabelText} = render(
+    const { getByText, getByTestId, getByLabelText } = render(
       <Stack.Navigator>
         <Stack.Screen name="RushShowList" component={RushShowListScreen} />
         <Stack.Screen name="ShowDetails" component={ShowDetailsScreen} />
@@ -209,7 +219,7 @@ describe("Rush show list", () => {
       `${process.env.TODAY_TIX_API_BASE_URL}${process.env.TODAY_TIX_API_V2_ENDPOINT}`
     )
       .get("/customers/me/rushGrants")
-      .reply(200, {data: []})
+      .reply(200, { data: [] })
       .get("/shows")
       .query({
         areAccessProgramsActive: 1,
@@ -219,15 +229,15 @@ describe("Rush show list", () => {
       })
       .reply(200, {
         data: [
-          {id: 1, displayName: "SIX the Musical", isRushActive: true},
+          { id: 1, displayName: "SIX the Musical", isRushActive: true },
           {
             id: 2,
             displayName: "Hamilton",
             isRushActive: true,
             images: {
               productMedia: {
-                appHeroImage: {file: {url: "test-url-for-show-card"}},
-                headerImage: {file: {url: "test-url-for-header-photo"}}
+                appHeroImage: { file: { url: "test-url-for-show-card" } },
+                headerImage: { file: { url: "test-url-for-header-photo" } }
               }
             }
           }
@@ -267,7 +277,7 @@ describe("Rush show list", () => {
 
     // render
     const Stack = createStackNavigator<RushShowStackParamList>();
-    const {getByText, getByLabelText} = render(
+    const { getByText, getByLabelText } = render(
       <Stack.Navigator>
         <Stack.Screen name="RushShowList" component={RushShowListScreen} />
         <Stack.Screen name="ShowDetails" component={ShowDetailsScreen} />
@@ -342,7 +352,7 @@ describe("Rush show list", () => {
     )
       .get("/customers/me/rushGrants")
       .delay(5000)
-      .reply(200, {data: []})
+      .reply(200, { data: [] })
       .get("/shows")
       .query({
         areAccessProgramsActive: 1,
@@ -352,12 +362,17 @@ describe("Rush show list", () => {
       })
       .reply(200, {
         data: [
-          {id: 1, displayName: "SIX the Musical", isRushActive: true, showId: 1}
+          {
+            id: 1,
+            displayName: "SIX the Musical",
+            isRushActive: true,
+            showId: 1
+          }
         ]
       });
 
     const Stack = createStackNavigator<RushShowStackParamList>();
-    const {getByTestId} = render(
+    const { getByTestId } = render(
       <Stack.Navigator>
         <Stack.Screen name="RushShowList" component={RushShowListScreen} />
       </Stack.Navigator>
@@ -372,9 +387,9 @@ describe("Rush show list", () => {
     )
       .get("/customers/me/rushGrants")
       .reply(200, {
-        data: [{showId: 1, showName: "SIX the Musical"}]
+        data: [{ showId: 1, showName: "SIX the Musical" }]
       })
-      .post("/customers/customer-id/rushGrants", {showId: 2})
+      .post("/customers/customer-id/rushGrants", { showId: 2 })
       .reply(401, {
         code: 401,
         error: "UnauthenticatedException",
@@ -397,7 +412,7 @@ describe("Rush show list", () => {
             isRushActive: true,
             showId: 1
           },
-          {id: 2, displayName: "Hamilton", isRushActive: true, showId: 2}
+          { id: 2, displayName: "Hamilton", isRushActive: true, showId: 2 }
         ]
       })
       .get("/shows/1/showtimes/with_rush_availability")
@@ -428,7 +443,7 @@ describe("Rush show list", () => {
       });
 
     const Stack = createStackNavigator<RushShowStackParamList>();
-    const {getByText, getAllByLabelText, getByLabelText} = render(
+    const { getByText, getAllByLabelText, getByLabelText } = render(
       <Stack.Navigator>
         <Stack.Screen name="RushShowList" component={RushShowListScreen} />
       </Stack.Navigator>
@@ -441,18 +456,18 @@ describe("Rush show list", () => {
     const firstShow = showCards[0];
     const secondShow = showCards[1];
 
-    expect(firstShow).toHaveTextContent("SIX the Musical", {exact: false});
-    expect(firstShow).toHaveTextContent("Tickets: 6", {exact: false});
+    expect(firstShow).toHaveTextContent("SIX the Musical", { exact: false });
+    expect(firstShow).toHaveTextContent("Tickets: 6", { exact: false });
     expect(firstShow).not.toHaveTextContent(
       "Rush is not unlocked for this show.",
-      {exact: false}
+      { exact: false }
     );
 
-    expect(secondShow).toHaveTextContent("Hamilton", {exact: false});
-    expect(secondShow).toHaveTextContent("Tickets: 10", {exact: false});
+    expect(secondShow).toHaveTextContent("Hamilton", { exact: false });
+    expect(secondShow).toHaveTextContent("Tickets: 10", { exact: false });
     expect(secondShow).toHaveTextContent(
       "Rush is not unlocked for this show.",
-      {exact: false}
+      { exact: false }
     );
     expect(getByLabelText("Inactive card")).toBeVisible();
   });
@@ -463,14 +478,14 @@ describe("Rush show list", () => {
       `${process.env.TODAY_TIX_API_BASE_URL}${process.env.TODAY_TIX_API_V2_ENDPOINT}`
     )
       .get("/customers/me")
-      .reply(200, {data: {id: "customer-id"}})
+      .reply(200, { data: { id: "customer-id" } })
       .get("/customers/me/rushGrants")
-      .reply(200, {data: []})
-      .post("/customers/customer-id/rushGrants", {showId: 1})
-      .reply(201, {data: [{showId: 1, showName: "SIX the Musical"}]})
+      .reply(200, { data: [] })
+      .post("/customers/customer-id/rushGrants", { showId: 1 })
+      .reply(201, { data: [{ showId: 1, showName: "SIX the Musical" }] })
       .get("/customers/me/rushGrants")
       .reply(200, {
-        data: [{showId: 1, showName: "SIX the Musical"}]
+        data: [{ showId: 1, showName: "SIX the Musical" }]
       })
       .get("/shows")
       .query({
@@ -481,7 +496,12 @@ describe("Rush show list", () => {
       })
       .reply(200, {
         data: [
-          {id: 1, displayName: "SIX the Musical", isRushActive: true, showId: 1}
+          {
+            id: 1,
+            displayName: "SIX the Musical",
+            isRushActive: true,
+            showId: 1
+          }
         ]
       })
       .get("/shows/1/showtimes/with_rush_availability")
@@ -499,7 +519,7 @@ describe("Rush show list", () => {
       });
 
     const Stack = createStackNavigator<RushShowStackParamList>();
-    const {getByText, getByLabelText, queryByLabelText} = render(
+    const { getByText, getByLabelText, queryByLabelText } = render(
       <Stack.Navigator>
         <Stack.Screen name="RushShowList" component={RushShowListScreen} />
       </Stack.Navigator>
@@ -511,13 +531,13 @@ describe("Rush show list", () => {
     await waitFor(() =>
       expect(getByLabelText("Show card")).not.toHaveTextContent(
         "Rush is not unlocked for this show.",
-        {exact: false}
+        { exact: false }
       )
     );
 
     const showCard = getByLabelText("Show card");
-    expect(showCard).toHaveTextContent("SIX the Musical", {exact: false});
-    expect(showCard).toHaveTextContent("Tickets: 6", {exact: false});
+    expect(showCard).toHaveTextContent("SIX the Musical", { exact: false });
+    expect(showCard).toHaveTextContent("Tickets: 6", { exact: false });
     expect(queryByLabelText("Inactive card")).toBeNull();
   });
 });

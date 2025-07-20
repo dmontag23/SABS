@@ -1,3 +1,3 @@
-import {startMockServer} from "./server";
+import { startMockServer } from "./server";
 
 startMockServer();

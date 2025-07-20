@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 
 import useGetAuthTokens from "./asyncStorageHooks/useGetAuthTokens";
 import useGetCustomerIdFromAsyncStorage from "./asyncStorageHooks/useGetCustomerIdFromAsyncStorage";
@@ -12,7 +12,7 @@ const useGetCustomerId = () => {
   const [hasCalledStoreCustomerMutation, setHasCalledStoreCustomerMutation] =
     useState(false);
 
-  const {data: authTokens, isPending: isGetAuthTokensPending} =
+  const { data: authTokens, isPending: isGetAuthTokensPending } =
     useGetAuthTokens();
 
   const {

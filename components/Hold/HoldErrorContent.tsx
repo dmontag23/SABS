@@ -1,21 +1,23 @@
-import React, {useContext} from "react";
-import {StyleSheet, View} from "react-native";
+import React, { useContext } from "react";
+import { StyleSheet, View } from "react-native";
 
-import {Button, Text} from "react-native-paper";
+import { Button, Text } from "react-native-paper";
 
 import useGetCustomerId from "../../hooks/useGetCustomerId";
 import HoldContext from "../../store/hold-context";
 import SelectedShowtimeContext from "../../store/selected-showtime-context";
 
-type HoldErrorContentProps = {message: string};
+type HoldErrorContentProps = { message: string };
 
-const HoldErrorContent = ({message}: HoldErrorContentProps) => {
-  const {customerId} = useGetCustomerId();
+const HoldErrorContent = ({ message }: HoldErrorContentProps) => {
+  const { customerId } = useGetCustomerId();
 
-  const {selectedShowtime: showtime, selectedNumberOfTickets: numberOfTickets} =
-    useContext(SelectedShowtimeContext);
+  const {
+    selectedShowtime: showtime,
+    selectedNumberOfTickets: numberOfTickets
+  } = useContext(SelectedShowtimeContext);
 
-  const {scheduleHold, cancelHold} = useContext(HoldContext);
+  const { scheduleHold, cancelHold } = useContext(HoldContext);
 
   const retryPlacingHold = () => {
     cancelHold();
@@ -39,4 +41,4 @@ const HoldErrorContent = ({message}: HoldErrorContentProps) => {
 
 export default HoldErrorContent;
 
-const styles = StyleSheet.create({container: {rowGap: 15}});
+const styles = StyleSheet.create({ container: { rowGap: 15 } });

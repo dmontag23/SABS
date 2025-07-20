@@ -1,18 +1,18 @@
-import React, {useMemo} from "react";
-import {ScrollView, StyleSheet, View} from "react-native";
+import React, { useMemo } from "react";
+import { ScrollView, StyleSheet, View } from "react-native";
 
-import {useSafeAreaInsets} from "react-native-safe-area-context";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-import ShowCard, {isShowActive} from "../ShowCard";
+import ShowCard, { isShowActive } from "../ShowCard";
 import LoadingSpinner from "../ui/LoadingSpinner";
 
 import useGetLocationId from "../../hooks/asyncStorageHooks/useGetLocationId";
 import useGetShows from "../../hooks/todayTixHooks/useGetShows";
 import useGetShowtimesWithRushAvailability from "../../hooks/todayTixHooks/useGetShowtimesWithRushAvailability";
 import useGrantRushAccessForAllShows from "../../hooks/useGrantRushAccessForAllShows";
-import {RushShowsStackScreenProps} from "../../types/navigation";
-import {TodayTixFieldset, TodayTixShow} from "../../types/shows";
-import {TodayTixShowtime} from "../../types/showtimes";
+import { RushShowsStackScreenProps } from "../../types/navigation";
+import { TodayTixFieldset, TodayTixShow } from "../../types/shows";
+import { TodayTixShowtime } from "../../types/showtimes";
 
 const isRushUnlocked = (show: TodayTixShow, allUnlockedRushShowIds: number[]) =>
   allUnlockedRushShowIds.includes(show.showId ?? NaN);
@@ -27,11 +27,11 @@ const addTickets = (showtimes: TodayTixShowtime[]) =>
 const RushShowListScreen = ({
   navigation
 }: RushShowsStackScreenProps<"RushShowList">) => {
-  const {top, bottom} = useSafeAreaInsets();
+  const { top, bottom } = useSafeAreaInsets();
 
-  const {data: currentLocationId, isPending: isLoadingLocation} =
+  const { data: currentLocationId, isPending: isLoadingLocation } =
     useGetLocationId();
-  const {data: rushAndLotteryShows, isPending: isLoadingRushAndLotteryShows} =
+  const { data: rushAndLotteryShows, isPending: isLoadingRushAndLotteryShows } =
     useGetShows({
       requestParams: {
         areAccessProgramsActive: true,
@@ -47,10 +47,10 @@ const RushShowListScreen = ({
     [rushAndLotteryShows]
   );
 
-  const {isGrantingAccess, rushGrants} =
+  const { isGrantingAccess, rushGrants } =
     useGrantRushAccessForAllShows(rushShows);
 
-  const {data: rushShowtimes, isPending: isLoadingRushShowtimes} =
+  const { data: rushShowtimes, isPending: isLoadingRushShowtimes } =
     useGetShowtimesWithRushAvailability({
       showIds: rushShows.map(show => show.id)
     });
@@ -67,7 +67,7 @@ const RushShowListScreen = ({
       </View>
     );
 
-  const allUnlockedRushShowIds = rushGrants.map(({showId}) => showId);
+  const allUnlockedRushShowIds = rushGrants.map(({ showId }) => showId);
   const showsAndTimes = rushShows.map((show, i) => ({
     show,
     showtimes: rushShowtimes[i] ?? []
@@ -98,10 +98,11 @@ const RushShowListScreen = ({
         showsVerticalScrollIndicator={false}
         contentContainerStyle={[
           styles.scrollContentContainer,
-          {paddingTop: top, paddingBottom: bottom}
+          { paddingTop: top, paddingBottom: bottom }
         ]}
-        testID="rushShows">
-        {sortedRushShows.map(({show, showtimes}) => (
+        testID="rushShows"
+      >
+        {sortedRushShows.map(({ show, showtimes }) => (
           <ShowCard
             key={show.id}
             show={show}
@@ -123,7 +124,7 @@ const RushShowListScreen = ({
 export default RushShowListScreen;
 
 const styles = StyleSheet.create({
-  container: {flex: 1},
-  loadingSpinnerContainer: {flex: 1, justifyContent: "center"},
-  scrollContentContainer: {rowGap: 15, paddingHorizontal: 20, paddingTop: 10}
+  container: { flex: 1 },
+  loadingSpinnerContainer: { flex: 1, justifyContent: "center" },
+  scrollContentContainer: { rowGap: 15, paddingHorizontal: 20, paddingTop: 10 }
 });

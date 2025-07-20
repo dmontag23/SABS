@@ -5,8 +5,8 @@ import nock from "nock";
 /* The following import is needed for react navigation. 
 See https://reactnavigation.org/docs/testing/ */
 import "react-native-gesture-handler/jestSetup";
-import {setUpTests} from "react-native-reanimated";
-import {act} from "testing-library/extension";
+import { setUpTests } from "react-native-reanimated";
+import { act } from "testing-library/extension";
 
 setUpTests();
 

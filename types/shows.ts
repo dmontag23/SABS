@@ -110,7 +110,7 @@ export enum RewardType {
   Default = "DEFAULT"
 }
 
-export type Rewards = {_type: string; maxAmount: number; type: RewardType};
+export type Rewards = { _type: string; maxAmount: number; type: RewardType };
 
 type Account = {
   _type: string;

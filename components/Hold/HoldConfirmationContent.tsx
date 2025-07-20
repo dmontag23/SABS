@@ -1,20 +1,21 @@
-import React, {useContext, useEffect} from "react";
-import {Linking, StyleSheet, View} from "react-native";
+import React, { useContext, useEffect } from "react";
+import { Linking, StyleSheet, View } from "react-native";
 
-import {Button, Card, Text} from "react-native-paper";
+import { Button, Card, Text } from "react-native-paper";
 
-import {pluralize} from "../utils";
+import { pluralize } from "../utils";
 
 import useDeleteHold from "../../hooks/todayTixHooks/useDeleteHold";
 import SelectedShowtimeContext from "../../store/selected-showtime-context";
-import {TodayTixHold} from "../../types/holds";
+import { TodayTixHold } from "../../types/holds";
 
-type HoldConfirmationProps = {hold: TodayTixHold};
+type HoldConfirmationProps = { hold: TodayTixHold };
 
-const HoldConfirmation = ({hold}: HoldConfirmationProps) => {
+const HoldConfirmation = ({ hold }: HoldConfirmationProps) => {
   // TODO: Add an error here on the page if deleting the hold fails?
-  const {mutate: deleteHold, isSuccess: isDeleteHoldSuccess} = useDeleteHold();
-  const {setSelectedShow, setSelectedShowtime, setSelectedNumberOfTickets} =
+  const { mutate: deleteHold, isSuccess: isDeleteHoldSuccess } =
+    useDeleteHold();
+  const { setSelectedShow, setSelectedShowtime, setSelectedNumberOfTickets } =
     useContext(SelectedShowtimeContext);
 
   useEffect(() => {
@@ -61,7 +62,7 @@ const HoldConfirmation = ({hold}: HoldConfirmationProps) => {
 export default HoldConfirmation;
 
 const styles = StyleSheet.create({
-  cardContainer: {flexDirection: "row", justifyContent: "space-between"},
-  container: {rowGap: 15},
-  rightCardContent: {alignItems: "flex-end"}
+  cardContainer: { flexDirection: "row", justifyContent: "space-between" },
+  container: { rowGap: 15 },
+  rightCardContent: { alignItems: "flex-end" }
 });

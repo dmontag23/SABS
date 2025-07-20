@@ -1,7 +1,7 @@
 import React from "react";
 
 import nock from "nock";
-import {render, waitFor} from "testing-library/extension";
+import { render, waitFor } from "testing-library/extension";
 
 import LoggedInScreen from "../LoggedInScreen";
 
@@ -13,10 +13,10 @@ describe("LoggedInScreen component", () => {
       .get("/shows")
       .reply(401);
 
-    const {getByRole} = render(<LoggedInScreen />);
+    const { getByRole } = render(<LoggedInScreen />);
 
     await waitFor(() =>
-      expect(getByRole("button", {name: "Rush Shows"})).toBeVisible()
+      expect(getByRole("button", { name: "Rush Shows" })).toBeVisible()
     );
   });
 });

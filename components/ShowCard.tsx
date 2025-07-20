@@ -1,11 +1,17 @@
 import React from "react";
-import {StyleSheet, View} from "react-native";
+import { StyleSheet, View } from "react-native";
 
-import {Card, Chip, Text, TouchableRipple, useTheme} from "react-native-paper";
+import {
+  Card,
+  Chip,
+  Text,
+  TouchableRipple,
+  useTheme
+} from "react-native-paper";
 
 import TodayTixBanner from "../assets/TodayTixBanner.jpg";
-import {TodayTixShow} from "../types/shows";
-import {TodayTixShowtime} from "../types/showtimes";
+import { TodayTixShow } from "../types/shows";
+import { TodayTixShowtime } from "../types/showtimes";
 
 const extractTimeFromDateString = (dateString: string | undefined) => {
   if (dateString) return new Date(dateString).toTimeString().slice(0, 5);
@@ -36,9 +42,8 @@ const RushShowtimeInfo = (rushShowtimes: TodayTixShowtime[]) => (
         <View key={showtime.id} style={styles.showtimeAndTicketNumContainer}>
           <Text style={styles.subtitle}>{showtime.localTime}</Text>
           <Text
-            style={
-              styles.subtitle
-            }>{`Tickets: ${showtime.rushTickets?.quantityAvailable ?? 0}`}</Text>
+            style={styles.subtitle}
+          >{`Tickets: ${showtime.rushTickets?.quantityAvailable ?? 0}`}</Text>
         </View>
       ))
     ) : (
@@ -88,7 +93,7 @@ const ShowCard = ({
   isRushUnlocked,
   onCardPress
 }: ShowCardProps) => {
-  const {roundness, colors} = useTheme();
+  const { roundness, colors } = useTheme();
 
   const maxNumOfRushTickets = showtimes[0]?.rushTickets?.maxTickets;
   const rushTicketPrice = show.lowPriceForRushTickets?.display;
@@ -112,7 +117,8 @@ const ShowCard = ({
             borderRadius: roundness
           },
           styles.cardBorder
-        ]}>
+        ]}
+      >
         <Card accessibilityLabel="Show card" mode="contained">
           <Card.Cover
             resizeMode="stretch"
@@ -120,7 +126,7 @@ const ShowCard = ({
               uri: `https:${show.images?.productMedia.appHeroImage.file.url}`
             }}
             defaultSource={TodayTixBanner}
-            theme={{roundness: 0}}
+            theme={{ roundness: 0 }}
             style={[
               styles.image,
               {
@@ -166,24 +172,24 @@ const ShowCard = ({
 export default ShowCard;
 
 const styles = StyleSheet.create({
-  cardBorder: {borderBottomLeftRadius: 12, borderBottomRightRadius: 12},
-  cardWithChip: {marginTop: 15},
-  chip: {position: "absolute", left: 10},
-  chipText: {fontSize: 8},
+  cardBorder: { borderBottomLeftRadius: 12, borderBottomRightRadius: 12 },
+  cardWithChip: { marginTop: 15 },
+  chip: { position: "absolute", left: 10 },
+  chipText: { fontSize: 8 },
   disabledOverlay: {
     position: "absolute",
     width: "100%",
     height: "100%",
     opacity: 0.3
   },
-  image: {height: 150},
-  showtimeAndTicketNumContainer: {alignItems: "center"},
+  image: { height: 150 },
+  showtimeAndTicketNumContainer: { alignItems: "center" },
   showtimesInfoContainer: {
     maxWidth: 120,
     marginRight: 10,
     flexDirection: "row",
     columnGap: 10
   },
-  subtitle: {fontSize: 11},
-  title: {fontSize: 14}
+  subtitle: { fontSize: 11 },
+  title: { fontSize: 14 }
 });

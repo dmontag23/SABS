@@ -1,6 +1,6 @@
-import {expect} from "detox";
+import { expect } from "detox";
 
-import {login} from "./utils/utils";
+import { login } from "./utils/utils";
 
 describe("Rush shows", () => {
   beforeEach(login);

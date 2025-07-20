@@ -2,11 +2,11 @@ import React from "react";
 
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import nock from "nock";
-import {render, waitFor} from "testing-library/extension";
+import { render, waitFor } from "testing-library/extension";
 
 import RootNavigator from "../RootNavigator";
 
-import {TodayTixFieldset} from "../../../types/shows";
+import { TodayTixFieldset } from "../../../types/shows";
 
 describe("The root navigator", () => {
   it("renders the splash screen when loading the access tokens", async () => {
@@ -27,7 +27,7 @@ describe("The root navigator", () => {
       });
 
     // render
-    const {getByLabelText} = render(<RootNavigator />);
+    const { getByLabelText } = render(<RootNavigator />);
     // wait for the above call to complete so the access tokens are the only thing loading
     await waitFor(() => scope.isDone());
 
@@ -55,7 +55,7 @@ describe("The root navigator", () => {
       });
 
     // render
-    const {getByLabelText} = render(<RootNavigator />);
+    const { getByLabelText } = render(<RootNavigator />);
 
     // assert
     expect(getByLabelText("TodayTix logo")).toBeVisible();
@@ -92,7 +92,7 @@ describe("The root navigator", () => {
       });
 
     // render
-    const {getByLabelText} = render(<RootNavigator />);
+    const { getByLabelText } = render(<RootNavigator />);
 
     // assert
     expect(getByLabelText("TodayTix logo")).toBeVisible();
@@ -116,19 +116,19 @@ describe("The root navigator", () => {
       });
 
     // render
-    const {getByText} = render(<RootNavigator />);
+    const { getByText } = render(<RootNavigator />);
 
     // assert
     await waitFor(() => expect(getByText("Sign into TodayTix")).toBeVisible());
   });
 
   const dataSet = [
-    {tokenKey: "access-token", tokenValue: "access-token"},
-    {tokenKey: "refresh-token", tokenValue: "refresh-token"}
+    { tokenKey: "access-token", tokenValue: "access-token" },
+    { tokenKey: "refresh-token", tokenValue: "refresh-token" }
   ];
   it.each(dataSet)(
     "renders the initial auth screen with just a $tokenKey",
-    async ({tokenKey, tokenValue}) => {
+    async ({ tokenKey, tokenValue }) => {
       // setup
       await AsyncStorage.setItem(tokenKey, tokenValue);
       nock(
@@ -147,12 +147,12 @@ describe("The root navigator", () => {
         });
 
       // render
-      const {getByText} = render(<RootNavigator />);
+      const { getByText } = render(<RootNavigator />);
 
       // assert
       await waitFor(
         () => expect(getByText("Sign into TodayTix")).toBeVisible(),
-        {timeout: 3000}
+        { timeout: 3000 }
       );
     }
   );
@@ -171,10 +171,10 @@ describe("The root navigator", () => {
         limit: 10000,
         location: 2
       })
-      .reply(200, {data: []});
+      .reply(200, { data: [] });
 
     // render
-    const {getAllByText} = render(<RootNavigator />);
+    const { getAllByText } = render(<RootNavigator />);
 
     // assert
     await waitFor(() => expect(getAllByText("Rush Shows")).toHaveLength(2));

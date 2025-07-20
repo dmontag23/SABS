@@ -1,7 +1,7 @@
-import {useMutation, useQueryClient} from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
-import {todayTixAPIv2} from "../../api/axiosConfig";
-import {TodayTixAPIv2ErrorResponse} from "../../types/base";
+import { todayTixAPIv2 } from "../../api/axiosConfig";
+import { TodayTixAPIv2ErrorResponse } from "../../types/base";
 
 const deleteHold = async (holdId: number) =>
   (await todayTixAPIv2.delete<{}>(`holds/${holdId}`)).data.data;

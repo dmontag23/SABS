@@ -1,7 +1,10 @@
-import {Router} from "express";
+import { Router } from "express";
 
-import {TodayTixAPIv2ErrorResponse, TodayTixAPIv2Response} from "../types/base";
-import {TodayTixLocation} from "../types/locations";
+import {
+  TodayTixAPIv2ErrorResponse,
+  TodayTixAPIv2Response
+} from "../types/base";
+import { TodayTixLocation } from "../types/locations";
 
 const getLocations200Response: TodayTixAPIv2Response<TodayTixLocation[]> = {
   code: 200,

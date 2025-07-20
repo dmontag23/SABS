@@ -1,7 +1,7 @@
-import {useQueries} from "@tanstack/react-query";
+import { useQueries } from "@tanstack/react-query";
 
-import {todayTixAPIv2} from "../../api/axiosConfig";
-import {TodayTixShowtime} from "../../types/showtimes";
+import { todayTixAPIv2 } from "../../api/axiosConfig";
+import { TodayTixShowtime } from "../../types/showtimes";
 
 const getShowtimesWithRushAvailability = async (showId: number) =>
   (

@@ -1,6 +1,9 @@
-import {Router} from "express";
+import { Router } from "express";
 
-import {TodayTixAPIv2ErrorResponse, TodayTixAPIv2Response} from "../types/base";
+import {
+  TodayTixAPIv2ErrorResponse,
+  TodayTixAPIv2Response
+} from "../types/base";
 import {
   AnchorPosition,
   Platform,

@@ -1,6 +1,6 @@
-import {Router} from "express";
+import { Router } from "express";
 
-import {TodayTixOauthAPIErrorResponse} from "../types/base";
+import { TodayTixOauthAPIErrorResponse } from "../types/base";
 import {
   TodayTixRefreshTokenReq,
   TodayTixRefreshTokenRes

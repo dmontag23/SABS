@@ -1,9 +1,12 @@
-import {Router} from "express";
+import { Router } from "express";
 
-import {getItemsFromStore} from "./utils";
+import { getItemsFromStore } from "./utils";
 
-import {TodayTixAPIv2ErrorResponse, TodayTixAPIv2Response} from "../types/base";
-import {TodayTixRushGrant} from "../types/rushGrants";
+import {
+  TodayTixAPIv2ErrorResponse,
+  TodayTixAPIv2Response
+} from "../types/base";
+import { TodayTixRushGrant } from "../types/rushGrants";
 
 const getRushGrants401Response: TodayTixAPIv2ErrorResponse = {
   code: 401,
@@ -27,7 +30,7 @@ const getRushGrantsRoute = (router: Router) =>
 
     const rushGrants = getItemsFromStore<TodayTixRushGrant>("rush-grants");
 
-    res.json({code: 200, data: rushGrants ?? [], pagination: null});
+    res.json({ code: 200, data: rushGrants ?? [], pagination: null });
   });
 
 export default getRushGrantsRoute;

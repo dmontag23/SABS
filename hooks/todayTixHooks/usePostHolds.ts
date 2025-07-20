@@ -1,7 +1,7 @@
-import {useMutation, useQueryClient} from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
-import {todayTixAPIv2} from "../../api/axiosConfig";
-import {TodayTixAPIv2ErrorResponse} from "../../types/base";
+import { todayTixAPIv2 } from "../../api/axiosConfig";
+import { TodayTixAPIv2ErrorResponse } from "../../types/base";
 import {
   TodayTixHold,
   TodayTixHoldErrorCode,
@@ -9,10 +9,13 @@ import {
   TodayTixHoldsReq
 } from "../../types/holds";
 
-const isRushLocked = ({message}: TodayTixAPIv2ErrorResponse) =>
+const isRushLocked = ({ message }: TodayTixAPIv2ErrorResponse) =>
   Boolean(message?.includes("unlock Rush"));
 
-export const isShadowBlocked = ({error, context}: TodayTixAPIv2ErrorResponse) =>
+export const isShadowBlocked = ({
+  error,
+  context
+}: TodayTixAPIv2ErrorResponse) =>
   error === TodayTixHoldErrorCode.SEATS_TAKEN &&
   Array.isArray(context) &&
   context[0].includes("Unfortunately");

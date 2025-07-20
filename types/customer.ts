@@ -1,4 +1,4 @@
-import {Money} from "./shows";
+import { Money } from "./shows";
 
 export enum MarketingEmailConsent {
   Granted = "GRANTED"

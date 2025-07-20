@@ -1,23 +1,25 @@
 import React from "react";
 
-import {render} from "testing-library/extension";
+import { render } from "testing-library/extension";
 
 import ShowCard from "../ShowCard";
 
-import {TodayTixShow} from "../../types/shows";
-import {TodayTixShowtime} from "../../types/showtimes";
+import { TodayTixShow } from "../../types/shows";
+import { TodayTixShowtime } from "../../types/showtimes";
 
 describe("The show card", () => {
   it("shows an active card when rush is open", () => {
     /* The typecast ensures an object without the many required show/showtime properties
     can be passed in*/
-    const {getByText, queryByLabelText} = render(
+    const { getByText, queryByLabelText } = render(
       <ShowCard
         show={
           {
             displayName: "Six",
-            lowPriceForRushTickets: {display: "£25"},
-            images: {productMedia: {appHeroImage: {file: {url: "test-url"}}}}
+            lowPriceForRushTickets: { display: "£25" },
+            images: {
+              productMedia: { appHeroImage: { file: { url: "test-url" } } }
+            }
           } as TodayTixShow
         }
         showtimes={[
@@ -59,13 +61,15 @@ describe("The show card", () => {
   it("shows an inactive card when rush is closed", () => {
     /* The typecast ensures an object without the many required show/showtime properties
     can be passed in*/
-    const {queryByText, getByText, getByLabelText} = render(
+    const { queryByText, getByText, getByLabelText } = render(
       <ShowCard
         show={
           {
             displayName: "Six",
-            lowPriceForRushTickets: {display: "£25"},
-            images: {productMedia: {appHeroImage: {file: {url: "test-url"}}}}
+            lowPriceForRushTickets: { display: "£25" },
+            images: {
+              productMedia: { appHeroImage: { file: { url: "test-url" } } }
+            }
           } as TodayTixShow
         }
         showtimes={[]}

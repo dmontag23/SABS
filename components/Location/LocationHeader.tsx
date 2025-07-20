@@ -1,13 +1,13 @@
 import React from "react";
-import {StyleSheet, View} from "react-native";
+import { StyleSheet, View } from "react-native";
 
-import {Button, Text} from "react-native-paper";
+import { Button, Text } from "react-native-paper";
 
 type LocationHeaderProps = {
   onCloseButtonPress: () => void;
 };
 
-const LocationHeader = ({onCloseButtonPress}: LocationHeaderProps) => (
+const LocationHeader = ({ onCloseButtonPress }: LocationHeaderProps) => (
   <View style={styles.header}>
     <View style={styles.headerItem}>
       <Button onPress={onCloseButtonPress} style={styles.button}>
@@ -25,12 +25,12 @@ const LocationHeader = ({onCloseButtonPress}: LocationHeaderProps) => (
 export default LocationHeader;
 
 const styles = StyleSheet.create({
-  button: {width: "50%"},
+  button: { width: "50%" },
   header: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center"
   },
-  headerItem: {flex: 1},
-  headerText: {textAlign: "center"}
+  headerItem: { flex: 1 },
+  headerText: { textAlign: "center" }
 });

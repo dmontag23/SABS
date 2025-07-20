@@ -1,9 +1,12 @@
-import {Router} from "express";
+import { Router } from "express";
 
-import {writeItemToStore} from "./utils";
+import { writeItemToStore } from "./utils";
 
-import {TodayTixAPIv2ErrorResponse, TodayTixAPIv2Response} from "../types/base";
-import {TodayTixRushGrant, TodayTixRushGrantsReq} from "../types/rushGrants";
+import {
+  TodayTixAPIv2ErrorResponse,
+  TodayTixAPIv2Response
+} from "../types/base";
+import { TodayTixRushGrant, TodayTixRushGrantsReq } from "../types/rushGrants";
 
 type RouteParams = {
   customerId: string;

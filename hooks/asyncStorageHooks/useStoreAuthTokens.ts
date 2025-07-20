@@ -1,6 +1,6 @@
-import {useMutation, useQueryClient} from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
-import {storeTokens} from "../../store/asyncStorageUtils";
+import { storeTokens } from "../../store/asyncStorageUtils";
 
 const useStoreAuthTokens = () => {
   const queryClient = useQueryClient();

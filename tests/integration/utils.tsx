@@ -1,8 +1,8 @@
-import React, {JSX, ReactElement, ReactNode} from "react";
-import {PropsWithChildren} from "react";
+import React, { JSX, ReactElement, ReactNode } from "react";
+import { PropsWithChildren } from "react";
 
-import {NavigationContainer} from "@react-navigation/native";
-import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
+import { NavigationContainer } from "@react-navigation/native";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   RenderHookOptions,
   RenderHookResult,
@@ -10,11 +10,11 @@ import {
   render,
   renderHook
 } from "@testing-library/react-native";
-import {PaperProvider} from "react-native-paper";
+import { PaperProvider } from "react-native-paper";
 
-import {HoldContextProvider} from "../../store/hold-context";
-import {SelectedShowtimeContextProvider} from "../../store/selected-showtime-context";
-import {LIGHT_THEME} from "../../themes";
+import { HoldContextProvider } from "../../store/hold-context";
+import { SelectedShowtimeContextProvider } from "../../store/selected-showtime-context";
+import { LIGHT_THEME } from "../../themes";
 
 // ensures a new query client is created for each test
 export const createQueryClient = () =>
@@ -34,7 +34,7 @@ export const createQueryClient = () =>
     }
   });
 
-const Providers = ({children}: PropsWithChildren) => (
+const Providers = ({ children }: PropsWithChildren) => (
   <QueryClientProvider client={createQueryClient()}>
     <NavigationContainer>
       <SelectedShowtimeContextProvider>
@@ -67,7 +67,7 @@ const customRenderHook = <Result, Props>(
   options?: CustomRenderHookOptionsProps<Props>
 ): RenderHookResult<Result, Props> =>
   renderHook(renderCallback, {
-    wrapper: ({children}) =>
+    wrapper: ({ children }) =>
       HookWrapper(children, options?.queryClient, options?.customWrapper),
     ...options?.options
   });
@@ -77,11 +77,11 @@ const customRenderHook = <Result, Props>(
 const customRender = (
   ui: ReactElement,
   options?: Omit<RenderOptions, "wrapper">
-) => render(ui, {wrapper: Providers, ...options});
+) => render(ui, { wrapper: Providers, ...options });
 
 // re-export everything
 export * from "@testing-library/react-native";
 
 // override renderHook and render method
-export {customRenderHook as renderHook};
-export {customRender as render};
+export { customRenderHook as renderHook };
+export { customRender as render };

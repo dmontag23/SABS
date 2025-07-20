@@ -1,7 +1,7 @@
 import React from "react";
-import {ScrollView, StyleSheet, View} from "react-native";
+import { ScrollView, StyleSheet, View } from "react-native";
 
-import {useTheme} from "react-native-paper";
+import { useTheme } from "react-native-paper";
 
 import LocationItem from "./LocationItem";
 
@@ -14,15 +14,15 @@ type LocationsContainerProps = {
   onItemPress?: () => void;
 };
 
-const LocationsContainer = ({onItemPress}: LocationsContainerProps) => {
-  const {colors} = useTheme();
+const LocationsContainer = ({ onItemPress }: LocationsContainerProps) => {
+  const { colors } = useTheme();
 
   const {
     data: locations,
     isPending: isLocationsLoading,
     isSuccess: isLocationsSuccess
   } = useGetLocations();
-  const {data: currentLocationId, isPending: isCurrentLocationIdLoading} =
+  const { data: currentLocationId, isPending: isCurrentLocationIdLoading } =
     useGetLocationId();
 
   return isLocationsLoading || isCurrentLocationIdLoading ? (
@@ -33,8 +33,9 @@ const LocationsContainer = ({onItemPress}: LocationsContainerProps) => {
     <ScrollView
       contentContainerStyle={[
         styles.locationsContainer,
-        {backgroundColor: colors.surfaceVariant}
-      ]}>
+        { backgroundColor: colors.surfaceVariant }
+      ]}
+    >
       {isLocationsSuccess &&
         locations
           .sort((a, b) => (a.name < b.name ? -1 : 1))
@@ -53,7 +54,7 @@ const LocationsContainer = ({onItemPress}: LocationsContainerProps) => {
 export default LocationsContainer;
 
 const styles = StyleSheet.create({
-  loadingSpinnerContainer: {marginTop: 50},
+  loadingSpinnerContainer: { marginTop: 50 },
   locationsContainer: {
     gap: 10,
     marginHorizontal: "10%",

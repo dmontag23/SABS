@@ -1,4 +1,4 @@
-import {clearAllMockServerData} from "./utils";
+import { clearAllMockServerData } from "./utils";
 
 beforeEach(async () => {
   // this is necessary in order to clear async storage before each test

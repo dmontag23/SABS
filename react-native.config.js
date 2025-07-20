@@ -2,6 +2,6 @@
 module.exports = {
   dependencies: {
     /** Needed for react-native-vector-icons, see https://github.com/oblador/react-native-vector-icons */
-    "react-native-vector-icons": {platforms: {ios: null}}
+    "react-native-vector-icons": { platforms: { ios: null } }
   }
 };

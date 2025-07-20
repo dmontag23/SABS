@@ -1,11 +1,11 @@
-import {act, renderHook} from "testing-library/extension";
+import { act, renderHook } from "testing-library/extension";
 
 import useScheduleCallback from "../useScheduleCallback";
 
 describe("useScheduleCallback hook", () => {
   it("runs callback immediately by default", () => {
     const callbackFn = jest.fn();
-    const {result} = renderHook(() => useScheduleCallback(callbackFn));
+    const { result } = renderHook(() => useScheduleCallback(callbackFn));
 
     act(() => result.current.scheduleCallback(0));
     expect(callbackFn).not.toBeCalled();
@@ -15,7 +15,7 @@ describe("useScheduleCallback hook", () => {
 
   it("runs callback after a delay of 5 seconds", () => {
     const callbackFn = jest.fn();
-    const {result} = renderHook(() => useScheduleCallback(callbackFn));
+    const { result } = renderHook(() => useScheduleCallback(callbackFn));
 
     act(() =>
       result.current.scheduleCallback(
@@ -30,7 +30,7 @@ describe("useScheduleCallback hook", () => {
 
   it("clears a timeout when cancelling callback execution", () => {
     const callbackFn = jest.fn();
-    const {result} = renderHook(() => useScheduleCallback(callbackFn));
+    const { result } = renderHook(() => useScheduleCallback(callbackFn));
 
     act(() =>
       result.current.scheduleCallback(
@@ -44,7 +44,7 @@ describe("useScheduleCallback hook", () => {
 
   it("does not schedule a new callback if one is already scheduled", () => {
     const callbackFn = jest.fn();
-    const {result} = renderHook(() => useScheduleCallback(callbackFn));
+    const { result } = renderHook(() => useScheduleCallback(callbackFn));
 
     act(() =>
       result.current.scheduleCallback(
@@ -60,7 +60,7 @@ describe("useScheduleCallback hook", () => {
 
   it("can reschedule a callback", () => {
     const callbackFn = jest.fn();
-    const {result} = renderHook(() => useScheduleCallback(callbackFn));
+    const { result } = renderHook(() => useScheduleCallback(callbackFn));
 
     act(() =>
       result.current.scheduleCallback(
@@ -83,7 +83,9 @@ describe("useScheduleCallback hook", () => {
 
   it("clears timeout when unmounted", () => {
     const callbackFn = jest.fn();
-    const {result, unmount} = renderHook(() => useScheduleCallback(callbackFn));
+    const { result, unmount } = renderHook(() =>
+      useScheduleCallback(callbackFn)
+    );
 
     act(() =>
       result.current.scheduleCallback(
@@ -96,7 +98,7 @@ describe("useScheduleCallback hook", () => {
   });
 
   it("shows correct isScheduled status after cancelling a schedule", () => {
-    const {result} = renderHook(() => useScheduleCallback(jest.fn()));
+    const { result } = renderHook(() => useScheduleCallback(jest.fn()));
 
     act(() => result.current.scheduleCallback(0));
     expect(result.current.isScheduled).toBe(true);
@@ -105,7 +107,7 @@ describe("useScheduleCallback hook", () => {
   });
 
   it("shows correct isScheduled status after executing the callback", async () => {
-    const {result} = renderHook(() => useScheduleCallback(jest.fn()));
+    const { result } = renderHook(() => useScheduleCallback(jest.fn()));
 
     act(() => result.current.scheduleCallback(0));
     expect(result.current.isScheduled).toBe(true);

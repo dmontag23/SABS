@@ -1,5 +1,5 @@
-import {Money} from "./shows";
-import {TodayTixShowtime} from "./showtimes";
+import { Money } from "./shows";
+import { TodayTixShowtime } from "./showtimes";
 
 export enum TodayTixHoldType {
   Rush = "RUSH"
