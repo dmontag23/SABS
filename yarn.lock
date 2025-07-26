@@ -2472,19 +2472,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-navigation/bottom-tabs@npm:^7.4.2":
-  version: 7.4.2
-  resolution: "@react-navigation/bottom-tabs@npm:7.4.2"
+"@react-navigation/bottom-tabs@npm:^7.4.4":
+  version: 7.4.4
+  resolution: "@react-navigation/bottom-tabs@npm:7.4.4"
   dependencies:
-    "@react-navigation/elements": "npm:^2.5.2"
+    "@react-navigation/elements": "npm:^2.6.1"
     color: "npm:^4.2.3"
   peerDependencies:
-    "@react-navigation/native": ^7.1.14
+    "@react-navigation/native": ^7.1.16
     react: ">= 18.2.0"
     react-native: "*"
     react-native-safe-area-context: ">= 4.0.0"
     react-native-screens: ">= 4.0.0"
-  checksum: 10/411430af94bd4de61849f39cadc0e08b48f2cb813c186f42f0a25b02c6f9b7ebf92122be7254332fb58b5f8817944a0bee93a763159d7d71c82f8275480cd802
+  checksum: 10/032a9467bab7a7cfa0119741f60b2f816cbb221faca5deb04edc8f60bb83ce3dcbcb4ffe9ef41f0b6915c16e5e79f59e7029b960c5e8a1c0da2ba18fcea1727a
   languageName: node
   linkType: hard
 
@@ -2522,6 +2522,26 @@ __metadata:
     "@react-native-masked-view/masked-view":
       optional: true
   checksum: 10/f6c472f82487661aee6f41e82e453cb80fea85e3956d94e58aa45b7c3f5ae04e4862df400439d0a58e6c54f8e091d7e08c547a153165d881fa8c74fd3b63d6a3
+  languageName: node
+  linkType: hard
+
+"@react-navigation/elements@npm:^2.6.1":
+  version: 2.6.1
+  resolution: "@react-navigation/elements@npm:2.6.1"
+  dependencies:
+    color: "npm:^4.2.3"
+    use-latest-callback: "npm:^0.2.4"
+    use-sync-external-store: "npm:^1.5.0"
+  peerDependencies:
+    "@react-native-masked-view/masked-view": ">= 0.2.0"
+    "@react-navigation/native": ^7.1.16
+    react: ">= 18.2.0"
+    react-native: "*"
+    react-native-safe-area-context: ">= 4.0.0"
+  peerDependenciesMeta:
+    "@react-native-masked-view/masked-view":
+      optional: true
+  checksum: 10/16bac33fcccebe3b0aaa723a7ec6a03bf6b5624c3f7c1a446603b49650606755f8bd28c61f8fd8b7ccca84b82a253d313be1c5b5b68a1faf93ccff81f6b6b771
   languageName: node
   linkType: hard
 
@@ -9657,7 +9677,7 @@ __metadata:
     "@react-native/eslint-config": "npm:0.80.1"
     "@react-native/metro-config": "npm:0.80.1"
     "@react-native/typescript-config": "npm:0.80.1"
-    "@react-navigation/bottom-tabs": "npm:^7.4.2"
+    "@react-navigation/bottom-tabs": "npm:^7.4.4"
     "@react-navigation/elements": "npm:^2.5.2"
     "@react-navigation/native": "npm:^7.1.15"
     "@react-navigation/stack": "npm:^7.4.2"
