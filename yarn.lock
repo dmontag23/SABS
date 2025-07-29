@@ -1548,14 +1548,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hookform/resolvers@npm:^5.2.0":
-  version: 5.2.0
-  resolution: "@hookform/resolvers@npm:5.2.0"
+"@hookform/resolvers@npm:^5.2.1":
+  version: 5.2.1
+  resolution: "@hookform/resolvers@npm:5.2.1"
   dependencies:
     "@standard-schema/utils": "npm:^0.3.0"
   peerDependencies:
     react-hook-form: ^7.55.0
-  checksum: 10/1a7371e74dffcc5f09cb6ee1d7b02857662c6782e312a27f7561c468cdaac471e246457f5bd3778492c9f301d93bb14ee297d787d774d10bc3331c875565cfc1
+  checksum: 10/9accc49f668209b58a4db5f410ab629d55fb9ac19d3cc6a591df9742a869286e1b929f117f419accaeb302a5941bf22f7e6da9c8b06cdb1104f57ac1a2a11c7e
   languageName: node
   linkType: hard
 
@@ -9668,7 +9668,7 @@ __metadata:
     "@babel/plugin-transform-export-namespace-from": "npm:^7.27.1"
     "@babel/preset-env": "npm:^7.25.3"
     "@babel/runtime": "npm:^7.25.0"
-    "@hookform/resolvers": "npm:^5.2.0"
+    "@hookform/resolvers": "npm:^5.2.1"
     "@react-native-async-storage/async-storage": "npm:^1.24.0"
     "@react-native-community/cli": "npm:19.0.0"
     "@react-native-community/cli-platform-android": "npm:19.0.0"
