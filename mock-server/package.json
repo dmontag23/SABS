@@ -14,7 +14,7 @@
   "devDependencies": {
     "@babel/core": "^7.28.0",
     "@types/express": "^5.0.3",
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.2"
   },
   "engines": {
     "node": ">=18"
