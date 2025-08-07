@@ -1961,9 +1961,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mswjs/interceptors@npm:^0.39.3":
-  version: 0.39.3
-  resolution: "@mswjs/interceptors@npm:0.39.3"
+"@mswjs/interceptors@npm:^0.39.5":
+  version: 0.39.5
+  resolution: "@mswjs/interceptors@npm:0.39.5"
   dependencies:
     "@open-draft/deferred-promise": "npm:^2.2.0"
     "@open-draft/logger": "npm:^0.3.0"
@@ -1971,7 +1971,7 @@ __metadata:
     is-node-process: "npm:^1.2.0"
     outvariant: "npm:^1.4.3"
     strict-event-emitter: "npm:^0.5.1"
-  checksum: 10/f5fbf0a4088ad013cec7b0803c03d6c47c4216d292fbf9bd7c01e32e40eb42fa4ce43e0bf9454697aa39c5bbb85f5e5d83fbb3a2640a411a413a85d9f7c3f8d0
+  checksum: 10/d921e6d85dd4e9bd52e5e97ca2b972753f69553f198e0b66123b3397187da52f57fe054c00328436cb0dacb3c0732d9de9ec018d2b19c4d9298dfe2301f2cab0
   languageName: node
   linkType: hard
 
@@ -8409,14 +8409,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nock@npm:^14.0.6":
-  version: 14.0.6
-  resolution: "nock@npm:14.0.6"
+"nock@npm:^14.0.9":
+  version: 14.0.9
+  resolution: "nock@npm:14.0.9"
   dependencies:
-    "@mswjs/interceptors": "npm:^0.39.3"
+    "@mswjs/interceptors": "npm:^0.39.5"
     json-stringify-safe: "npm:^5.0.1"
     propagate: "npm:^2.0.0"
-  checksum: 10/32048a34b1109b6ff85b25a9c9a939e57779929ac6d33332dd09a8803ae9dc2296f577d9f9ba9b0482e503b0eb01ca2b5f3e25678db2619b5a0364f2fd2b0f5e
+  checksum: 10/f8ddbb5deb91f3d55e6939e49ee36759e2feabe256efad3981174fe102bd0a7843ccad4b8ab3067b482a057cf30ca8d60d2c139a2a61996d2b68a44570ae9705
   languageName: node
   linkType: hard
 
@@ -9740,7 +9740,7 @@ __metadata:
     eslint-config-prettier: "npm:^10.1.8"
     eslint-plugin-prettier: "npm:^5.5.4"
     jest: "npm:^29.6.3"
-    nock: "npm:^14.0.6"
+    nock: "npm:^14.0.9"
     prettier: "npm:3.2.5"
     react: "npm:19.1.0"
     react-hook-form: "npm:^7.62.0"
