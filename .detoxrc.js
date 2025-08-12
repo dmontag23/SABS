@@ -53,8 +53,7 @@ module.exports = {
     iphone15: {
       type: "ios.simulator",
       device: {
-        type: "iPhone 15",
-        os: "17.4"
+        type: "iPhone 12"
       }
     },
     attached: {
