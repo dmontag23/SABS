@@ -50,10 +50,10 @@ module.exports = {
         type: "iPhone 12"
       }
     },
-    iphone15: {
+    iphone16: {
       type: "ios.simulator",
       device: {
-        type: "iPhone 15"
+        type: "iPhone 16"
       }
     },
     attached: {
@@ -75,7 +75,7 @@ module.exports = {
       app: "ios.debug"
     },
     "ios.sim.release": {
-      device: "iphone15",
+      device: "iphone16",
       app: "ios.release"
     },
     "android.att.debug": {
