@@ -63,6 +63,8 @@ jobs:
         run: |
           brew tap wix/brew
           brew install applesimutils
+      - name: Install iPhone 12 simulator
+        run: xcrun simctl create "iPhone 12" "iPhone 12"
       - name: Install pod dependencies
         run: cd ./ios && pod install --repo-update && cd ..
       - name: Build Detox
