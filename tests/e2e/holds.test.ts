@@ -87,6 +87,8 @@ describe("Holds", () => {
     ).toBeVisible();
     const purchaseTicketsButton = element(by.text("Purchase on TodayTix"));
     await expect(purchaseTicketsButton).toBeVisible();
+    // TODO: Figure out why this is necessary to avoid the test hanging
+    await device.disableSynchronization();
     await purchaseTicketsButton.tap();
     // TODO: maybe mock the Linking module here and test that openURL was called?
   });
@@ -219,6 +221,8 @@ describe("Holds", () => {
     await expect(headerText).toBeVisible();
 
     // send the app to the background and release the tickets via the API
+    // TODO: Figure out why this is necessary to avoid the test hanging
+    await device.disableSynchronization();
     await device.sendToHome();
     await axios.delete(
       `${process.env.TODAY_TIX_API_BASE_URL}${process.env.TODAY_TIX_API_V2_ENDPOINT}/holds/75088671`
@@ -226,6 +230,8 @@ describe("Holds", () => {
 
     // check that, when bringing the app to the foreground, the hold is no longer visible
     await device.launchApp();
+    // TODO: Remove once device.disableSynchronization() is removed from this test
+    await device.enableSynchronization();
     await expect(selectATimeText).toBeVisible();
     await expect(headerText).not.toBeVisible();
   });
