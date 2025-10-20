@@ -87,6 +87,8 @@ describe("Holds", () => {
     ).toBeVisible();
     const purchaseTicketsButton = element(by.text("Purchase on TodayTix"));
     await expect(purchaseTicketsButton).toBeVisible();
+    // TODO: Figure out why this is necessary to avoid the test hanging
+    await device.disableSynchronization();
     await purchaseTicketsButton.tap();
     // TODO: maybe mock the Linking module here and test that openURL was called?
   });
