@@ -230,8 +230,6 @@ describe("Holds", () => {
 
     // check that, when bringing the app to the foreground, the hold is no longer visible
     await device.launchApp();
-    // TODO: Remove once device.disableSynchronization() is removed from this test
-    await device.enableSynchronization();
     await expect(selectATimeText).toBeVisible();
     await expect(headerText).not.toBeVisible();
   });
