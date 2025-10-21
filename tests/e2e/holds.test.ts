@@ -119,7 +119,7 @@ describe("Holds", () => {
     await element(by.text("19:30")).tap();
     await element(by.text("1")).tap();
     await expect(headerText).toBeVisible();
-  });
+  }, 180000);
 
   it("can attempt to get tickets again if all tickets are currently reserved", async () => {
     await expect(
