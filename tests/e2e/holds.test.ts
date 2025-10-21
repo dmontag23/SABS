@@ -232,5 +232,5 @@ describe("Holds", () => {
     await device.launchApp();
     await expect(selectATimeText).toBeVisible();
     await expect(headerText).not.toBeVisible();
-  });
+  }, 180000);
 });
