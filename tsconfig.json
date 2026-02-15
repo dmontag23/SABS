@@ -4,8 +4,11 @@
   e.g. to import all the custom react testing library functions
   see https://testing-library.com/docs/react-testing-library/setup/#configuring-jest-with-test-utils */
   "compilerOptions": {
+    "types": ["jest"],
     "paths": {
       "testing-library/extension": ["./tests/integration/utils"]
     }
-  }
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["**/node_modules", "**/Pods"]
 }
