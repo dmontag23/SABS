@@ -8,6 +8,12 @@ import "react-native-gesture-handler/jestSetup";
 import { setUpTests } from "react-native-reanimated";
 import { act } from "testing-library/extension";
 
+/* The following mock is needed for react-native-worklets.
+See https://docs.swmansion.com/react-native-worklets/docs/guides/testing/ */
+jest.mock("react-native-worklets", () =>
+  require("react-native-worklets/src/mock")
+);
+
 setUpTests();
 
 jest.mock("@react-native-async-storage/async-storage", () => MockAsyncStorage);
