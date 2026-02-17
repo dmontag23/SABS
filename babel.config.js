@@ -5,7 +5,7 @@ module.exports = {
   plugins: [
     "@babel/plugin-transform-export-namespace-from",
     "module:react-native-dotenv",
-    "react-native-reanimated/plugin"
+    "react-native-worklets/plugin"
   ],
   /** The following is needed for react native paper.
    *  See https://callstack.github.io/react-native-paper/docs/guides/getting-started
