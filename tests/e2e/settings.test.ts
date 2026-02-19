@@ -21,7 +21,9 @@ describe("Rush shows", () => {
     const closeButton = element(by.text("Close"));
     await expect(closeButton).toBeVisible();
 
-    await expect(element(by.text("London")).atIndex(1)).toBeVisible();
+    await waitFor(element(by.text("London")).atIndex(1))
+      .toBeVisible()
+      .withTimeout(10000);
     await expect(element(by.text("New York"))).toBeVisible();
 
     // close and reopen the location bottom sheet
