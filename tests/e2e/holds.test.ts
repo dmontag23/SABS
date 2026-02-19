@@ -47,7 +47,7 @@ describe("Holds", () => {
     }
 
     // ensure the modal stays minimized when navigating between screens
-    await element(by.label("Back button")).atIndex(1).tap();
+    await element(by.label("Back button")).tap();
     const sixShow = element(by.label("SIX the Musical"));
     await expect(sixShow).toBeVisible();
     await expect(holdConfirmationText).toBeVisible();
