@@ -14,6 +14,7 @@ describe("Rush shows", () => {
     const locationText = element(by.text("Location")).atIndex(0);
     await expect(locationText).toBeVisible();
     await expect(element(by.text("London")).atIndex(0)).toBeVisible();
+    await expect(element(by.text("New York"))).not.toBeVisible();
 
     // open the location bottom sheet and check all locations are visible
     await locationText.tap();
@@ -21,9 +22,7 @@ describe("Rush shows", () => {
     const closeButton = element(by.text("Close"));
     await expect(closeButton).toBeVisible();
 
-    await waitFor(element(by.text("London")).atIndex(1))
-      .toBeVisible()
-      .withTimeout(10000);
+    await expect(element(by.text("London")).atIndex(0)).toBeVisible();
     await expect(element(by.text("New York"))).toBeVisible();
 
     // close and reopen the location bottom sheet
@@ -37,6 +36,7 @@ describe("Rush shows", () => {
 
     // ensure the location has changed
     await expect(element(by.text("New York")).atIndex(0)).toBeVisible();
+    await expect(element(by.text("London"))).not.toBeVisible();
     await element(by.text("Rush Shows")).atIndex(0).tap();
     await expect(element(by.text("Little Shop of Horrors"))).toBeVisible();
   });
