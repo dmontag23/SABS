@@ -46,7 +46,7 @@ describe("Rush shows", () => {
     await ticketButton.tap();
 
     // navigate to a different show
-    const backButton = element(by.label("Back button")).atIndex(1);
+    const backButton = element(by.label("Back button"));
     await backButton.tap();
     await element(by.label("SIX the Musical")).tap();
     await expect(selectATimeText).toBeVisible();

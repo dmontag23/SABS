@@ -9,13 +9,9 @@ describe("Authentication flow", () => {
         by.text("Enter the access tokens from the current TodayTix session.")
       )
     ).toBeVisible();
-    const accessTokenFormInput = element(
-      by.label("Access token input")
-    ).atIndex(1);
+    const accessTokenFormInput = element(by.label("Access token input"));
     await expect(accessTokenFormInput).toBeVisible();
-    const refreshTokenFormInput = element(
-      by.label("Refresh token input")
-    ).atIndex(1);
+    const refreshTokenFormInput = element(by.label("Refresh token input"));
     await expect(refreshTokenFormInput).toBeVisible();
     const loginButton = element(by.text("Login"));
     await expect(loginButton).toBeVisible();

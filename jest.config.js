@@ -18,6 +18,6 @@ module.exports = {
   setupFilesAfterEnv: ["<rootDir>/tests/integration/setup.ts"],
   testPathIgnorePatterns: ["<rootDir>/tests/e2e"],
   transformIgnorePatterns: [
-    "node_modules/(?!(@react-native|react-native|@react-navigation|react-native-vector-icons|react-native-reanimated|react-native-gesture-handler)/)"
+    "node_modules/(?!(@react-native|react-native|@react-navigation|react-native-vector-icons|react-native-reanimated|react-native-worklets|react-native-gesture-handler)/)"
   ]
 };

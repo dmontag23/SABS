@@ -47,8 +47,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
       endDate: "2024-09-28",
       genreTags: ["Musical"],
       hasPromotion: false,
-      heroImageUrl:
-        "https://images.ctfassets.net/6pezt69ih962/3fHQ41gqlpwWBHcawW3OIZ/33c9b17158e0cfa84cb2971d74ed7583/Hamilton_-_Hero",
+      heroImageUrl: "http://localhost:3000/assets/Hamilton_-_Hero.jpg",
       id: 20561,
       images: {
         productMedia: {
@@ -64,7 +63,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
                 size: 788364
               },
               contentType: "image/jpeg",
-              url: "//images.ctfassets.net/6pezt69ih962/7tdRGOQ5P7KD6qz6sIrI05/a6369f18a5edb12426bdeb7b1f3039d7/Reuben_Joseph_as_Hamilton__Waylon_Jacobs__Jake_Halsey-Jones_and_Emile_Ruddock_and_Company._Photo_by_Danny_Kaan.jpg"
+              url: "//localhost:3000/assets/Reuben_Joseph_as_Hamilton__Waylon_Jacobs__Jake_Halsey-Jones_and_Emile_Ruddock_and_Company._Photo_by_Danny_Kaan.jpg"
             },
             description: "",
             title:
@@ -83,7 +82,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
                     size: 3431636
                   },
                   contentType: "image/png",
-                  url: "//images.ctfassets.net/6pezt69ih962/31zEqyFmPBiBJG2Ee7IL2z/5ed3e5eb8859712293df4191283b3c45/HamiltonPS1.png"
+                  url: "//localhost:3000/assets/HamiltonPS1.png"
                 },
                 description: "",
                 title: "Ham1"
@@ -95,7 +94,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
                     size: 9129281
                   },
                   contentType: "video/mp4",
-                  url: "//videos.ctfassets.net/6pezt69ih962/7nl22wfhn7h36FW81Bwi41/36f08cd3d3acb658ec3f36451c6e04b0/53b040ff-b302-4b88-9c02-d12d8e458380.mp4"
+                  url: "//localhost:3000/assets/53b040ff-b302-4b88-9c02-d12d8e458380.mp4"
                 },
                 description: "",
                 title: "53b040ff-b302-4b88-9c02-d12d8e458380"
@@ -119,7 +118,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
                     size: 3363899
                   },
                   contentType: "image/png",
-                  url: "//images.ctfassets.net/6pezt69ih962/2ryFyaGKLooaSFtquDcMhW/2d26457f71dae37cb8b31b557b536989/HamiltonPS5.png"
+                  url: "//localhost:3000/assets/HamiltonPS5.png"
                 },
                 description: "",
                 title:
@@ -142,7 +141,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
                 size: 61779
               },
               contentType: "image/jpeg",
-              url: "//images.ctfassets.net/6pezt69ih962/1LDjWFwIBcfRSEXA4BkL8T/860fedcfedf0a467703e9afa4caa67b0/prod_1580719924849_HamPoster.jpg"
+              url: "//localhost:3000/assets/prod_1580719924849_HamPoster.jpg"
             },
             title: "Hamilton Poster - LON"
           },
@@ -157,7 +156,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
                 size: 22110
               },
               contentType: "image/jpeg",
-              url: "//images.ctfassets.net/6pezt69ih962/66D2qh7F7c31dzfuJo1G3l/9428cd3abee7d347f5777cfbd58a9c01/5388-1573115024-hamiltonsq071119.jpg"
+              url: "//localhost:3000/assets/5388-1573115024-hamiltonsq071119.jpg"
             },
             description: "Poster of Hamilton in London",
             title: "5388-1573115024-hamiltonsq071119"
@@ -174,7 +173,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
                 size: 142189
               },
               contentType: "image/jpeg",
-              url: "//images.ctfassets.net/6pezt69ih962/3fHQ41gqlpwWBHcawW3OIZ/33c9b17158e0cfa84cb2971d74ed7583/Hamilton_-_Hero"
+              url: "//localhost:3000/assets/Hamilton_-_Hero.jpg"
             },
             description: "Hamilton - Hero",
             title: "Hamilton - Hero"
@@ -196,7 +195,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
               size: 788364
             },
             contentType: "image/jpeg",
-            url: "//images.ctfassets.net/6pezt69ih962/7tdRGOQ5P7KD6qz6sIrI05/a6369f18a5edb12426bdeb7b1f3039d7/Reuben_Joseph_as_Hamilton__Waylon_Jacobs__Jake_Halsey-Jones_and_Emile_Ruddock_and_Company._Photo_by_Danny_Kaan.jpg"
+            url: "//localhost:3000/assets/Reuben_Joseph_as_Hamilton__Waylon_Jacobs__Jake_Halsey-Jones_and_Emile_Ruddock_and_Company._Photo_by_Danny_Kaan.jpg"
           },
           description: "",
           title:
@@ -215,7 +214,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
                   size: 3431636
                 },
                 contentType: "image/png",
-                url: "//images.ctfassets.net/6pezt69ih962/31zEqyFmPBiBJG2Ee7IL2z/5ed3e5eb8859712293df4191283b3c45/HamiltonPS1.png"
+                url: "//localhost:3000/assets/HamiltonPS1.png"
               },
               description: "",
               title: "Ham1"
@@ -227,7 +226,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
                   size: 9129281
                 },
                 contentType: "video/mp4",
-                url: "//videos.ctfassets.net/6pezt69ih962/7nl22wfhn7h36FW81Bwi41/36f08cd3d3acb658ec3f36451c6e04b0/53b040ff-b302-4b88-9c02-d12d8e458380.mp4"
+                url: "//localhost:3000/assets/53b040ff-b302-4b88-9c02-d12d8e458380.mp4"
               },
               description: "",
               title: "53b040ff-b302-4b88-9c02-d12d8e458380"
@@ -251,7 +250,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
                   size: 3363899
                 },
                 contentType: "image/png",
-                url: "//images.ctfassets.net/6pezt69ih962/2ryFyaGKLooaSFtquDcMhW/2d26457f71dae37cb8b31b557b536989/HamiltonPS5.png"
+                url: "//localhost:3000/assets/HamiltonPS5.png"
               },
               description: "",
               title:
@@ -274,7 +273,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
               size: 61779
             },
             contentType: "image/jpeg",
-            url: "//images.ctfassets.net/6pezt69ih962/1LDjWFwIBcfRSEXA4BkL8T/860fedcfedf0a467703e9afa4caa67b0/prod_1580719924849_HamPoster.jpg"
+            url: "//localhost:3000/assets/prod_1580719924849_HamPoster.jpg"
           },
           title: "Hamilton Poster - LON"
         },
@@ -289,7 +288,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
               size: 22110
             },
             contentType: "image/jpeg",
-            url: "//images.ctfassets.net/6pezt69ih962/66D2qh7F7c31dzfuJo1G3l/9428cd3abee7d347f5777cfbd58a9c01/5388-1573115024-hamiltonsq071119.jpg"
+            url: "//localhost:3000/assets/5388-1573115024-hamiltonsq071119.jpg"
           },
           description: "Poster of Hamilton in London",
           title: "5388-1573115024-hamiltonsq071119"
@@ -317,7 +316,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
       maxDiscountPercentage: 0,
       name: "Hamilton",
       posterImageUrl:
-        "https://images.ctfassets.net/6pezt69ih962/1LDjWFwIBcfRSEXA4BkL8T/860fedcfedf0a467703e9afa4caa67b0/prod_1580719924849_HamPoster.jpg",
+        "http://localhost:3000/assets/prod_1580719924849_HamPoster.jpg",
       productType: ProductType.Show,
       promotion: null,
       ratingCount: 1648,
@@ -369,7 +368,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
       genreTags: ["Musical"],
       hasPromotion: false,
       heroImageUrl:
-        "https://images.ctfassets.net/6pezt69ih962/1mPlDr0V2bIsB45NBXiC8r/348ae0ae326e2a6b5b767537cf091879/SIX23042_TodayTix_1440x580pxls.jpg",
+        "http://localhost:3000/assets/SIX23042_TodayTix_1440x580pxls.jpg",
       id: 1,
       images: {
         productMedia: {
@@ -384,7 +383,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
                 size: 2092608
               },
               contentType: "image/jpeg",
-              url: "//images.ctfassets.net/6pezt69ih962/62nYHrfpgwsWFXWAvhn8CF/b0672177b384cc4c4d68aea2b2ed6457/SIX_Header_2.jpg"
+              url: "//localhost:3000/assets/SIX_Header_2.jpg"
             },
             description: "",
             title: "359 96A0697 SIX 2021 Pamela Raith Photography RT"
@@ -401,7 +400,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
                 size: 397100
               },
               contentType: "image/jpeg",
-              url: "//images.ctfassets.net/6pezt69ih962/4jU6Lh9ema4Q91naj8BH6s/150c98ef0d8f02b3de658090102dc1d2/SIX23042_TodayTix_480x720pxls.jpg"
+              url: "//localhost:3000/assets/SIX23042_TodayTix_480x720pxls.jpg"
             }
           },
           posterImageSquare: {
@@ -415,7 +414,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
                 size: 1442283
               },
               contentType: "image/jpeg",
-              url: "//images.ctfassets.net/6pezt69ih962/6urBQXG4aXijlc6UdnJdke/10333ad13639ba222573241ca3e76640/SIX23042_TodayTix_1080x1080pxls.jpg"
+              url: "//localhost:3000/assets/SIX23042_TodayTix_1080x1080pxls.jpg"
             }
           },
           entryTitle: "SIX - LON [1] Product Media",
@@ -430,7 +429,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
                 size: 938692
               },
               contentType: "image/jpeg",
-              url: "//images.ctfassets.net/6pezt69ih962/1mPlDr0V2bIsB45NBXiC8r/348ae0ae326e2a6b5b767537cf091879/SIX23042_TodayTix_1440x580pxls.jpg"
+              url: "//localhost:3000/assets/SIX23042_TodayTix_1440x580pxls.jpg"
             }
           },
           contentModelType: "productMedia",
@@ -451,7 +450,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
               size: 397100
             },
             contentType: "image/jpeg",
-            url: "//images.ctfassets.net/6pezt69ih962/4jU6Lh9ema4Q91naj8BH6s/150c98ef0d8f02b3de658090102dc1d2/SIX23042_TodayTix_480x720pxls.jpg"
+            url: "//localhost:3000/assets/SIX23042_TodayTix_480x720pxls.jpg"
           }
         },
         posterImageSquare: {
@@ -465,7 +464,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
               size: 1442283
             },
             contentType: "image/jpeg",
-            url: "//images.ctfassets.net/6pezt69ih962/6urBQXG4aXijlc6UdnJdke/10333ad13639ba222573241ca3e76640/SIX23042_TodayTix_1080x1080pxls.jpg"
+            url: "//localhost:3000/assets/SIX23042_TodayTix_1080x1080pxls.jpg"
           }
         }
       },
@@ -491,7 +490,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
       maxDiscountPercentage: 0,
       name: "SIX",
       posterImageUrl:
-        "https://images.ctfassets.net/6pezt69ih962/4jU6Lh9ema4Q91naj8BH6s/150c98ef0d8f02b3de658090102dc1d2/SIX23042_TodayTix_480x720pxls.jpg",
+        "http://localhost:3000/assets/SIX23042_TodayTix_480x720pxls.jpg",
       productType: ProductType.Show,
       promotion: null,
       ratingCount: 4878,
@@ -535,8 +534,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
       endDate: "2024-12-15",
       genreTags: ["Family", "Musical"],
       hasPromotion: true,
-      heroImageUrl:
-        "https://images.ctfassets.net/6pezt69ih962/3JrWwn0D2c2B1FRPJ0rIN3/0e896294647e9316218515b7db3489ac/Wicked_-_Hero",
+      heroImageUrl: "http://localhost:3000/assets/Wicked_-_Hero.jpg",
       id: 2,
       images: {
         productMedia: {
@@ -552,7 +550,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
                 size: 135747
               },
               contentType: "image/jpeg",
-              url: "//images.ctfassets.net/6pezt69ih962/7AkVwNyOeUOYeoYOgxNxah/316f175bad5d73d0c66995cce15f7a1a/Wicked_480x720.jpg"
+              url: "//localhost:3000/assets/Wicked_480x720.jpg"
             }
           },
           posterImageSquare: {
@@ -566,7 +564,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
                 size: 337303
               },
               contentType: "image/jpeg",
-              url: "//images.ctfassets.net/6pezt69ih962/4OqVkgpspztv7qhwfSWswZ/fb1171b17ff499cce80240b129e5fc93/Wicked_TTG_1080x1080.jpg"
+              url: "//localhost:3000/assets/Wicked_TTG_1080x1080.jpg"
             }
           },
           entryTitle: "Wicked - LON [2]  Product Media",
@@ -581,7 +579,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
                 size: 94276
               },
               contentType: "image/jpeg",
-              url: "//images.ctfassets.net/6pezt69ih962/3JrWwn0D2c2B1FRPJ0rIN3/0e896294647e9316218515b7db3489ac/Wicked_-_Hero"
+              url: "//localhost:3000/assets/Wicked_-_Hero.jpg"
             }
           },
           contentModelType: "productMedia",
@@ -600,7 +598,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
               size: 1733389
             },
             contentType: "image/jpeg",
-            url: "//images.ctfassets.net/6pezt69ih962/1GrTAOs1JWzVNKcssVutNa/957a17295cc579d4b7645b0543192850/Wicked_header1.jpg"
+            url: "//localhost:3000/assets/Wicked_header1.jpg"
           }
         },
         imagesAndVideos: [],
@@ -615,7 +613,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
               size: 135747
             },
             contentType: "image/jpeg",
-            url: "//images.ctfassets.net/6pezt69ih962/7AkVwNyOeUOYeoYOgxNxah/316f175bad5d73d0c66995cce15f7a1a/Wicked_480x720.jpg"
+            url: "//localhost:3000/assets/Wicked_480x720.jpg"
           }
         },
         posterImageSquare: {
@@ -629,7 +627,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
               size: 337303
             },
             contentType: "image/jpeg",
-            url: "//images.ctfassets.net/6pezt69ih962/4OqVkgpspztv7qhwfSWswZ/fb1171b17ff499cce80240b129e5fc93/Wicked_TTG_1080x1080.jpg"
+            url: "//localhost:3000/assets/Wicked_TTG_1080x1080.jpg"
           }
         }
       },
@@ -654,8 +652,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
       marketableLocationIds: [2],
       maxDiscountPercentage: 0,
       name: "Wicked",
-      posterImageUrl:
-        "https://images.ctfassets.net/6pezt69ih962/7AkVwNyOeUOYeoYOgxNxah/316f175bad5d73d0c66995cce15f7a1a/Wicked_480x720.jpg",
+      posterImageUrl: "http://localhost:3000/assets/Wicked_480x720.jpg",
       productType: ProductType.Show,
       promotion: {
         _type: "Promotion",
@@ -708,8 +705,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
       endDate: "2024-08-31",
       genreTags: ["Musical"],
       hasPromotion: true,
-      heroImageUrl:
-        "https://images.ctfassets.net/6pezt69ih962/3krB1LYKHogMKqYwuBEftq/a412f5f4e4a2b110569bd85af206444b/BT_G_D_TTG_1440x580.png",
+      heroImageUrl: "http://localhost:3000/assets/BT_G_D_TTG_1440x580.png",
       id: 3,
       images: {
         productMedia: {
@@ -725,7 +721,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
                 size: 1527572
               },
               contentType: "image/jpeg",
-              url: "//images.ctfassets.net/6pezt69ih962/7pCxFFeZ8WIsA8iWrmpXg6/f5f0dc907c98958be4464569e07ce658/41._Cast_of_Guys___Dolls_at_The_Bridge_Theatre__photo_by_Manuel_Harlan.jpg"
+              url: "//localhost:3000/assets/41._Cast_of_Guys___Dolls_at_The_Bridge_Theatre__photo_by_Manuel_Harlan.jpg"
             },
             description: "",
             title:
@@ -743,7 +739,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
                 size: 1086992
               },
               contentType: "image/png",
-              url: "//images.ctfassets.net/6pezt69ih962/5EiIwnxRjHGl4uaEFtfM6q/d250f150d866bba3d5e8a95d68a28bd7/BT_G_D_TTG_480x720.png"
+              url: "//localhost:3000/assets/BT_G_D_TTG_480x720.png"
             }
           },
           posterImageSquare: {
@@ -757,7 +753,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
                 size: 2350867
               },
               contentType: "image/png",
-              url: "//images.ctfassets.net/6pezt69ih962/6D8x7fosmyKxlDgCALCBoy/0469eaa98f086bd904042632f963ff5a/BT_G_D_TTG_1080x1080.png"
+              url: "//localhost:3000/assets/BT_G_D_TTG_1080x1080.png"
             }
           },
           entryTitle: "Guys & Dolls - Seated - LON  Product Media",
@@ -772,7 +768,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
                 size: 2261365
               },
               contentType: "image/png",
-              url: "//images.ctfassets.net/6pezt69ih962/3krB1LYKHogMKqYwuBEftq/a412f5f4e4a2b110569bd85af206444b/BT_G_D_TTG_1440x580.png"
+              url: "//localhost:3000/assets/BT_G_D_TTG_1440x580.png"
             }
           },
           contentModelType: "productMedia",
@@ -792,7 +788,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
               size: 1527572
             },
             contentType: "image/jpeg",
-            url: "//images.ctfassets.net/6pezt69ih962/7pCxFFeZ8WIsA8iWrmpXg6/f5f0dc907c98958be4464569e07ce658/41._Cast_of_Guys___Dolls_at_The_Bridge_Theatre__photo_by_Manuel_Harlan.jpg"
+            url: "//localhost:3000/assets/41._Cast_of_Guys___Dolls_at_The_Bridge_Theatre__photo_by_Manuel_Harlan.jpg"
           }
         },
         imagesAndVideos: [],
@@ -807,7 +803,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
               size: 1086992
             },
             contentType: "image/png",
-            url: "//images.ctfassets.net/6pezt69ih962/5EiIwnxRjHGl4uaEFtfM6q/d250f150d866bba3d5e8a95d68a28bd7/BT_G_D_TTG_480x720.png"
+            url: "//localhost:3000/assets/BT_G_D_TTG_480x720.png"
           }
         },
         posterImageSquare: {
@@ -821,7 +817,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
               size: 2350867
             },
             contentType: "image/png",
-            url: "//images.ctfassets.net/6pezt69ih962/6D8x7fosmyKxlDgCALCBoy/0469eaa98f086bd904042632f963ff5a/BT_G_D_TTG_1080x1080.png"
+            url: "//localhost:3000/assets/BT_G_D_TTG_1080x1080.png"
           }
         }
       },
@@ -846,8 +842,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
       marketableLocationIds: [2],
       maxDiscountPercentage: 50,
       name: "Guys & Dolls",
-      posterImageUrl:
-        "https://images.ctfassets.net/6pezt69ih962/5EiIwnxRjHGl4uaEFtfM6q/d250f150d866bba3d5e8a95d68a28bd7/BT_G_D_TTG_480x720.png",
+      posterImageUrl: "http://localhost:3000/assets/BT_G_D_TTG_480x720.png",
       productType: ProductType.Show,
       promotion: null,
       ratingCount: 18,
@@ -892,7 +887,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
       genreTags: ["Musical"],
       hasPromotion: true,
       heroImageUrl:
-        "https://images.ctfassets.net/6pezt69ih962/4UVgHm95bydvrhFYCvnugV/4070ae37d6405150df6f916cf8566bc1/Tina_-_The_Tina_Turner_Musical_-_Hero",
+        "http://localhost:3000/assets/Tina_-_The_Tina_Turner_Musical_-_Hero.jpg",
       id: 4,
       images: {
         productMedia: {
@@ -908,7 +903,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
                 size: 54986
               },
               contentType: "image/jpeg",
-              url: "//images.ctfassets.net/6pezt69ih962/7DHW1Gn7FTIniFg8pK3svw/abe07c3d7cbf08cdca0607fd8177be2e/TINA_4x7.jpg"
+              url: "//localhost:3000/assets/TINA_4x7.jpg"
             }
           },
           posterImageSquare: {
@@ -922,7 +917,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
                 size: 608964
               },
               contentType: "image/jpeg",
-              url: "//images.ctfassets.net/6pezt69ih962/1HnacTo35egiFx0Qf2BUGd/1b9497bb544ba1563bd95e1d2e70bf62/TINA_1080x1080px.jpg"
+              url: "//localhost:3000/assets/TINA_1080x1080px.jpg"
             }
           },
           entryTitle: "Tina - The Tina Turner Musical [4] - LON Product Media",
@@ -937,7 +932,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
                 size: 112451
               },
               contentType: "image/jpeg",
-              url: "//images.ctfassets.net/6pezt69ih962/4UVgHm95bydvrhFYCvnugV/4070ae37d6405150df6f916cf8566bc1/Tina_-_The_Tina_Turner_Musical_-_Hero"
+              url: "//localhost:3000/assets/Tina_-_The_Tina_Turner_Musical_-_Hero.jpg"
             }
           },
           contentModelType: "productMedia",
@@ -958,7 +953,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
               size: 54986
             },
             contentType: "image/jpeg",
-            url: "//images.ctfassets.net/6pezt69ih962/7DHW1Gn7FTIniFg8pK3svw/abe07c3d7cbf08cdca0607fd8177be2e/TINA_4x7.jpg"
+            url: "//localhost:3000/assets/TINA_4x7.jpg"
           }
         },
         posterImageSquare: {
@@ -972,7 +967,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
               size: 608964
             },
             contentType: "image/jpeg",
-            url: "//images.ctfassets.net/6pezt69ih962/1HnacTo35egiFx0Qf2BUGd/1b9497bb544ba1563bd95e1d2e70bf62/TINA_1080x1080px.jpg"
+            url: "//localhost:3000/assets/TINA_1080x1080px.jpg"
           }
         }
       },
@@ -997,8 +992,7 @@ const getRushAndLotteryShowsLondon200Response: TodayTixAPIv2Response<
       marketableLocationIds: [2],
       maxDiscountPercentage: 0,
       name: "Tina - The Tina Turner Musical",
-      posterImageUrl:
-        "https://images.ctfassets.net/6pezt69ih962/7DHW1Gn7FTIniFg8pK3svw/abe07c3d7cbf08cdca0607fd8177be2e/TINA_4x7.jpg",
+      posterImageUrl: "http://localhost:3000/assets/TINA_4x7.jpg",
       productType: ProductType.Show,
       promotion: null,
       ratingCount: 5188,
@@ -1060,7 +1054,7 @@ const getRushAndLotteryShowsNewYork200Response: TodayTixAPIv2Response<
       endDate: "2025-05-31",
       genreTags: ["Musical"],
       heroImageUrl:
-        "https://images.ctfassets.net/6pezt69ih962/3BWDIxnmh6kpSFXh0389KR/0ab26a9af6a0ba1b7184e7618c79a329/Little_Shop_of_Horrors_-_Hero",
+        "http://localhost:3000/assets/Little_Shop_of_Horrors_-_Hero.jpg",
       id: 24608,
       images: {
         productMedia: {
@@ -1076,7 +1070,7 @@ const getRushAndLotteryShowsNewYork200Response: TodayTixAPIv2Response<
                 size: 54986
               },
               contentType: "image/jpeg",
-              url: "//images.ctfassets.net/6pezt69ih962/rWG80L9TlvNF6YOPusY6Z/da81589ce57294e706ee681cb0dd50e9/359768039-lsh-1146w-todaytix-480x720-v1.jpg"
+              url: "//localhost:3000/assets/359768039-lsh-1146w-todaytix-480x720-v1.jpg"
             }
           },
           posterImageSquare: {
@@ -1090,7 +1084,7 @@ const getRushAndLotteryShowsNewYork200Response: TodayTixAPIv2Response<
                 size: 608964
               },
               contentType: "image/jpeg",
-              url: "//images.ctfassets.net/6pezt69ih962/rWG80L9TlvNF6YOPusY6Z/da81589ce57294e706ee681cb0dd50e9/359768039-lsh-1146w-todaytix-480x720-v1.jpg"
+              url: "//localhost:3000/assets/359768039-lsh-1146w-todaytix-480x720-v1.jpg"
             }
           },
           entryTitle: "Little Shop of Horrors Product Media",
@@ -1105,7 +1099,7 @@ const getRushAndLotteryShowsNewYork200Response: TodayTixAPIv2Response<
                 size: 112451
               },
               contentType: "image/jpeg",
-              url: "//images.ctfassets.net/6pezt69ih962/3BWDIxnmh6kpSFXh0389KR/0ab26a9af6a0ba1b7184e7618c79a329/Little_Shop_of_Horrors_-_Hero"
+              url: "//localhost:3000/assets/Little_Shop_of_Horrors_-_Hero.jpg"
             }
           },
           contentModelType: "productMedia",
@@ -1126,7 +1120,7 @@ const getRushAndLotteryShowsNewYork200Response: TodayTixAPIv2Response<
               size: 54986
             },
             contentType: "image/jpeg",
-            url: "//images.ctfassets.net/6pezt69ih962/rWG80L9TlvNF6YOPusY6Z/da81589ce57294e706ee681cb0dd50e9/359768039-lsh-1146w-todaytix-480x720-v1.jpg"
+            url: "//localhost:3000/assets/359768039-lsh-1146w-todaytix-480x720-v1.jpg"
           }
         },
         posterImageSquare: {
@@ -1140,7 +1134,7 @@ const getRushAndLotteryShowsNewYork200Response: TodayTixAPIv2Response<
               size: 608964
             },
             contentType: "image/jpeg",
-            url: "//images.ctfassets.net/6pezt69ih962/rWG80L9TlvNF6YOPusY6Z/da81589ce57294e706ee681cb0dd50e9/359768039-lsh-1146w-todaytix-480x720-v1.jpg"
+            url: "//localhost:3000/assets/359768039-lsh-1146w-todaytix-480x720-v1.jpg"
           }
         }
       },

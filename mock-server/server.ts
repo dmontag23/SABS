@@ -1,6 +1,7 @@
 import express from "express";
 import { Server } from "http";
 import { AddressInfo } from "net";
+import path from "path";
 
 import clearAllDataRoute from "./clearAllDataRoute";
 import { oauthRouter, v2Router } from "./routers";
@@ -12,6 +13,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/oauth/v1", oauthRouter);
 app.use("/api/v2", v2Router);
+// serve static assets
+app.use("/assets", express.static(path.join(__dirname, "..", "..", "assets")));
 app.delete("/clearAllData", clearAllDataRoute);
 
 const port = process.env.PORT || 3000;

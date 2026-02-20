@@ -26,7 +26,7 @@ const ShowDetailsScreen = ({
       <Image
         accessibilityLabel="Header image"
         source={{
-          uri: `https:${headerImage?.file.url ?? show.images?.productMedia.appHeroImage.file.url}`
+          uri: `${__DEV__ ? "http" : "https"}:${headerImage?.file.url ?? show.images?.productMedia.appHeroImage.file.url}`
         }}
         defaultSource={TodayTixBanner}
         resizeMode={headerImage ? "cover" : "stretch"}

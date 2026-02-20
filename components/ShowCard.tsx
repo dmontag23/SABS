@@ -123,7 +123,7 @@ const ShowCard = ({
           <Card.Cover
             resizeMode="stretch"
             source={{
-              uri: `https:${show.images?.productMedia.appHeroImage.file.url}`
+              uri: `${__DEV__ ? "http" : "https"}:${show.images?.productMedia.appHeroImage.file.url}`
             }}
             defaultSource={TodayTixBanner}
             theme={{ roundness: 0 }}
