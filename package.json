@@ -51,7 +51,7 @@
     "@react-native/metro-config": "0.84.0",
     "@react-native/typescript-config": "0.84.0",
     "@testing-library/react-native": "^13.2.2",
-    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
+    "@trivago/prettier-plugin-sort-imports": "^6.0.2",
     "@types/jest": "^29.5.13",
     "@types/react": "^19.2.0",
     "@types/react-native-vector-icons": "^6.4.18",
