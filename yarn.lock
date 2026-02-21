@@ -4759,9 +4759,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"detox@npm:20.45.1":
-  version: 20.45.1
-  resolution: "detox@npm:20.45.1"
+"detox@npm:20.47.0":
+  version: 20.47.0
+  resolution: "detox@npm:20.47.0"
   dependencies:
     "@wix-pilot/core": "npm:^3.4.2"
     "@wix-pilot/detox": "npm:^1.0.13"
@@ -4807,7 +4807,7 @@ __metadata:
       optional: true
   bin:
     detox: local-cli/cli.js
-  checksum: 10/27e55c553541579d5d45c4880f7c353005f929c93972fdb221c6d9514b57518c60e1acb8a6663611c49e426bdac57eea12dc4b1813524fb39df9e13c68f232af
+  checksum: 10/495e9bf65b891b13dbb302aea6022ee95b7bf3d5a0667bdaafafab76376e5ab4f402db5b356573aec2f5135adb63965c7e2c4a8dc30de02dd28109a773939074
   languageName: node
   linkType: hard
 
@@ -9623,7 +9623,7 @@ __metadata:
     "@types/react-native-vector-icons": "npm:^6.4.18"
     "@types/react-test-renderer": "npm:^19.1.0"
     axios: "npm:^1.12.0"
-    detox: "npm:20.45.1"
+    detox: "npm:20.47.0"
     eslint: "npm:^8.19.0"
     eslint-config-prettier: "npm:^10.1.8"
     eslint-plugin-prettier: "npm:^5.5.4"
