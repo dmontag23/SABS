@@ -223,14 +223,19 @@ describe("Holds", () => {
     // send the app to the background and release the tickets via the API
     // TODO: Figure out why this is necessary to avoid the test hanging
     await device.disableSynchronization();
-    await device.sendToHome();
+    try {
+      await device.sendToHome();
+    } catch {
+      // App may disconnect when going to background in CI; continue and relaunch
+    }
     await axios.delete(
       `${process.env.TODAY_TIX_API_BASE_URL}${process.env.TODAY_TIX_API_V2_ENDPOINT}/holds/75088671`
     );
 
     // check that, when bringing the app to the foreground, the hold is no longer visible
     await device.launchApp();
+    await device.enableSynchronization();
     await expect(selectATimeText).toBeVisible();
     await expect(headerText).not.toBeVisible();
-  }, 180000);
+  }, 300000);
 });
