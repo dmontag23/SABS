@@ -1,5 +1,5 @@
 import axios from "axios";
-import { expect } from "detox";
+import { expect, waitFor } from "detox";
 
 import { login } from "./utils/utils";
 
@@ -232,10 +232,12 @@ describe("Holds", () => {
       `${process.env.TODAY_TIX_API_BASE_URL}${process.env.TODAY_TIX_API_V2_ENDPOINT}/holds/75088671`
     );
 
-    // check that, when bringing the app to the foreground, the hold is no longer visible
+    // Check that, when bringing the app to the foreground, the hold is no longer visible.
+    // Use waitFor: after relaunch the app re-fetches holds and re-renders; sync "idle" can
+    // happen before the Select a Time screen is shown, so we poll for it instead of asserting immediately.
     await device.launchApp();
     await device.enableSynchronization();
-    await expect(selectATimeText).toBeVisible();
+    await waitFor(selectATimeText).toBeVisible().withTimeout(20000);
     await expect(headerText).not.toBeVisible();
   }, 300000);
 });
