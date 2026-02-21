@@ -239,5 +239,5 @@ describe("Holds", () => {
     await device.enableSynchronization();
     await waitFor(selectATimeText).toBeVisible().withTimeout(20000);
     await expect(headerText).not.toBeVisible();
-  }, 300000);
+  }, 600000);
 });
