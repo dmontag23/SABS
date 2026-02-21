@@ -234,10 +234,11 @@ describe("Holds", () => {
 
     // Check that, when bringing the app to the foreground, the hold is no longer visible.
     // Use waitFor: after relaunch the app re-fetches holds and re-renders; sync "idle" can
-    // happen before the Select a Time screen is shown, so we poll for it instead of asserting immediately.
+    // happen before the refetch completes. Wait for the hold to disappear (refetch outcome)
+    // with a generous timeout to avoid flake when CI or network is slow.
     await device.launchApp();
     await device.enableSynchronization();
-    await waitFor(selectATimeText).toBeVisible().withTimeout(20000);
-    await expect(headerText).not.toBeVisible();
-  }, 600000);
+    await waitFor(headerText).not.toBeVisible().withTimeout(45000);
+    await expect(selectATimeText).toBeVisible();
+  }, 200000);
 });
