@@ -5,7 +5,7 @@
   "scripts": {
     "build": "pnpm clean-mock-server && pnpm mock-server-ts-compile",
     "clean-mock-server": "rm -rf dist",
-    "mock-server-ts-compile": "npx tsc",
+    "mock-server-ts-compile": "pnpm exec tsc",
     "start": "pnpm build && node dist/mock-server/runMockServer.js"
   },
   "dependencies": {
