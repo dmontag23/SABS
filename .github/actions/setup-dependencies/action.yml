@@ -6,16 +6,13 @@ runs:
     - name: Enable Corepack
       run: corepack enable
       shell: bash
-    - name: Setup node and cache yarn
+    - name: Setup node and cache pnpm
       uses: actions/setup-node@v4
       with:
-        node-version: 22.x
-        cache: yarn
+        node-version: 24.13.1
+        cache: pnpm
     - name: Install dependencies
-      run: yarn
-      shell: bash
-    - name: Install mock server dependencies
-      run: cd mock-server && yarn && cd ..
+      run: pnpm install
       shell: bash
     - name: Create the env file
       run: echo "${{ inputs.env_var }}" > .env

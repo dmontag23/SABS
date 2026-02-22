@@ -3,10 +3,10 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "build": "yarn clean-mock-server && yarn mock-server-ts-compile",
+    "build": "pnpm clean-mock-server && pnpm mock-server-ts-compile",
     "clean-mock-server": "rm -rf dist",
     "mock-server-ts-compile": "npx tsc",
-    "start": "yarn build && node dist/mock-server/runMockServer.js"
+    "start": "pnpm build && node dist/mock-server/runMockServer.js"
   },
   "dependencies": {
     "express": "^5.2.1"
@@ -17,7 +17,7 @@
     "typescript": "^5.9.3"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=24.13.1"
   },
-  "packageManager": "yarn@4.9.1"
+  "packageManager": "pnpm@10.30.1"
 }

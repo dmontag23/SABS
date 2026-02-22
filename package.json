@@ -7,10 +7,10 @@
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
-    "test": "yarn typecheck && yarn lint && yarn test:integration && yarn test:e2e:local",
+    "test": "pnpm typecheck && pnpm lint && pnpm test:integration && pnpm test:e2e:local",
     "test:e2e": "npx detox test -c",
     "test:e2e:build": "npx detox build -c",
-    "test:e2e:local": "NODE_ENV=development yarn test:e2e ios.sim.debug",
+    "test:e2e:local": "NODE_ENV=development pnpm test:e2e ios.sim.debug",
     "test:integration": "jest",
     "typecheck": "npx tsc"
   },
@@ -70,5 +70,5 @@
   "engines": {
     "node": ">=22.11.0"
   },
-  "packageManager": "yarn@4.9.2"
+  "packageManager": "pnpm@10.30.1"
 }

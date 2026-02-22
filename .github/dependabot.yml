@@ -1,10 +1,10 @@
 version: 2
 updates:
-  # Enable version updates for yarn in the root directory
+  # Enable version updates for pnpm in the root directory
   - package-ecosystem: "npm"
-    # Look for `package.json` and `lock` files in the `root` directory
+    # Look for `package.json` in the `root` directory
     directory: "/"
-    # Check the yarn registry for updates every day (weekdays)
+    # Check the npm registry for updates every day (weekdays)
     schedule:
       interval: "daily"
     # Ignore all react native dependencies
@@ -21,11 +21,11 @@ updates:
       - dependency-name: "react-test-renderer"
       - dependency-name: "typescript"
 
-  # Enable version updates for yarn in the mock-server directory
+  # Enable version updates for pnpm in the mock-server directory
   - package-ecosystem: "npm"
-    # Look for `package.json` and `lock` files in the `mock server` directory
+    # Look for `package.json` in the `mock-server` directory
     directory: "/mock-server"
-    # Check the yarn registry for updates every day (weekdays)
+    # Check the npm registry for updates every day (weekdays)
     schedule:
       interval: "daily"
 

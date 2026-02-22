@@ -17,7 +17,7 @@ jobs:
         with:
           env_var: ${{ vars.ENV }}
       - name: Typecheck
-        run: yarn typecheck
+        run: pnpm typecheck
   lint:
     name: Lint 🧹
     runs-on: ubuntu-latest
@@ -29,7 +29,7 @@ jobs:
         with:
           env_var: ${{ vars.ENV }}
       - name: Lint
-        run: yarn lint
+        run: pnpm lint
   integration_tests:
     name: Integration tests 🧪
     runs-on: ubuntu-latest
@@ -41,7 +41,7 @@ jobs:
         with:
           env_var: ${{ vars.ENV }}
       - name: Run integration tests
-        run: yarn test:integration
+        run: pnpm test:integration
   e2e_tests:
     name: E2E tests (IOS) 📱
     runs-on: macos-latest
@@ -58,7 +58,7 @@ jobs:
         run: echo "$SENTRY_PROPERTIES" > ios/sentry.properties
         shell: bash
       - name: Start mock server
-        run: cd ./mock-server && nohup yarn start &
+        run: cd ./mock-server && nohup pnpm start &
       - name: Install Detox dependencies
         run: |
           brew tap wix/brew
@@ -68,9 +68,9 @@ jobs:
       - name: Install pod dependencies
         run: cd ./ios && pod install --repo-update && cd ..
       - name: Build Detox
-        run: yarn test:e2e:build ios.sim.release
+        run: pnpm test:e2e:build ios.sim.release
       - name: Run Detox Tests
-        run: yarn test:e2e ios.sim.release
+        run: pnpm test:e2e ios.sim.release
       - name: Upload failed E2E test artifacts
         if: failure()
         uses: actions/upload-artifact@v4
