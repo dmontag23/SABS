@@ -1400,7 +1400,7 @@ PODS:
     - React-RCTFBReactNativeSpec
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
-  - react-native-safe-area-context (5.6.2):
+  - react-native-safe-area-context (5.7.0):
     - hermes-engine
     - RCTRequired
     - RCTTypeSafety
@@ -1412,8 +1412,8 @@ PODS:
     - React-graphics
     - React-ImageManager
     - React-jsi
-    - react-native-safe-area-context/common (= 5.6.2)
-    - react-native-safe-area-context/fabric (= 5.6.2)
+    - react-native-safe-area-context/common (= 5.7.0)
+    - react-native-safe-area-context/fabric (= 5.7.0)
     - React-NativeModulesApple
     - React-RCTFabric
     - React-renderercss
@@ -1424,7 +1424,7 @@ PODS:
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
     - Yoga
-  - react-native-safe-area-context/common (5.6.2):
+  - react-native-safe-area-context/common (5.7.0):
     - hermes-engine
     - RCTRequired
     - RCTTypeSafety
@@ -1446,7 +1446,7 @@ PODS:
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
     - Yoga
-  - react-native-safe-area-context/fabric (5.6.2):
+  - react-native-safe-area-context/fabric (5.7.0):
     - hermes-engine
     - RCTRequired
     - RCTTypeSafety
@@ -1972,7 +1972,7 @@ PODS:
     - ReactNativeDependencies
     - RNWorklets
     - Yoga
-  - RNScreens (4.23.0):
+  - RNScreens (4.24.0):
     - hermes-engine
     - RCTRequired
     - RCTTypeSafety
@@ -1994,9 +1994,9 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
-    - RNScreens/common (= 4.23.0)
+    - RNScreens/common (= 4.24.0)
     - Yoga
-  - RNScreens/common (4.23.0):
+  - RNScreens/common (4.24.0):
     - hermes-engine
     - RCTRequired
     - RCTTypeSafety
@@ -2019,7 +2019,7 @@ PODS:
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
     - Yoga
-  - RNSentry (8.1.0):
+  - RNSentry (8.2.0):
     - hermes-engine
     - RCTRequired
     - RCTTypeSafety
@@ -2041,7 +2041,7 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
-    - Sentry (= 9.4.1)
+    - Sentry (= 9.5.1)
     - Yoga
   - RNSVG (15.15.3):
     - hermes-engine
@@ -2159,9 +2159,9 @@ PODS:
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
     - Yoga
-  - Sentry (9.4.1):
-    - Sentry/Core (= 9.4.1)
-  - Sentry/Core (9.4.1)
+  - Sentry (9.5.1):
+    - Sentry/Core (= 9.5.1)
+  - Sentry/Core (9.5.1)
   - Yoga (0.0.0)
 
 DEPENDENCIES:
@@ -2456,7 +2456,7 @@ SPEC CHECKSUMS:
   React-logger: 9e51e01455f15cb3ef87a09a1ec773cdb22d56c1
   React-Mapbuffer: 92b99e450e8ff598b27d6e4db3a75e04fd45e9a9
   React-microtasksnativemodule: 2fe0f2bd2840dedbd66c0ac249c64f977f39cc18
-  react-native-safe-area-context: 37e680fc4cace3c0030ee46e8987d24f5d3bdab2
+  react-native-safe-area-context: ae7587b95fb580d1800c5b0b2a7bd48c2868e67a
   React-NativeModulesApple: 44a9474594566cd03659f92e38f42599c6b9dee4
   React-networking: db73d91466cb134fcbdaaa579fb2de14e2c2ea01
   React-oscompat: b924b8609d06899f00ab1aa813b0cde9c5e12771
@@ -2494,11 +2494,11 @@ SPEC CHECKSUMS:
   RNCAsyncStorage: 7a5a6094f9f6b9158e72f1855cd86e769413d851
   RNGestureHandler: 07de6f059e0ee5744ae9a56feb07ee345338cc31
   RNReanimated: 9699b4e4c869652e8f1fd12c8094b44e4bdf5475
-  RNScreens: 14243fa0d9842ffa7f8bb2d00b6c3cfd3ca817e8
-  RNSentry: a87a1d8dcff9c660354b118760584273f0dfb033
+  RNScreens: 6cb648bdad8fe9bee9259fe144df95b6d1d5b707
+  RNSentry: dce4eea44915de84df19234f3f2b9ecb1a37ce29
   RNSVG: 507bf2685de6b3d49449efd4aae7e7471bb9c433
   RNWorklets: b00840820dac986f75b4675222e925266917defa
-  Sentry: 990a381d8592207a52e7be654b31a27738c3a6a8
+  Sentry: 7475eb7bf6a41d7505f46341706015ad2d1766b9
   Yoga: 772166513f9cd2d61a6251d0dacbbfaa5b537479
 
 PODFILE CHECKSUM: 373c1bc12d12c8cde2e0c5c7741f148ac00fc511
