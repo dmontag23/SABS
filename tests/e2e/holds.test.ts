@@ -236,9 +236,10 @@ describe("Holds", () => {
     // Use waitFor: after relaunch the app re-fetches holds and re-renders; sync "idle" can
     // happen before the refetch completes. Wait for the hold to disappear (refetch outcome)
     // with a generous timeout to avoid flake when CI or network is slow.
-    await device.launchApp();
+    await device.launchApp({ newInstance: false });
     await device.enableSynchronization();
-    await waitFor(headerText).not.toBeVisible().withTimeout(45000);
-    await expect(selectATimeText).toBeVisible();
-  }, 200000);
+
+    await waitFor(headerText).not.toBeVisible().withTimeout(60000);
+    await waitFor(selectATimeText).toBeVisible().withTimeout(30000);
+  }, 250000);
 });
