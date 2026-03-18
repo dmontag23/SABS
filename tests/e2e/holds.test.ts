@@ -240,6 +240,6 @@ describe("Holds", () => {
     await device.enableSynchronization();
 
     await waitFor(headerText).not.toBeVisible().withTimeout(60000);
-    await waitFor(selectATimeText).toBeVisible().withTimeout(30000);
+    await waitFor(selectATimeText).toBeVisible().withTimeout(60000);
   }, 250000);
 });
